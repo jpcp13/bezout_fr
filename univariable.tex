@@ -94,7 +94,7 @@ Regardons cette dernière égalité comme une égalité entre polynômes en la v
 $$\delta(g)_\beta = g(x)\delta(1)_\beta - f(x)(\dfrac{g(x)-g(y)}{x-y})_\beta $$
 qui est une égalité entre éléments de $\C[x]$. En projetant sur $A_x$ on a
 $\delta(g)_\beta = g(x)\delta(1)_\beta$
-et comme ceci est vrai pour tout $\beta\in\N$, on obtient bien la relation \ref{relations}.
+et comme ceci est vrai pour tout $\beta\in\N$, on obtient bien la relation~(\ref{relations}).
 \end{proof}
 \begin{rem}
 En disant la  proposition autrement, chaque colonne de $B(1)$ donne, lorsqu'elle est multipliée par $g$ modulo $A_x$, la colonne de même indice de $B(g)$.
@@ -128,7 +128,7 @@ ce qui se vérifie facilement.
 \end{exmp}
 
 \begin{rem}
-En considérant les lignes de $B(1), B(x)$ à la place des colonnes on aboutirait à une formule écrite en la variable $y$, identique à la formule \ref{relations} car les matrices de Bezout sont ici symétriques, mais ce ne sera plus le cas en plusieurs variables.
+En considérant les lignes de $B(1), B(x)$ à la place des colonnes on aboutirait à une formule écrite en la variable $y$, identique à la formule~(\ref{relations}) car les matrices de Bezout sont ici symétriques, mais ce ne sera plus le cas en plusieurs variables.
 \end{rem}
 
 %\begin{rem}
@@ -176,8 +176,9 @@ Définissons deux nouvelles familles dans $A_x$ par
 \end{equation}
 et posons $\hat{\bold{x}} = \bold{x}B(1)$.
 $B(1)$ étant inversible, la famille $\hat{\bold{x}}$ est une base de $A_x$ appellée {\bf base de Horner}.
-D'après la proposition \ref{relations_prop} on a $\hat{\bold{x}}x = \bold{x}B(1)$. Par construction, les familles $\hat{\bold{x}}$ et $\hat{\bold{x}}x$ s'expriment dans la base $\bold{x}$ (des monômes) respectivement par les matrices $B(1)$ et $B(x)$. La famille $\hat{\bold{x}}x$ s'exprime donc dans la base $\hat{\bold{x}}$ (de Horner) par la matrice $B(1)^{-1}B(x)$ ce qui veut dire que l'endomorphisme
-$x = \left\vert
+D'après la proposition \ref{relations_prop} on a $\hat{\bold{x}}x = \bold{x}B(1)$. Par construction, les familles $\hat{\bold{x}}$ et $\hat{\bold{x}}x$ s'expriment dans la base $\bold{x}$ (des monômes) respectivement par les matrices $B(1)$ et $B(x)$.
+La famille $\hat{\bold{x}}x$ s'exprime donc dans la base $\hat{\bold{x}}$ (de Horner) par la matrice $B(1)^{-1}B(x)$ ce qui veut dire que l'endomorphisme
+$x : \left\vert
 \begin{array}{c}
 A \mapsto A \\
 h \mapsto xh
@@ -196,7 +197,7 @@ Si on considère un polynôme quelconque $g$ de $\C[x]$ et $B(g)$ sa matrice de 
 	\label{BG}
 	B(g)B(1)^{-1} = g(X)
 \end{equation}
-On montre facilement la formule \ref{BG} lorsque le degré de g est inférieur ou égal à $d$, c'est-à-dire lorsque $B(1)$ et $B(g)$ sont de même taille. Par exemple pour $f = x^2 - 3x + 2$, $d = 2$, on a
+On montre facilement la formule~(\ref{BG}) lorsque le degré de g est inférieur ou égal à $d$, c'est-à-dire lorsque $B(1)$ et $B(g)$ sont de même taille. Par exemple pour $f = x^2 - 3x + 2$, $d = 2$, on a
 $$
 \begin{array}{c|cc}
 	\delta(1) & 1 & y \\
@@ -234,7 +235,7 @@ $$
 	\end{bmatrix}
 	= X^2
 \end{equation}
-ce qui confirme bien la formule \ref{BG}.
+ce qui confirme bien la formule~(\ref{BG}).
 Si par contre le degré de $g$ est supérieur à $d$, alors $B(g)$ et $B(1)$ ne sont plus de la même taille et une opération telle que $B(g)B(1)^{-1}$ n'a plus de sens. Une première idée est de réécrire les deux matrices de Bezout dans le même système d'indices, à savoir
 $\bold{x} = (1, x,\cdots, x^{m-1})$ et $\bold{y} = (1, y,\cdots, y^{m-1})$, $m$ étant le degré de $g$. Par exemple en choisissant $f$ comme ci-dessus et $g = x^3$ on aurait
 $$
@@ -254,8 +255,9 @@ x & 0 & -2 & 3\\
 x^2 & -2 & 3 & -1
 \end{array}
 $$
-mais alors $B(1)$ n'est plus inversible. Nous allons cependant montrer, grâce aux relations \ref{relations}, que si {\bf on projette les deux polynômes de Bezout sur le quotient $A_x$} alors les matrices $B(g)$ et $B(1)$ sont redimensionnées à la même taille, $B(1)$ est inversible et la formule \ref{BG} s'applique. Illustrons le procédé sur l'exemple ci-dessus.
-Puisque $B(1)$ n'est pas inversible, on peut trouver une combinaison linéaire de colonnes qui s'annule, ici c'est la troisième colonne qui est nulle. En la multipliant par $x^3$, et en appliquant les  relations \ref{relations}, on obtient que la troisième colonne de $B(x^3)$ est aussi nulle. Mais cette colonne vaut $-2 + 3x - x^2$ ce qui entraine que, dans le quotient, $-2 + 3x - x^2 = 0$ (ce n'est pas une surprise car ce dernier polynôme n'est autre que $-f$; ceci est dû au fait que l'exemple choisi est particulièrement simple, mais nous verrons dans le cas multidimensionnel que les relations nulles dans le quotient ainsi générées sont loin d'être triviales).
+mais alors $B(1)$ n'est plus inversible. Nous allons cependant montrer, grâce aux relations~(\ref{relations}), que si {\bf on projette les deux polynômes de Bezout sur le quotient $A_x$} alors les matrices $B(g)$ et $B(1)$ sont redimensionnées à la même taille, $B(1)$ est inversible et la formule~(\ref{BG}) s'applique. Illustrons le procédé sur l'exemple ci-dessus. Puisque $B(1)$ n'est pas inversible, on peut trouver une combinaison linéaire de colonnes qui s'annule, ici c'est la troisième colonne qui est nulle. En la multipliant par $x^3$, et en appliquant les relations~(\ref{relations}), on obtient que la troisième colonne de $B(x^3)$ est aussi nulle. Mais cette colonne vaut $-2 + 3x - x^2$ ce qui entraine que, dans le quotient,
+$-2 + 3x - x^2 = 0$ (ce n'est pas une surprise car ce dernier polynôme n'est autre que $-f$; ceci est dû au fait que l'exemple choisi est particulièrement simple, mais nous verrons dans le cas multidimensionnel que les relations nulles dans le quotient ainsi générées sont loin d'être triviales).
+
 En vue d'automatiser les calculs, traduisons le procédé précédent en termes d'algèbre matricielle.
 Toujours sur le même exemple
 \begin{align} \nonumber %%%%%%%%%%%%%%
@@ -321,13 +323,8 @@ $P =
 	1 & 0 & 2 \\
 	0 & 1 & -3 \\
 	0 & 0 & 1
-\end{bmatrix}$, les deux matrices de Bezout $B(1)$ et $B(g)$ à gauche par
-$P^{-1} =
-\begin{bmatrix}
-	1 & 0 & -2 \\
-	0 & 1 & 3 \\
-	0 & 0 & 1
-\end{bmatrix}$. Les polynômes de Bezout, écrits sous la forme de tableaux, deviennent alors
+\end{bmatrix}$
+et les deux matrices de Bezout $B(1)$ et $B(g)$ à gauche par $P^{-1}$. Les polynômes de Bezout, écrits sous forme de tableaux, deviennent alors
 $$
 \begin{array}{c|ccc}
 	\delta(1) & 1 & y & y^2\\
@@ -345,8 +342,7 @@ $$
 	2 - 3x + x^2 & -2 & 3 & -1
 \end{array}
 $$
-Ce que disent les relations \ref{relations} c'est que la troisième colonne de $B(x^3)$ est nulle dans le quotient $A_x$, c'est à-dire $-2 + 3x - x^2 = 0$, (on reconnait l'égalité $-f = 0$). On a donc
-
+Ce que disent les relations~(\ref{relations}) c'est que la troisième colonne de $B(x^3)$ est nulle dans le quotient $A_x$, c'est à-dire $-2 + 3x - x^2 = 0$, (on reconnait l'égalité $-f = 0$). On a donc
 $$
 \delta(1) = \begin{bmatrix}
 	1 & x
@@ -358,9 +354,8 @@ $$
 \begin{bmatrix}
 	1 \\
 	y
-\end{bmatrix},
-\hspace{1cm}
-\delta(x^3) = \begin{bmatrix}
+\end{bmatrix}$$
+$$\delta(x^3) = \begin{bmatrix}
 	1 & x
 \end{bmatrix}
 \begin{bmatrix}
@@ -370,10 +365,7 @@ $$
 \begin{bmatrix}
 	1 \\
 	y
-\end{bmatrix} - (2 - 3x + x^2)(2 - 3y + y^2)
-$$
-
-
+\end{bmatrix} + (2 - 3x + x^2)(-2 + 3y - y^2)$$
 puis, en projetant $\delta(1), \delta(g)$ sur $A_x \otimes A_y$
 $$
 \begin{array}{c|cc}
@@ -390,7 +382,6 @@ $$
 	x & -6 & 7
 \end{array}
 $$
-
 Nous avons bien obtenu des matrices de Bezout de même taille, avec $B(1)$ inversible. Formons alors le quotient
 \begin{equation}
 	B(x^3)B(1)^{-1} =
