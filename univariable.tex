@@ -7,18 +7,18 @@
   \section{Cas univariable}
   \label{univariable}
 
-  Rappelons quelques faits connus sur les polynômes à une variable.\\
+  Rappelons quelques faits connus sur les polynômes à une variable.
   Soit $f(x) = a_0x^d + \dots + a_{d-1}x + a_d$ un polynôme de la variable complexe $x$. Notons $<f(x)>$ l'idéal engendré par $f(x)$ dans l'anneau $\C[x]$ et $A_x = \C[x]/<f(x)>$  son algèbre quotient; de même nous noterons $A_y = \C[y]/<f(y)>$. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A_x$ ou l'endomorphisme de multiplication par $x$ dans $A_x$. Une base du $\C$-espace vectoriel $A_x$ est la {\bf base des monômes} $\bold{x} = (1, x,\cdots, x^{d-1})$.
 
   \subsection{Matrices des opérateurs de multiplication dans $A_x$}
   L'opérateur de multiplication
-  $x = \left\vert
+  $x : \left\vert
   \begin{array}{c}
   A \mapsto A \\
   h \mapsto xh
   \end{array}
-  \right.$ est un endomorphisme et se représente donc dans la base des monômes par
-  une matrice $X$ de taille $d$, appelée {\bf la matrice compagnon}
+  \right.$
+  est un endomorphisme et se représente donc dans la base des monômes par une matrice $X$ de taille $d$, appelée {\bf matrice compagnon}
   \begin{equation}
   \label{compan}
   X =
@@ -36,16 +36,16 @@
   \end{prop}
 
   \begin{rem}
-  La proposition précédente fournit une méthode effective de calcul numérique des racines de $f$. En effet, $X$ est une matrice de Hessenberg, à laquelle on peut appliquer des techniques performantes de calcul de valeurs propres, comme la méthode du QR. Nous appliquerons aussi ces techniques dans le cas d'un système multivariable.
+  La proposition précédente fournit une méthode effective de calcul numérique des racines de $f$. En effet, $X$ est une matrice de Hessenberg, à laquelle on peut appliquer des techniques performantes de calcul de valeurs propres, comme la méthode du QR. Nous verrons à la section \ref{multivariable} que ces techniques peuvent aussi s'appliquer au cas d'un système multivariable en intersection complète.
   \end{rem}
-  Plus généralement, pour un élément $g\in A_x$, l'opérateur de multiplication
-  $g = \left\vert
+  Plus généralement, pour tout élément $g\in A_x$, l'opérateur de multiplication
+  $g : \left\vert
   \begin{array}{c}
   A \mapsto A \\
   h \mapsto gh
   \end{array}
   \right.$
-  est un endomorphisme, qui se représente dans la base des monômes par une matrice que nous appelerons encore {\bf matrice compagnon de $g$} et qui se calcule à partir de $X$ très facilement. Considérons par exemple $g = x^2$. L'opérateur de multiplication par $x^2$ n'est autre que l'opérateur de multiplication par $x$, lui-même élevé au carré. Sa matrice est donc $X^2$. Plus généralement, nous avons
+  est un endomorphisme, et se représente dans la base des monômes par une matrice que nous appelerons encore matrice compagnon de $g$ et qui se calcule à partir de $X$ très facilement. Considérons par exemple $g = x^2$. L'opérateur de multiplication par $x^2$ n'est autre que le carré de l'opérateur de multiplication par $x$; sa matrice est donc $X^2$. Donc d'une façon générale, nous avons
   \begin{prop}
   la matrice compagnon de $g$ est $g(X)$.
   \end{prop}
