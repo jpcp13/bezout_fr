@@ -6,7 +6,7 @@
 \usepackage{amsfonts}
 %\usepackage{wrapfig}
 %\usepackage{geometry}
-%\geometry{ hmargin=2.8cm, vmargin=3cm } 
+%\geometry{ hmargin=2.8cm, vmargin=3cm }
 \usepackage{graphicx}
 %\usepackage{amsmath}
 %\usepackage{mathdots}
@@ -71,8 +71,8 @@
 
 
 
-\begin{abstract} 
-%~ Nous proposons un algorithme de calcul 
+\begin{abstract}
+%~ Nous proposons un algorithme de calcul
 %~ numérique des racines d'un système polynômial zéro-dimensionnel basé sur les matrices de Bézout.
 %~ Cet algorithme est entièrement basé sur des procédures l'algèbre linéaire numérique. Une implémentation en python en est fournie en annexe.
 \end{abstract}
@@ -85,7 +85,7 @@
 \label{univariable}
 
 Rappelons quelques faits connus sur les polynômes à une variable.\\
-Soit $f(x) = a_0x^d + \dots + a_{d-1}x + a_d$ un polynôme de la variable complexe $x$. Notons $<f(x)>$ l'idéal engendré par $f(x)$ dans l'anneau $\C[x]$ et $A_x = \C[x]/<f(x)>$  son algèbre quotient; de même nous noterons $A_y = \C[y]/<f(y)>$. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A_x$ ou l'endomorphisme de multiplication par $x$ dans $A_x$. $A_x$ est un espace vectoriel sur $\C$ de dimension $d$ dont une base, appelée {\bf base des monômes}, est $\bold{x} = (1, x,\cdots, x^{d-1})$ famille d'éléments élément de $A_x$. 
+Soit $f(x) = a_0x^d + \dots + a_{d-1}x + a_d$ un polynôme de la variable complexe $x$. Notons $<f(x)>$ l'idéal engendré par $f(x)$ dans l'anneau $\C[x]$ et $A_x = \C[x]/<f(x)>$  son algèbre quotient; de même nous noterons $A_y = \C[y]/<f(y)>$. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A_x$ ou l'endomorphisme de multiplication par $x$ dans $A_x$. Une base du $\C$-espace vectoriel $A_x$ est de dimension $d$ dont une base, appelée {\bf base des monômes}, est $\bold{x} = (1, x,\cdots, x^{d-1})$ famille d'éléments élément de $A_x$.
 
 \subsection{Matrices des opérateurs de multiplication dans $A_x$}
 L'opérateur de multiplication
@@ -93,8 +93,8 @@ $x = \left\vert
 \begin{array}{c}
 A \mapsto A \\
 h \mapsto xh
-\end{array} 
-\right.$ est un endomorphisme et se représente donc dans la base des monômes par 
+\end{array}
+\right.$ est un endomorphisme et se représente donc dans la base des monômes par
 une matrice $X$ de taille $d$, appelée {\bf la matrice compagnon}
 \begin{equation}
 \label{compan}
@@ -120,9 +120,9 @@ $g = \left\vert
 \begin{array}{c}
 A \mapsto A \\
 h \mapsto gh
-\end{array} 
+\end{array}
 \right.$
-est un endomorphisme, qui se représente dans la base des monômes par une matrice que nous appelerons encore {\bf matrice compagnon de $g$} et qui se calcule à partir de $X$ très facilement. Considérons par exemple $g = x^2$. L'opérateur de multiplication par $x^2$ n'est autre que l'opérateur de multiplication par $x$, lui-même élevé au carré. Sa matrice est donc $X^2$. Plus généralement, nous avons  
+est un endomorphisme, qui se représente dans la base des monômes par une matrice que nous appelerons encore {\bf matrice compagnon de $g$} et qui se calcule à partir de $X$ très facilement. Considérons par exemple $g = x^2$. L'opérateur de multiplication par $x^2$ n'est autre que l'opérateur de multiplication par $x$, lui-même élevé au carré. Sa matrice est donc $X^2$. Plus généralement, nous avons
 \begin{prop}
 la matrice compagnon de $g$ est $g(X)$.
 \end{prop}
@@ -148,7 +148,7 @@ Le polynôme et la matrice de Bezout sont liés par l'égalité matricielle
 \begin{equation}
 	\delta(g) = \bold{x} B(g) \bold{y}^T
 \end{equation}
-où $\bold{x} = (1, x,\cdots, x^{m-1})$ et $\bold{y} = (1, y,\cdots, y^{m-1})$ sont des vecteurs de monômes de $\C[x]$ et $\C[y]$. (Attention, on emploie encore ici la notation ${\bold x}$ pour un vecteur de $\C[x]^m$, notation qui était utilisée précédemment pour désigner la base des monômes ${\bold x}$ mais en pratique cette confusion n'est pas gênante). 
+où $\bold{x} = (1, x,\cdots, x^{m-1})$ et $\bold{y} = (1, y,\cdots, y^{m-1})$ sont des vecteurs de monômes de $\C[x]$ et $\C[y]$. (Attention, on emploie encore ici la notation ${\bold x}$ pour un vecteur de $\C[x]^m$, notation qui était utilisée précédemment pour désigner la base des monômes ${\bold x}$ mais en pratique cette confusion n'est pas gênante).
 Considérons maintenat les produits vecteur-matrice $\bold{x}B(1)$ et $\bold{x}B(g)$. Ces deux familles sont constituées des colonnes de $B(1)$, resp. $B(g)$, vues comme des polynômes en $x$ exprimés dans la base des monômes. On peut aussi voir $\bold{x}B(1)$, resp. $\bold{x}B(g)$, comme la famille des coefficients de $\delta(1)$, resp. $\delta(g)$, considéré comme un polynôme en $y$ à coefficients dans $\C[x]$.
 \end{rem}
 
@@ -162,11 +162,11 @@ Soit $g$ un polynôme de $\C[x]$, et $m$ le maximum des degrés de $f$ et $g$. S
 \end{prop}
 \begin{proof}
 Ecrivons
-\begin{align} \nonumber 
-	\delta(g) = g(x)\dfrac{f(x)-f(y)}{x-y} - f(x)\dfrac{g(x)-g(y)}{x-y} \\ \nonumber 
-	\delta(g) = g(x)\delta(1) - f(x)\dfrac{g(x)-g(y)}{x-y} 
+\begin{align} \nonumber
+	\delta(g) = g(x)\dfrac{f(x)-f(y)}{x-y} - f(x)\dfrac{g(x)-g(y)}{x-y} \\ \nonumber
+	\delta(g) = g(x)\delta(1) - f(x)\dfrac{g(x)-g(y)}{x-y}
 \end{align}
-Regardons cette dernière égalité comme une égalité entre polynômes en la variable $y$, à coefficients dans $\C[x]$. Si $h\in \C[x][y]$ et $\beta\in\N$ notons $h_\beta$ le coefficient de $y^\beta$ dans $h$. On a alors 
+Regardons cette dernière égalité comme une égalité entre polynômes en la variable $y$, à coefficients dans $\C[x]$. Si $h\in \C[x][y]$ et $\beta\in\N$ notons $h_\beta$ le coefficient de $y^\beta$ dans $h$. On a alors
 $$\delta(g)_\beta = g(x)\delta(1)_\beta - f(x)(\dfrac{g(x)-g(y)}{x-y})_\beta $$
 qui est une égalité entre éléments de $\C[x]$. En projetant sur $A_x$ on a
 $\delta(g)_\beta = g(x)\delta(1)_\beta$
@@ -194,17 +194,17 @@ x & 0 & -2 & 3\\
 x^2 & -2 & 3 & -1
 \end{array}
 $$
-La proposition \ref{relations_prop} dit que, modulo $A_x$, 
-\begin{align} \nonumber 
-	(-3 + x)x^3 &= -2x^2 \\ \nonumber 
-	(1)x^3 &= -2x + 3x^2 \\ \nonumber 
+La proposition \ref{relations_prop} dit que, modulo $A_x$,
+\begin{align} \nonumber
+	(-3 + x)x^3 &= -2x^2 \\ \nonumber
+	(1)x^3 &= -2x + 3x^2 \\ \nonumber
 	(0)x^3 &= -2 + 3x - x^2
 \end{align}
 ce qui se vérifie facilement.
 \end{exmp}
 
 \begin{rem}
-En considérant les lignes de $B(1), B(x)$ à la place des colonnes on aboutirait à une formule écrite en la variable $y$, identique à la formule  \ref{relations} car les matrices de Bezout sont ici symétriques, mais ce ne sera plus le cas en plusieurs variables.
+En considérant les lignes de $B(1), B(x)$ à la place des colonnes on aboutirait à une formule écrite en la variable $y$, identique à la formule \ref{relations} car les matrices de Bezout sont ici symétriques, mais ce ne sera plus le cas en plusieurs variables.
 \end{rem}
 
 %\begin{rem}
@@ -233,7 +233,7 @@ Particulièrement importantes sont les matrices de Bezout définies par $B(1)$ e
 		x_{d-1} & 0 & a_0 & \ldots & 0 \\
 	\end{array}
 \end{equation}
-en effet nous avons le lien suivant entre matrice de Bezout et la matrice compagnon 
+en effet nous avons le lien suivant entre matrice de Bezout et la matrice compagnon
 \begin{prop}
 \label{Barnett}
 La matrice compagnon $X$ peut se calculer grâce à la {\bf formule de Barnett}
@@ -243,7 +243,7 @@ La matrice compagnon $X$ peut se calculer grâce à la {\bf formule de Barnett}
 \end{equation}
 \end{prop}
 \begin{proof}
-Définissons deux nouvelles familles dans $A_x$ par 
+Définissons deux nouvelles familles dans $A_x$ par
 \begin{equation}
 	\begin{array}{lll}
 		\bold{x}B(1) & = & (a_{d-1} + a_{d-2}x + \cdots + a_0x^{d-1}, \cdots, a_1 + a_0x,  a_0).\\
@@ -252,13 +252,13 @@ Définissons deux nouvelles familles dans $A_x$ par
 \end{equation}
 et posons $\hat{\bold{x}} = \bold{x}B(1)$.
 $B(1)$ étant inversible, la famille $\hat{\bold{x}}$ est une base de $A_x$ appellée {\bf base de Horner}.
-D'après la proposition \ref{relations_prop} on a $\hat{\bold{x}}x = \bold{x}B(1)$. Par construction, les familles $\hat{\bold{x}}$ et $\hat{\bold{x}}x$ s'expriment dans la base $\bold{x}$ (des monômes) respectivement par les matrices $B(1)$ et $B(x)$. La famille $\hat{\bold{x}}x$ s'exprime donc dans la base $\hat{\bold{x}}$ (de Horner) par la matrice $B(1)^{-1}B(x)$ ce qui veut dire que l'endomorphisme 
+D'après la proposition \ref{relations_prop} on a $\hat{\bold{x}}x = \bold{x}B(1)$. Par construction, les familles $\hat{\bold{x}}$ et $\hat{\bold{x}}x$ s'expriment dans la base $\bold{x}$ (des monômes) respectivement par les matrices $B(1)$ et $B(x)$. La famille $\hat{\bold{x}}x$ s'exprime donc dans la base $\hat{\bold{x}}$ (de Horner) par la matrice $B(1)^{-1}B(x)$ ce qui veut dire que l'endomorphisme
 $x = \left\vert
 \begin{array}{c}
 A \mapsto A \\
 h \mapsto xh
-\end{array} 
-\right.$ a pour matrice $B(1)^{-1}B(x)$ dans la base $\hat{\bold{x}}$ 
+\end{array}
+\right.$ a pour matrice $B(1)^{-1}B(x)$ dans la base $\hat{\bold{x}}$
 et pour matrice $B(1)(B(1)^{-1}B(x))B(1)^{-1} = B(x)B(1)^{-1}$ dans la base $\bold{x}$.
 \end{proof}
 
@@ -266,7 +266,7 @@ et pour matrice $B(1)(B(1)^{-1}B(x))B(1)^{-1} = B(x)B(1)^{-1}$ dans la base $\bo
 
 \subsection{Formule de Barnett généralisée}
 \label{Bar_gen}
-La formule de Barnett a été écrite en considérant les matrices de Bezout des polynômes $1$ et $x$. 
+La formule de Barnett a été écrite en considérant les matrices de Bezout des polynômes $1$ et $x$.
 Si on considère un polynôme quelconque $g$ de $\C[x]$ et $B(g)$ sa matrice de Bezout il serait naturel d'avoir entre les matrices de Bezout $B(1)$ et $B(g)$ la relation suivante, que nous appellerons {\bf formule de Barnett généralisée}
 \begin{equation}
 	\label{BG}
@@ -296,14 +296,14 @@ $$
 \end{array}
 $$
 \begin{equation}
-	B(x)B(1)^{-1} = 
+	B(x)B(1)^{-1} =
 	\begin{bmatrix}
 		0 & -2 \\
 		1 & 3
 	\end{bmatrix}
 	= X
 	\hspace{1cm}
-	B(x^2)B(1)^{-1} = 
+	B(x^2)B(1)^{-1} =
 	\begin{bmatrix}
 		-3 & -6 \\
 		2 & 7
@@ -311,7 +311,7 @@ $$
 	= X^2
 \end{equation}
 ce qui confirme bien la formule \ref{BG}.
-Si par contre le degré de $g$ est supérieur à $d$, alors $B(g)$ et $B(1)$ ne sont plus de la même taille et une opération telle que $B(g)B(1)^{-1}$ n'a plus de sens. Une première idée est de réécrire les deux matrices de Bezout dans le même système d'indices, à savoir 
+Si par contre le degré de $g$ est supérieur à $d$, alors $B(g)$ et $B(1)$ ne sont plus de la même taille et une opération telle que $B(g)B(1)^{-1}$ n'a plus de sens. Une première idée est de réécrire les deux matrices de Bezout dans le même système d'indices, à savoir
 $\bold{x} = (1, x,\cdots, x^{m-1})$ et $\bold{y} = (1, y,\cdots, y^{m-1})$, $m$ étant le degré de $g$. Par exemple en choisissant $f$ comme ci-dessus et $g = x^3$ on aurait
 $$
 \begin{array}{c|ccc}
@@ -333,11 +333,11 @@ $$
 mais alors $B(1)$ n'est plus inversible. Nous allons cependant montrer, grâce aux relations \ref{relations}, que si {\bf on projette les deux polynômes de Bezout sur le quotient $A_x$} alors les matrices $B(g)$ et $B(1)$ sont redimensionnées à la même taille, $B(1)$ est inversible et la formule \ref{BG} s'applique. Illustrons le procédé sur l'exemple ci-dessus.
 Puisque $B(1)$ n'est pas inversible, on peut trouver une combinaison linéaire de colonnes qui s'annule, ici c'est la troisième colonne qui est nulle. En la multipliant par $x^3$, et en appliquant les  relations \ref{relations}, on obtient que la troisième colonne de $B(x^3)$ est aussi nulle. Mais cette colonne vaut $-2 + 3x - x^2$ ce qui entraine que, dans le quotient, $-2 + 3x - x^2 = 0$ (ce n'est pas une surprise car ce dernier polynôme n'est autre que $-f$; ceci est dû au fait que l'exemple choisi est particulièrement simple, mais nous verrons dans le cas multidimensionnel que les relations nulles dans le quotient ainsi générées sont loin d'être triviales).
 En vue d'automatiser les calculs, traduisons le procédé précédent en termes d'algèbre matricielle.
-Toujours sur le même exemple 
+Toujours sur le même exemple
 \begin{align} \nonumber %%%%%%%%%%%%%%
-	\delta(x^3) &= 
+	\delta(x^3) &=
 	\begin{bmatrix}
-			1 & x & x^2 
+			1 & x & x^2
 	\end{bmatrix}
 	\begin{bmatrix}
 		0 & 0 & -2 \\
@@ -349,9 +349,9 @@ Toujours sur le même exemple
 		y \\
 		y^2
 	\end{bmatrix} \\ \nonumber %%%%%%%%%%%%%%
-	\delta(x^3) &= 
+	\delta(x^3) &=
 	\begin{bmatrix}
-		1 & x & x^2 
+		1 & x & x^2
 	\end{bmatrix}
 	\begin{bmatrix}
 		1 & 0 & 2 \\
@@ -373,9 +373,9 @@ Toujours sur le même exemple
 		y \\
 		y^2
 	\end{bmatrix} \\ \nonumber %%%%%%%%%%%%%%%
-	\delta(x^3) &= 
+	\delta(x^3) &=
 	\begin{bmatrix}
-			1 & x & 2 - 3x + x^2 
+			1 & x & 2 - 3x + x^2
 	\end{bmatrix}
 	\begin{bmatrix}
 		4 & -6 & 0 \\
@@ -390,15 +390,15 @@ Toujours sur le même exemple
 \end{align}
 En résumé nous multiplions le vecteur d'indices
 $\begin{bmatrix}
-	1 & x & x^2 
-\end{bmatrix}$ à droite par la transformation de Gauss 	
-$P = 
+	1 & x & x^2
+\end{bmatrix}$ à droite par la transformation de Gauss
+$P =
 \begin{bmatrix}
 	1 & 0 & 2 \\
 	0 & 1 & -3 \\
-	0 & 0 & 1 
-\end{bmatrix}$, les deux matrices de Bezout $B(1)$ et $B(g)$ à gauche par 
-$P^{-1} = 
+	0 & 0 & 1
+\end{bmatrix}$, les deux matrices de Bezout $B(1)$ et $B(g)$ à gauche par
+$P^{-1} =
 \begin{bmatrix}
 	1 & 0 & -2 \\
 	0 & 1 & 3 \\
@@ -425,27 +425,27 @@ Ce que disent les relations \ref{relations} c'est que la troisième colonne de $
 
 $$
 \delta(1) = \begin{bmatrix}
-	1 & x 
+	1 & x
 \end{bmatrix}
 \begin{bmatrix}
 	-3 & 1 \\
-	1 & 0 
+	1 & 0
 \end{bmatrix}
 \begin{bmatrix}
 	1 \\
-	y 
+	y
 \end{bmatrix},
 \hspace{1cm}
 \delta(x^3) = \begin{bmatrix}
-	1 & x 
+	1 & x
 \end{bmatrix}
 \begin{bmatrix}
 	4 & -6 \\
-	-6 & 7 
+	-6 & 7
 \end{bmatrix}
 \begin{bmatrix}
 	1 \\
-	y 
+	y
 \end{bmatrix} - (2 - 3x + x^2)(2 - 3y + y^2)
 $$
 
@@ -456,20 +456,20 @@ $$
 	\delta(1) & 1 & y \\
 	\hline
 	1 & -3 & 1 \\
-	x & 1 & 0 
+	x & 1 & 0
 \end{array}
 \hspace{1cm}
 \begin{array}{c|cc}
 	\delta(x^3) & 1 & y \\
 	\hline
 	1 & 4 & -6  \\
-	x & -6 & 7  
+	x & -6 & 7
 \end{array}
 $$
 
-Nous avons bien obtenu des matrices de Bezout de même taille, avec $B(1)$ inversible. Formons alors le quotient 
+Nous avons bien obtenu des matrices de Bezout de même taille, avec $B(1)$ inversible. Formons alors le quotient
 \begin{equation}
-	B(x^3)B(1)^{-1} = 
+	B(x^3)B(1)^{-1} =
 	\begin{bmatrix}
 		-6 & -14 \\
 		7 & 15
@@ -483,19 +483,19 @@ On peut remplacer la matrice de Gauss par toute matrice permettant de transforme
 
 \end{rem}
 
-%Nous voyons donc que la matrice compagnon peut être calculée à partir de matrices de Bezout, 
+%Nous voyons donc que la matrice compagnon peut être calculée à partir de matrices de Bezout,
 %phénomène qui n'est pas, en une variable, particulièrement intéressant, mais qui sera, dans le cas multivariable, pleinement exploité pour le calcul des matrices compagnon et de la structure de l'algèbre quotient $A$.
 
 
 \section{Cas multivariable}
 Dans le cas univariable, examiné à la section précédente, la structure de $A_x$ se compose de deux éléments : d'une part une base, en l'occurence la base des monômes, d'autre part la matrice compagnon, exprimant l'endomorphisme de multiplication par $x$ dans la base. Ces deux éléments peuvent être obtenus soit directement par lecture des coefficients de $f$, soit à partir des matrices de Bezout $B(1), B(x)$. \\
-Dans le le cas multivariable, que nous allons développer dans cette section, ni une base ni les matrices compagnon 
+Dans le le cas multivariable, que nous allons développer dans cette section, ni une base ni les matrices compagnon
 (matrices des opérateurs
 $x_j = \left\vert
 \begin{array}{c}
 A \mapsto A \\
 h \mapsto x_jh
-\end{array} 
+\end{array}
 \right.$ dans la base) ne sont visibles directement sur les coefficients des polynômes de départ. En revanche nous allons montrer comment construire des matrices de Bezout $B(1), B(x_1), \cdots, B(x_n)$ à partir desquelles on peut obtenir une base et les matrices compagnon $X_j$ associées à la base obtenue. Commençons par fixer le cadre de travail.
 On considère $n$ polynômes $f_1,\cdots, f_n$ en les variables complexes $x_1,\cdots, x_n$. Notons :
 \begin{itemize}
@@ -504,7 +504,7 @@ On considère $n$ polynômes $f_1,\cdots, f_n$ en les variables complexes $x_1,\
 \item $V(f) = \{x \in \C^n : f(x) = 0\}$ la variété associée à $<f>$
 \item $A_x = \C[x]/<f>$ l'algèbre quotient
 \end{itemize}
-Nous supposerons dorénavant que l'idéal $<f>$ est {\bf zéro-dimensionel}, 
+Nous supposerons dorénavant que l'idéal $<f>$ est {\bf zéro-dimensionel},
 c'est-à-dire que $V(I)$ est fini ou, de façon équivalente  (see \cite{clo} p..), que {\bf $A_x$ est de dimension finie} en tant qu'espace vectoriel sur $\C$. Ceci est bien sûr toujours le cas lorsque $n = 1$.
 
 \subsection{Construction des polynômes et des matrices de Bezout dans le cas multivariable}
@@ -513,7 +513,7 @@ c'est-à-dire que $V(I)$ est fini ou, de façon équivalente  (see \cite{clo} p.
 \label{def_bez_multi}
 
 \begin{defn}
-Soit $x^\gamma = x_1^{\gamma_1}\cdots x_n^{\gamma_n} \in \C[x]$ un monôme. 
+Soit $x^\gamma = x_1^{\gamma_1}\cdots x_n^{\gamma_n} \in \C[x]$ un monôme.
 Introduisons un nouveau jeu de variables $y = y_1,\cdots, y_n$ et considérons, pour tous $i, j = 1\cdots n$, le rapport
 \begin{equation}
 \label{finite_diff}
@@ -524,7 +524,7 @@ Le {\bf polynôme de Bezout} du monôme $x^\gamma$ est par définition
 \begin{equation}
 	\delta(x^\gamma) = det(\Delta(x^\gamma))
 \end{equation}
-qui est un élément de $\C[x, y]$. Pour un polynôme général $g = \sum_\gamma g_\gamma x^\gamma \in \C[x]$, on étend la définition précédente par linéarité $\delta(g) = \sum_\gamma g_\gamma \delta(x^\gamma)$. 
+qui est un élément de $\C[x, y]$. Pour un polynôme général $g = \sum_\gamma g_\gamma x^\gamma \in \C[x]$, on étend la définition précédente par linéarité $\delta(g) = \sum_\gamma g_\gamma \delta(x^\gamma)$.
 En développant $\delta(g) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\beta$ comme une somme de monômes de $\C[x, y]$, et en notant $\bold{x}$ et $\bold{y}$ les familles de tous les monômes en $x$ et $y$ apparaissant dans ce développement, nous définissons la {\bf matrice de Bezout} $B(g) = [b_{\alpha\beta}]$, c'est à dire que l'on a
 \begin{equation}
 	\delta(g) = \bold{x} B(g) \bold{y}^T
@@ -532,31 +532,31 @@ En développant $\delta(g) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\bet
 \end{defn}
 
 \begin{exmp}
-\label{ex_bez_multi} 
+\label{ex_bez_multi}
 Fixons $n = 2$ et considérons $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
 Nous allons calculer les matrices de Bezout $B(1), B(x_1), B(x_2)$,  qui vont servir à la construction des matrices compagnon $X_1, X_2$, comme nous le verrons plus loin. Pour commencer, calculons à partir des formules (\ref{finite_diff})
 \begin{align}
-\Delta(1) &= 
+\Delta(1) &=
 \begin{pmatrix}
 x_1 + x_2^2 + y_1 & x_2y_1 + y_1y_2 \\
 1 + x_1x_2 + x_2y_1 & y_1^2
 \end{pmatrix} \nonumber  \\
-\Delta(x_1) &= 
+\Delta(x_1) &=
 \begin{pmatrix}
 1 + x_1y_1 & x_2y_1 + y_1y_2 \\
 1 + x_1x_2 + x_2y_1 & y_1^2
 \end{pmatrix} \nonumber  \\
-\Delta(x_2) &= 
+\Delta(x_2) &=
 \begin{pmatrix}
 x_1 + x_2^2 + y_1 & 1 - y_1^2 + x_2y_1y_2 \\
 1 + x_1x_2 + x_2y_1  & -y_1
-\end{pmatrix} \nonumber 
+\end{pmatrix} \nonumber
 \end{align}
 dont le déterminant fournit les polynômes de Bezout
 \begin{align}
 \delta(1) &= -x_2y_1 - x_1x_2^2y_1 + x_1y_1^2 + y_1^3 - y_1y_2 - x_1x_2y_1y_2 - x_2y_1^2y_2 \nonumber \\
 \delta(x_1) &=  y_1^2 - x_1x_2^2y_1^2 + x_1y_1^3 - x_1x_2y_1^2y_2 \nonumber \\
-\delta(x_2) &= -1 - x_1x_2 - x_1y_1 -x_2y_1 - x_2^2y_1 + x_1x_2y_1^2 + x_2y_1^3 - x_2y_1y_2 - x_1x_2^2y_1y_2 - x_2^2y_1^2y_2\nonumber 
+\delta(x_2) &= -1 - x_1x_2 - x_1y_1 -x_2y_1 - x_2^2y_1 + x_1x_2y_1^2 + x_2y_1^3 - x_2y_1y_2 - x_1x_2^2y_1y_2 - x_2^2y_1^2y_2\nonumber
 \end{align}
 Les familles de mônomes apparaissant dans ces polynômes sont
 $\bold{x} = (1, x_2, x_2^2, x_1, x_1x_2, x_1x_2^2)$ et $\bold{y} = (1, y_1, y_1y_2, y_1^2, y_1^2y_2, y_1^3)$.
@@ -571,9 +571,9 @@ Les polynomes de Bezout s'écrivent sous forme de tableaux\\
 	x_2^2 &  &  &  &  &  & \\
 	x_1 &  &  &  & 1 &  & \\
 	x_1x_2 &  &  & -1 &  &  & \\
-	x_1x_2^2 &  & -1 &  &  &  & 
-\end{array} 
-\hspace{0.2cm} 
+	x_1x_2^2 &  & -1 &  &  &  &
+\end{array}
+\hspace{0.2cm}
 \begin{array}{c|cccccc}
 	\delta(x_1) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -582,9 +582,9 @@ Les polynomes de Bezout s'écrivent sous forme de tableaux\\
 	x_2^2 &  &  &  &  &  & \\
 	x_1 &  &  &  &  &  & 1\\
 	x_1x_2 &  &  &  &  & -1 & \\
-	x_1x_2^2 &  &  &  & -1 &  & 
+	x_1x_2^2 &  &  &  & -1 &  &
 \end{array}
-\hspace{0.2cm} 
+\hspace{0.2cm}
 \begin{array}{c|cccccc}
 	\delta(x_2) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -593,7 +593,7 @@ Les polynomes de Bezout s'écrivent sous forme de tableaux\\
 	x_2^2 &  & -1 &  &  & -1 & \\
 	x_1 &  & -1 &  &  &  & \\
 	x_1x_2 & -1 &  &  & 1 &  & \\
-	x_1x_2^2 &  &  & -1 &  &  & 
+	x_1x_2^2 &  &  & -1 &  &  &
 \end{array}
 $}
 \end{exmp}
@@ -630,9 +630,9 @@ Dans l'exemple précédent, les polynômes de Bezout s'obtiennent en calculant l
 	\For{$(u, v) \in U\times V$}
    		\For{$(i, j) \gets 1..n$}
       		\State $m(i, j) \gets \Delta_j f_i(u, v)$
-   		\EndFor  
+   		\EndFor
 		\State $C(u, v) \gets \texttt{det}(m)$
-	\EndFor  
+	\EndFor
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
@@ -647,13 +647,13 @@ Rappelons que dans notre hypothèse où l'idéal est zéro-dimensionel, la dimen
 Rappelons tout d'abord un certain nombre de propriétés algébriques du polynôme $\delta(1)$ et des matrices de Bezout $B_j$.
 
 \subsubsection{Propriétés algébriques du polynôme $\delta(1)$ et de la matrice $B_0$}
-Les propriétés qui suivent sont de nature algébrique et seront données sans démonstration. Le lecteur intéressé pourra consulter les détails dans \cite{jpc, CM}. Comme dans la proposition \ref{Barnett}, définissons de nouvelles familles dans $A_x$ par 
+Les propriétés qui suivent sont de nature algébrique et seront données sans démonstration. Le lecteur intéressé pourra consulter les détails dans \cite{jpc, CM}. Comme dans la proposition \ref{Barnett}, définissons de nouvelles familles dans $A_x$ par
 \begin{equation}
 		\hat{\bold{x}}_j  =  \bold{x}B_j, \quad j=0\cdots n
 \end{equation}
 
 \begin{exmp}
-En reprenant l'exemple précédent nous avons 
+En reprenant l'exemple précédent nous avons
 \begin{equation}
 	\begin{array}{lll}
 		\hat{\bold{x}}_0 & = & (0, -x_2 - x_1x_2^2, -1 - x_1x_2, x_1, -x_2, 1) \\
@@ -665,7 +665,7 @@ En reprenant l'exemple précédent nous avons
 
 \begin{prop}
 \label{xj}
-Pour tout $j=1\cdots n$ on a 
+Pour tout $j=1\cdots n$ on a
 \begin{equation}
     \hat{\bold{x}}_0x_j = \hat{\bold{x}}_j
 \end{equation}
@@ -685,7 +685,7 @@ Chacune des familles $\bold{x}$ et $\hat{\bold{x}}$ est génératrice dans $A_x$
 %\end{figure}
 
 \subsubsection{Processus de réduction}
-La proposition précédente fournit un début de structure de l'algèbre $A_x$. Pour l'instant nous avons une famille génératrice $\bold{x}$ de $A_x$ ainsi que des matrices de Bezout $B(x_j)$. 
+La proposition précédente fournit un début de structure de l'algèbre $A_x$. Pour l'instant nous avons une famille génératrice $\bold{x}$ de $A_x$ ainsi que des matrices de Bezout $B(x_j)$.
 Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B_j$, on peut fabriquer une base de $A_x$ et des matrices compagnon $X_j$.
 Illustrons les calculs à partir de l'exemple \ref{ex_bez_multi}.\\
 Le rang de $B_0$ est $5$. La première colonne de $B_0$ est nulle mais celle de $B_2$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
@@ -701,9 +701,9 @@ Les polynômes de Bezout se reécrivent\\
 	x_2^2 &  &  &  &  &  & \\
 	x_1 &  &  &  & 1 &  & \\
 	1+x_1x_2 &  &  & -1 &  &  & \\
-	x_1x_2^2 &  & -1 &  &  &  & 
-\end{array} 
-\hspace{0.2cm} 
+	x_1x_2^2 &  & -1 &  &  &  &
+\end{array}
+\hspace{0.2cm}
 \begin{array}{c|cccccc}
 	\delta(x_1) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -712,9 +712,9 @@ Les polynômes de Bezout se reécrivent\\
 	x_2^2 &  &  &  &  &  & \\
 	x_1 &  &  &  &  &  & 1\\
 	1+x_1x_2 &  &  &  &  & -1 & \\
-	x_1x_2^2 &  &  &  & -1 &  & 
+	x_1x_2^2 &  &  &  & -1 &  &
 \end{array}
-\hspace{0.2cm} 
+\hspace{0.2cm}
 \begin{array}{c|cccccc}
 	\delta(x_2) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -723,7 +723,7 @@ Les polynômes de Bezout se reécrivent\\
 	x_2^2 &  & -1 &  &  & -1 & \\
 	x_1 &  & -1 &  &  &  & \\
 	1+x_1x_2 & -1 &  &  & 1 &  & \\
-	x_1x_2^2 &  &  & -1 &  &  & 
+	x_1x_2^2 &  &  & -1 &  &  &
 \end{array}
 $}
 La première colonne de $B_2$ contient maintenant un seul coefficient non nul, indexé par $1 + x_1x_2$, on peut donc, en projetant les trois bezoutiens sur $A_x$, supprimer la première colonne et la cinquième ligne dans les trois matrices. On obtient\\
@@ -736,9 +736,9 @@ La première colonne de $B_2$ contient maintenant un seul coefficient non nul, i
 	x_2  & -1 &  &  & -1 & \\
 	x_2^2  &  &  &  &  & \\
 	x_1  &  &  & 1 &  & \\
-	x_1x_2^2  & -1 &  &  &  & 
-\end{array} 
-\hspace{0.2cm} 
+	x_1x_2^2  & -1 &  &  &  &
+\end{array}
+\hspace{0.2cm}
 \begin{array}{c|ccccc}
 	\delta(x_1)  & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -746,9 +746,9 @@ La première colonne de $B_2$ contient maintenant un seul coefficient non nul, i
 	x_2  &  &  &  &  & \\
 	x_2^2  &  &  &  &  & \\
 	x_1  &  &  &  &  & 1 \\
-	x_1x_2^2  &  &  & -1 &  & 
+	x_1x_2^2  &  &  & -1 &  &
 \end{array}
-\hspace{0.2cm} 
+\hspace{0.2cm}
 \begin{array}{c|ccccc}
 	\delta(x_2) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -756,7 +756,7 @@ La première colonne de $B_2$ contient maintenant un seul coefficient non nul, i
 	x_2  & -1 & -1 &  &  & 1 \\
 	x_2^2  & -1 &  &  & -1 & \\
 	x_1  & -1 &  &  &  & \\
-	x_1x_2^2 &  & -1 &  &  & 
+	x_1x_2^2 &  & -1 &  &  &
 \end{array}
 $}\\
 
@@ -770,9 +770,9 @@ Maintenant, la deuxième colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas
 	x_2  &  &  &  & -1 & \\
 	x_2^2  &  &  &  &  & \\
 	x_1  &  &  & 1 &  & \\
-	x_2 + x_1x_2^2  & -1 &  &  &  & 
-\end{array} 
-\hspace{0.2cm} 
+	x_2 + x_1x_2^2  & -1 &  &  &  &
+\end{array}
+\hspace{0.2cm}
 \begin{array}{c|ccccc}
 	\delta(x_1)  & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -780,9 +780,9 @@ Maintenant, la deuxième colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas
 	x_2  &  &  & 1 &  & \\
 	x_2^2  &  &  &  &  & \\
 	x_1  &  &  &  &  & 1 \\
-	x_2 + x_1x_2^2  &  &  & -1 &  & 
+	x_2 + x_1x_2^2  &  &  & -1 &  &
 \end{array}
-\hspace{0.2cm} 
+\hspace{0.2cm}
 \begin{array}{c|ccccc}
 	\delta(x_2) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -790,7 +790,7 @@ Maintenant, la deuxième colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas
 	x_2  & -1 &  &  &  & 1 \\
 	x_2^2  & -1 &  &  & -1 & \\
 	x_1  & -1 &  &  &  & \\
-	x_2 + x_1x_2^2 &  & -1 &  &  & 
+	x_2 + x_1x_2^2 &  & -1 &  &  &
 \end{array}
 $}\\
 
@@ -803,25 +803,25 @@ $$
 	1  &   &  &  & 1 \\
 	x_2  &  &  & -1 & \\
 	x_2^2  &  &  &  & \\
-	x_1  &  & 1 &  & 
-\end{array} 
-\hspace{0.2cm} 
+	x_1  &  & 1 &  &
+\end{array}
+\hspace{0.2cm}
 \begin{array}{c|cccc}
 	\delta(x_1)  & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & 1 & 1 & \\
 	x_2  &  & 1 &  & \\
 	x_2^2  &  &  &  & \\
-	x_1  &  &  &  & 1 
+	x_1  &  &  &  & 1
 \end{array}
-\hspace{0.2cm} 
+\hspace{0.2cm}
 \begin{array}{c|cccc}
 	\delta(x_2) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & -1 &  & \\
 	x_2  & -1 &  &  & 1 \\
 	x_2^2  & -1 &  & -1 & \\
-	x_1  & -1 &  &  & 
+	x_1  & -1 &  &  &
 \end{array}
 $$\\
 
@@ -834,25 +834,25 @@ Maintenant, la première colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas
 	1  &   &  &  & 1 \\
 	x_2  &  & -1 & -1 & \\
 	x_2^2  &  & -1 &  & \\
-	x_2 + x_2^{2} + x_1  &  & 1 &  & 
-\end{array} 
-\hspace{0.2cm} 
+	x_2 + x_2^{2} + x_1  &  & 1 &  &
+\end{array}
+\hspace{0.2cm}
 \begin{array}{c|cccc}
 	\delta(x_1)  & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & 1 & 1 & \\
 	x_2  &  &  &  & \\
 	x_2^2  &  &  &  & -1 \\
-	x_2 + x_2^{2} + x_1  &  &  &  & 1 
+	x_2 + x_2^{2} + x_1  &  &  &  & 1
 \end{array}
-\hspace{0.2cm} 
+\hspace{0.2cm}
 \begin{array}{c|cccc}
 	\delta(x_2) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & -1 &  & \\
 	x_2  &  &  &  & 1 \\
 	x_2^2  &  &  & -1 & \\
-	x_2 + x_2^{2} + x_1  & -1 &  &  & 
+	x_2 + x_2^{2} + x_1  & -1 &  &  &
 \end{array}
 $}
 
@@ -864,23 +864,23 @@ $$
 	\hline
 	1  &  &  & 1 \\
 	x_2  & -1 & -1 & \\
-	x_2^2 & -1 &  & 
-\end{array} 
-\hspace{0.2cm} 
+	x_2^2 & -1 &  &
+\end{array}
+\hspace{0.2cm}
 \begin{array}{c|ccc}
 	\delta(x_1) & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  & 1 & 1 & \\
 	x_2  & 1 &  & -1\\
-	x_2^2  &  &  & -1 
+	x_2^2  &  &  & -1
 \end{array}
-\hspace{0.2cm} 
+\hspace{0.2cm}
 \begin{array}{c|ccc}
 	\delta(x_2) & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  & -1 &  & \\
 	x_2  &  &  & 1 \\
-	x_2^2  &  & -1 & 
+	x_2^2  &  & -1 &
 \end{array}
 $$
 A ce stade, la matrice de $\delta(1)$ est inversible, le processus de réduction est terminé. On vérifie facilement que les familles $\bold{x} = (1, x_2, x_2^{2})$ et $\bold{y} = (y_1, y_1^{2}, y_1^{3})$ sont des bases de $A$, dont les bases de Horner associées sont $\hat{\bold{x}} = (-x_2-x_2^{2}, -x_{2}, 1)$ et $\hat{\bold{y}} = (y_1^{3}, -y_1^{2}-y_1^{2}y_2, -y_1^{2})$. La dimension de $A$ est donc ici égale à $3$.\\
@@ -898,20 +898,20 @@ Nous insistons particulièrement sur le fait que la conjecture précédente est 
 \subsubsection{Formule de Barnett et matrices compagnon}
 Reprenons l'exemple \label{ex_bez_multi} et définissons $X_1, X_2$ par les quotients
 \begin{equation}
-	X_1 = B(x_1)B(1)^{-1} = 
+	X_1 = B(x_1)B(1)^{-1} =
 	\begin{bmatrix}
 		0 & -1 & 0\\
 		-1 & 0 & -1\\
 		-1 & 0 & 0
 	\end{bmatrix},\quad
-	X_2 = B(x_2)B(1)^{-1} = 
+	X_2 = B(x_2)B(1)^{-1} =
 	\begin{bmatrix}
 		0 & 0 & 1\\
 		1 & 0 & 0\\
 		0 & 1 & -1
 	\end{bmatrix}
 \end{equation}
-On vérifie facilement que $X_1, X_2$ sont les matrices de multiplication par $x_1, x_2$ dans la base $\bold{x}$. $X_1, X_2$ sont donc des matrices compagnon, pour la base $\bold{x}$ et nous retrouvons donc dans la situation décrite à la section \ref{Bar}. Plus généralement nous avons 
+On vérifie facilement que $X_1, X_2$ sont les matrices de multiplication par $x_1, x_2$ dans la base $\bold{x}$. $X_1, X_2$ sont donc des matrices compagnon, pour la base $\bold{x}$ et nous retrouvons donc dans la situation décrite à la section \ref{Bar}. Plus généralement nous avons
 \begin{prop}
 \label{Barnett_multi}
 Lorsque le processus de réduction est terminé, que les matrices de Bezout s'écrivent dans des bases $\bold{x, y}$, alors les matrices compagnon $X_j$, c'est à dire les matrices de multiplication par $x_j$ dans la base $\bold{x}$, peuvent se calculer grâce aux {\bf formules de Barnett}
@@ -929,7 +929,7 @@ $B(1)^{-T}B(x_j)^{T}$ est la matrice de multiplication par $y_j$ dans la base $\
 
 \subsubsection{Calcul numérique des racines}
 D'une manière similaire au cas univariable, comme indiqué dans la proposition \ref{compan2roots}, les racines numériques du système polynomial $f_1, \cdots, f_n$ s'obtiennent en calculant les valeurs propres des matrices compagnons (\cite{AS}).\\
-Dans l'exemple précédent, les matrices $X_1, X_2$ fournissent les valeurs propres 
+Dans l'exemple précédent, les matrices $X_1, X_2$ fournissent les valeurs propres
 $$
 \begin{array}{c|c}
 	x_1 & x_2 \\
@@ -937,7 +937,7 @@ $$
 	-1.32472  & 0.75488 \\
 	0.66236 + 0.56228i & -0.87744 + 0.74486i \\
 	0.66236 - 0.56228i & -0.87744 - 0.74486i
-\end{array} 
+\end{array}
 $$
 Comme l'algèbre $A$ est commutative, les matrices $X_1, X_2$ commutent et ont donc les mêmes vecteurs propres. Lors du calcul il faut donc faire attention d'ordonner les valeurs propres pour qu'elles correspondent aux mêmes vecteurs propres.
 Dans l'exemple précédent on vérifie facilement que les couples $(x_1, x_2)$ ci-dessus sont bien numériquement solutions du système $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
@@ -947,7 +947,7 @@ Dans le processus de réduction, la première étape consiste à calculer le noy
 La méthode éprouvée pour cela, implémentée dans des packages d'algèbre linéaire numérique comme Matlab/Octave, Numpy ou Julia, est d'effectuer une factorisation QR "rank revealing" de $B(1)$, que nous appellerons factorisation QRP, c'est-à-dire accompagnée de pivots sur les colonnnes. L'expérience montre que cette approche est souvent efficace mais peut s'avérer délicate à mettre en oeuvre si la taille de la matrice augmente. Montrons le sur un exemple.
 
 \begin{exmp}
-Nous choisissons $n = 4$, 
+Nous choisissons $n = 4$,
 \begin{align}
 f_1 & = x_0^2x_1^2x_2x_3^2 - x_0^2x_1x_2^2x_3^2 - x_0^3x_1x_3^2 + x_0x_1^2x_2x_3^2 + x_0x_1^2x_3^2 + x_0^3x_2 - x_1^2x_3^2 + x_0^2x_2 + x_0x_1x_2 + x_1x_2x_3 + x_2^2 + x_2x_3 + 1,\nonumber\\
 f_2 & = x_0^3x_1^2x_2x_3^2 + x_0^3x_1x_2^2 - x_0^2x_1^2x_2^2 + x_0^2x_1x_2x_3^2 - x_0^3x_1^2 + x_0^2x_1^2x_3 - x_0^3x_2x_3 + x_0x_1x_2^2x_3 + x_0^3x_3^2 - x_0x_1x_2x_3^2 + x_0x_1x_2^2 - x_0^3x_3 + x_0x_1x_2x_3 + x_1^2x_2x_3 - x_1^2x_3^2 - x_0^2x_1 + x_0x_1 + x_2^2 + x_3^2 - x_1 + 1,\nonumber\\
@@ -956,16 +956,16 @@ f_4 & =  x_0^2x_1^2x_2^2x_3 + x_0^3x_1x_3^2 - x_0^3x_1x_2 - x_0^3x_3^2 - x_0x_1^
 \end{align}
 \end{exmp}
 \begin{center}
-\includegraphics[width=8cm]{B1.png}
+\includegraphics[width=8cm]{B0.png}
 \end{center}
 
 Ce système est de multidegré $(3, 2, 2, 2)$, la matrice de Bezout $B(1)$ est de taille $576$. Si on effectue une factorisation QRP sur cette matrice, on sait que les éléments diagonaux seront triés en ordre décroissant, voir figure ci-dessous.
-\begin{center}
-\includegraphics[width=8cm]{qrp.pdf}
-\end{center}
+% \begin{center}
+% \includegraphics[width=8cm]{qrp.pdf}
+% \end{center}
  On s'aperçoit alors que les derniers éléments non nuls décroissent très vite, et qu'il peut devenir difficile de choisir un seuil au dessus duquel les éléments diagonaux seront déclarés "non nuls".
 En d'autres termes, le "saut" entre éléments "non-nuls" et éléments proches du epsilon de la machine a tendance à diminuer à mesure que la taille de la matrice augmente, ce qui rend le calcul du rang numérique difficile.\\
-Nous pouvons cependant améliorer un peu la situation précédente, en exploitant une propriété de $B(1)$. En effet, en permutant lignes et colones de cette matrice d'une certaine façon, on peut arriver à une structure bloc-triangulaire de $B(1)$. 
+Nous pouvons cependant améliorer un peu la situation précédente, en exploitant une propriété de $B(1)$. En effet, en permutant lignes et colones de cette matrice d'une certaine façon, on peut arriver à une structure bloc-triangulaire de $B(1)$.
 \begin{center}
 \includegraphics[width=8cm]{B0_tri.png}
 \end{center}
@@ -978,7 +978,7 @@ On voit que, malgré une décroissance rapide des éléments diagonaux dans chaq
 \section{Expérimentation}
 Nous choisissons $n=4$ et le multidegré $deg=[2,2,2,2]$. Le système polynômial s'écrit
 \begin{align}
-f_1 & = 
+f_1 & =
 -x_0^2x_1^2x_2^2 - x_0x_1x_2^2 + x_0x_2^2x_3 - x_1^2x_2 + x_1x_3^2 - x_0^2 + x_1x_2 - x_1 - 1, \nonumber\\
 f_2 & =
  -x_1^2x_2^2x_3^2 - x_0^2x_2^2x_3 - x_0x_1x_2x_3^2 + x_0^2x_2 - x_0x_1x_2 + x_1^2x_3 + x_0x_1 - x_1x_2 - 1, \nonumber\\
@@ -998,7 +998,7 @@ En permutant lignes et colonnes on obtient une matrice bloc-triangulaire supéri
  \begin{center}
 \includegraphics[width=8cm]{B0_tri.png}
 \end{center}
-dont on peut calculer le noyau facilement. On trouve que rang de $B(1)$ vaut $253$. 
+dont on peut calculer le noyau facilement. On trouve que rang de $B(1)$ vaut $253$.
 Une fois le processus de réduction terminé on obtient des matrices $B(1), B(x_j), j=1,\cdots,n$ de même taille, $B(1)$ étant inversible. On trouve que la dimension de $A$ est $253$. Les matrices compagnon $X_j = B(x_j)B(1)^{-1}$ fournissent alors les racines du système polynômial. Pour chacune des racines obtenues nous vérifions sa qualité en lui appliquant les polynômes $f_i, i=1,\cdots,n$ puis on représente en graphique semi-logarithmique la  valeur absolue du résultat
  \begin{center}
 \includegraphics[height=10cm, width=18cm]{f_rac.png}
@@ -1019,7 +1019,7 @@ Nous avons proposé une méthode de résolution numérique des systèmes polynô
 
 \bibitem{Barnett}
 {S. Barnett}, {A note on the Bezoutian matrix}, {SIAM J. Appl. Math., 22:84-86}, {1972}
-		
+
 \bibitem{Golub}
 {G.H. Golub, C.F. van Loan}, {Matrix Computations}, {The Johns Hopkins University Press}, {1989}.
 
@@ -1039,17 +1039,17 @@ Nous avons proposé une méthode de résolution numérique des systèmes polynô
 $\delta(1) = \sum_{\alpha} x^\alpha \hat{y}_\alpha = \sum_{\beta} \hat{x}_\beta y^\beta$.
 
 Pour fixer les choses nous nous donnons un système de polynômes $f_1, \cdots, f_n$ en $n$ variables, nous appellerons multi-degré de $f$ le $n$-uplet d'entiers $(d_1, \cdots, d_n)$ tel que pour tout $j$, $d_j$ est le maximum des degrés des $f_i$ en la variable $x_j$.\\
-Par exemple, si $n = 3$ et 
+Par exemple, si $n = 3$ et
 \begin{align}
-f_1 & = x_1^2 + x_1x_2^2 - x_1x_2x_3 + 1 \nonumber \\ 
+f_1 & = x_1^2 + x_1x_2^2 - x_1x_2x_3 + 1 \nonumber \\
 f_2 & = x_1^2x_2 + x_1 - 5x_2^3 \nonumber \\
 f_3 & = x_1x_2^2 + x_3 - 2 \nonumber
 \end{align}
 
 \section{Structure triangulaire par blocs et rang de $B(1)$}
-Le calcul de la structure de l'algèbre quotient $A = 
-\C[\bold{x}]/<f>$, effectué au chapitre suivant, nécessitera la 
-connaissance du rang de la matrice $B(1)$. 
+Le calcul de la structure de l'algèbre quotient $A =
+\C[\bold{x}]/<f>$, effectué au chapitre suivant, nécessitera la
+connaissance du rang de la matrice $B(1)$.
 \subsection{The singular spectrum of $B_0$ in practice}
 \subsection{Using the hidden block-triangular structure of $B_0$ to improve its rank determination}
 
@@ -1065,17 +1065,17 @@ yB_0\bold{y} = B_1\bold{y}
 \end{array}
 \end{equation}
 
-Soit $\{x^\alpha y^\beta, (\alpha, \beta) \in A\times B\}$ l'ensemble des monômes apparaissant dans les polynômes de Bezout $\delta(x_j), j = 0,\cdots ,n$. 
+Soit $\{x^\alpha y^\beta, (\alpha, \beta) \in A\times B\}$ l'ensemble des monômes apparaissant dans les polynômes de Bezout $\delta(x_j), j = 0,\cdots ,n$.
 Pour chaque $j$ écrivons $\delta(x_j) = \sum_{\alpha\in A} x^\alpha \hat{y}_j^\alpha = \sum_{\beta\in B} \hat{x}_j^\beta y^\beta$.
-Ecrivons le polynôme de Bezout $\delta(1) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\beta$ comme une somme de monômes. 
-Pour chaque $\alpha$ posons $\hat{y}_\alpha = \sum_{\beta} b_{\alpha\beta} y^\beta$ 
-et pour chaque $\beta$ posons $\hat{x}_\beta = \sum_{\alpha} b_{\alpha\beta} x^\alpha$, de sorte que 
+Ecrivons le polynôme de Bezout $\delta(1) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\beta$ comme une somme de monômes.
+Pour chaque $\alpha$ posons $\hat{y}_\alpha = \sum_{\beta} b_{\alpha\beta} y^\beta$
+et pour chaque $\beta$ posons $\hat{x}_\beta = \sum_{\alpha} b_{\alpha\beta} x^\alpha$, de sorte que
 
 		\hat{\bold{y}} & = & B_0\bold{y}^T \\
 		\hat{\bold{y}}_j & = & B_j\bold{y}^T, \quad j=1\cdots n
 \{\hat{y}_\alpha\} & =  \{ -y1y_2 + y_1^3, -y_1 - y_1^2y_2, 0, y_1^2, -y_1y_2, -y_1 \}  \nonumber \\
  \{\hat{x}_\beta\} & = \{0, -x_2 - x_1x_2^2, -1 - x_1x_2, x_1, -x_2, 1 \}  \nonumber \\
- \{y^\beta\} & =  \{1, y_1, y_1y_2, y_1^2, y_1^2y_2, y_1^3 \}  \nonumber 
+ \{y^\beta\} & =  \{1, y_1, y_1y_2, y_1^2, y_1^2y_2, y_1^3 \}  \nonumber
 
 Reécrivons maintenant toutes les colonnes de nos deux matrices en tenant compte de la relation $x^2 = -2 + 3x$. Les colonnes de $B(x^3)$ se reécrivent alors $4 - 6x$ pour la première, $-6 + 7x$ pour la deuxième et $0$ pour la troisième. La matrice $B(1)$ quand à elle, est inchangée ce qui donne
 $$
@@ -1102,7 +1102,7 @@ matrices que nous pouvons maintenant écrire dans le système d'indices $\bold{x
 B(1) & 1 & y \\
 \hline
 1 & -3 & 1 \\
-x & 1 & 0 
+x & 1 & 0
 \end{array}
 \hspace{1cm}
 \begin{array}{c|cc}
