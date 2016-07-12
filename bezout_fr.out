@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Cas univariable}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Matrices des op\351rateurs de multiplication dans Ax}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Polyn\364mes et matrices de Bezout}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Lien entre matrices de Bezout et matrices compagnon}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Formule de Barnett g\351n\351ralis\351e}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Cas multivariable}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Construction des polyn\364mes et des matrices de Bezout}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Extension de la D\351finition 1 au cas multivariable}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Calcul effectif des matrices de Bezout}{subsection.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Formules de Barnett et structure de l'alg\350bre quotient.}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Propri\351t\351s alg\351briques du polyn\364me \(1\) et de la matrice B0}{subsection.3.2}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Processus de r\351duction}{subsection.3.2}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Formule de Barnett et matrices compagnon}{subsection.3.2}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Calcul num\351rique des racines}{subsection.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.3}{Structure bloc-triangulaire et rang num\351rique de B\(1\)}{section.3}% 16
+\BOOKMARK [1][-]{section.4}{Exp\351rimentation}{}% 17
+\BOOKMARK [1][-]{section.5}{Conclusion et perspectives}{}% 18

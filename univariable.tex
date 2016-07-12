@@ -6,9 +6,9 @@
 
 \section{Cas univariable}
 \label{univariable}
-
+\cite{jp_code}
 Rappelons quelques faits connus sur les polynômes à une variable.
-Soit $f(x) = a_0x^d + \dots + a_{d-1}x + a_d$ un polynôme de la variable complexe $x$. Notons $<f(x)>$ l'idéal engendré par $f(x)$ dans l'anneau $\C[x]$ et $A_x = \C[x]/<f(x)>$  son algèbre quotient; de même nous noterons $A_y = \C[y]/<f(y)>$. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A_x$ ou l'endomorphisme de multiplication par $x$ dans $A_x$. Une base du $\C$-espace vectoriel $A_x$ est la {\bf base des monômes} $\bold{x} = (1, x,\cdots, x^{d-1})$.
+Soit $f(x) = a_0x^d + \dots + a_{d-1}x + a_d$ un polynôme en la variable complexe $x$. Notons $<f(x)>$ l'idéal engendré par $f(x)$ dans l'anneau $\C[x]$ et $A_x = \C[x]/<f(x)>$  son algèbre quotient; de même notons $A_y = \C[y]/<f(y)>$. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A_x$ ou l'endomorphisme de multiplication par $x$ dans $A_x$. Une base du $\C$-espace vectoriel $A_x$ est la {\bf base des monômes} $\bold{x} = (1, x,\cdots, x^{d-1})$.
 
 \subsection{Matrices des opérateurs de multiplication dans $A_x$}
 L'opérateur de multiplication
@@ -36,7 +36,7 @@ La matrice compagnon admet $f$ comme polynôme caractéristique et comme polynô
 \end{prop}
 
 \begin{rem}
-La proposition précédente fournit une méthode effective de calcul numérique des racines de $f$. En effet, $X$ est une matrice de Hessenberg, à laquelle on peut appliquer des techniques performantes de calcul de valeurs propres, comme la méthode du QR. Nous verrons à la section \ref{multivariable} que ces techniques peuvent aussi s'appliquer au cas d'un système multivariable en intersection complète.
+La proposition précédente fournit une méthode effective de calcul numérique des racines de $f$. En effet, $X$ est une matrice de Hessenberg, à laquelle on peut appliquer des techniques performantes de calcul de valeurs propres, comme la méthode QR. Nous verrons à la section \ref{multivariable} que ces techniques peuvent aussi s'appliquer au cas d'un système multivariable en intersection complète.
 \end{rem}
 Plus généralement, pour tout élément $g\in A_x$, l'opérateur de multiplication
 $g : \left\vert
