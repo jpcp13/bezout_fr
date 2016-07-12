@@ -5,26 +5,23 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[francais]{babel}
+\input def_algolight.tex
 %\usepackage{wrapfig}
 %\usepackage{geometry}
 %\geometry{ hmargin=2.8cm, vmargin=3cm }
-\usepackage{graphicx}
 %\usepackage{amsmath}
 %\usepackage{mathdots}
-\input def_algolight.tex
-
 \theoremstyle{plain}% default
 \newtheorem{thm}{Théorème}
 \newtheorem{conj}{Conjecture}
 \newtheorem{lem}{Lemme}
 \newtheorem{prop}{Proposition}
 \newtheorem{cor}{Corollaire}
-
 \theoremstyle{definition}
 \newtheorem{defn}{Définition}
 \newtheorem{exmp}{Example}
-
-
 \theoremstyle{remark}
 \newtheorem*{rem}{Remarque}
 \newtheorem*{note}{Note}
@@ -33,7 +30,6 @@
 \def\R{\mathbb{R}}
 \newcommand{\vecb}[1]{\pmb{#1}}
 \newcommand{\VECAXPY}{\textsc{VecAxpy}}
-
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cM}{\mathcal{M}}
 \newcommand{\cS}{\mathcal{S}}
@@ -42,10 +38,8 @@
 \newcommand{\bcA}{\boldsymbol{\cA}}
 \newcommand{\bcS}{\boldsymbol{\cS}}
 \newcommand{\bvpi}{\boldsymbol{\varpi}}
-
 \newcommand{\wcM}{\widetilde\cM}
 \newcommand{\wcU}{\widetilde\cU}
-
 \newcommand{\VT}{\Vert T_n \Vert}
 \newcommand{\VcM}{\Vert \cM_n \Vert}
 \newcommand{\VwcM}{\Vert \widetilde\cM_n \Vert}
@@ -61,18 +55,12 @@
 \newcommand{\wh}{\widehat}
 \newcommand{\sn}{\sqrt{n}}
 
-
 \begin{document}
-
 
 %% Title, authors and addresses
 
 \title{A polynomial solver based on numerical linear algebra : practical implementation and numerical experiments.}
 \author{Jean-Paul Cardinal}
-
-
-
-
 
 \input{abstract}
 \input{introduction}
@@ -82,83 +70,4 @@
 \input{conclusion}
 \input{bibliography}
 
-
 \end{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-$\delta(1) = \sum_{\alpha} x^\alpha \hat{y}_\alpha = \sum_{\beta} \hat{x}_\beta y^\beta$.
-
-Pour fixer les choses nous nous donnons un système de polynômes $f_1, \cdots, f_n$ en $n$ variables, nous appellerons multi-degré de $f$ le $n$-uplet d'entiers $(d_1, \cdots, d_n)$ tel que pour tout $j$, $d_j$ est le maximum des degrés des $f_i$ en la variable $x_j$.\\
-Par exemple, si $n = 3$ et
-\begin{align}
-f_1 & = x_1^2 + x_1x_2^2 - x_1x_2x_3 + 1 \nonumber \\
-f_2 & = x_1^2x_2 + x_1 - 5x_2^3 \nonumber \\
-f_3 & = x_1x_2^2 + x_3 - 2 \nonumber
-\end{align}
-
-\section{Structure triangulaire par blocs et rang de $B(1)$}
-Le calcul de la structure de l'algèbre quotient $A =
-\C[\bold{x}]/<f>$, effectué au chapitre suivant, nécessitera la
-connaissance du rang de la matrice $B(1)$.
-\subsection{The singular spectrum of $B_0$ in practice}
-\subsection{Using the hidden block-triangular structure of $B_0$ to improve its rank determination}
-
-Multiplions les premières colonnes de $B_0$ et $B_1$ à gauche par $\bold{x}^T$ pour obtenir des polynômes en $x$
-
-Nous constatons que, modulo $<f(x)>$, on a la relation $x\bold{x}^TB_0(:, 1) = \bold{x}^TB_1(:, 1)$ et que cette propriété est vraie pour toutes les colonnes de $B_0$ et $B_1$.
-En d'autres termes, toute colonne de $B_0$, vue comme un élément de $A_x$, multipliée par $x$, est égale à la colonne de même indice de $B_1$
-Synthétiquement nous avons les relations dans $A_x^d$ et $A_y^d$:
-\begin{equation}
-\begin{array}{c}
-\bold{x}^TB_0x = \bold{x}^TB_1\\
-yB_0\bold{y} = B_1\bold{y}
-\end{array}
-\end{equation}
-
-Soit $\{x^\alpha y^\beta, (\alpha, \beta) \in A\times B\}$ l'ensemble des monômes apparaissant dans les polynômes de Bezout $\delta(x_j), j = 0,\cdots ,n$.
-Pour chaque $j$ écrivons $\delta(x_j) = \sum_{\alpha\in A} x^\alpha \hat{y}_j^\alpha = \sum_{\beta\in B} \hat{x}_j^\beta y^\beta$.
-Ecrivons le polynôme de Bezout $\delta(1) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\beta$ comme une somme de monômes.
-Pour chaque $\alpha$ posons $\hat{y}_\alpha = \sum_{\beta} b_{\alpha\beta} y^\beta$
-et pour chaque $\beta$ posons $\hat{x}_\beta = \sum_{\alpha} b_{\alpha\beta} x^\alpha$, de sorte que
-
-		\hat{\bold{y}} & = & B_0\bold{y}^T \\
-		\hat{\bold{y}}_j & = & B_j\bold{y}^T, \quad j=1\cdots n
-\{\hat{y}_\alpha\} & =  \{ -y1y_2 + y_1^3, -y_1 - y_1^2y_2, 0, y_1^2, -y_1y_2, -y_1 \}  \nonumber \\
- \{\hat{x}_\beta\} & = \{0, -x_2 - x_1x_2^2, -1 - x_1x_2, x_1, -x_2, 1 \}  \nonumber \\
- \{y^\beta\} & =  \{1, y_1, y_1y_2, y_1^2, y_1^2y_2, y_1^3 \}  \nonumber
-
-Reécrivons maintenant toutes les colonnes de nos deux matrices en tenant compte de la relation $x^2 = -2 + 3x$. Les colonnes de $B(x^3)$ se reécrivent alors $4 - 6x$ pour la première, $-6 + 7x$ pour la deuxième et $0$ pour la troisième. La matrice $B(1)$ quand à elle, est inchangée ce qui donne
-$$
-\begin{array}{c|ccc}
-B(1) & 1 & y & y^2\\
-\hline
-1 & -3 & 1 & 0\\
-x & 1 & 0 & 0\\
-x^2 & 0 & 0 & 0
-\end{array}
-\hspace{1cm}
-\begin{array}{c|ccc}
-B(x^3) & 1 & y & y^2\\
-\hline
-1 & 4 & -6 & 0\\
-x & -6 & 7 & 0\\
-x^2 & 0 & 0 & 0
-\end{array}
-$$
-matrices que nous pouvons maintenant écrire dans le système d'indices $\bold{x} = (1, x)$ et $\bold{y} = (1, y)$
-\begin{equation}
-\label{B1x3}
-\begin{array}{c|cc}
-B(1) & 1 & y \\
-\hline
-1 & -3 & 1 \\
-x & 1 & 0
-\end{array}
-\hspace{1cm}
-\begin{array}{c|cc}
-B(x^3) & 1 & y \\
-\hline
-1 & 4 & -6 \\
-x & -6 & 7 \\
-\end{array}
-\end{equation}

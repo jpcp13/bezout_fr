@@ -66,9 +66,31 @@ Pour tout polynôme $g$, on définit le {\bf polynôme de Bezout $\delta(g)$} et
 où $m$ désigne n'importe quel entier supérieur ou égal au maximum des degrés de $f$ et $g$.
 \end{defn}
 
+\begin{exmp}
+Pour $f = x^2 - 3x + 2$, et $g = x^3$ on a les polynômes de Bezout $\delta(1) = -3 + x + y$ et $\delta(x^3) = -2x^2 - 2xy -2y^2 + 3x^2y + 3xy^2 -x^2y^2$ qui, représentés sous forme de tableaux, font apparaitre les matrices de Bezout $B(1)$ et $B(x^3)$
+$$
+\begin{array}{c|ccc}
+\delta(1) & 1 & y & y^2\\
+\hline
+1 & -3 & 1 & 0\\
+x & 1 & 0 & 0\\
+x^2 & 0 & 0 & 0
+\end{array}
+\hspace{1cm}
+\begin{array}{c|ccc}
+\delta(x^3) & 1 & y & y^2\\
+\hline
+1 & 0 & 0 & -2\\
+x & 0 & -2 & 3\\
+x^2 & -2 & 3 & -1
+\end{array}
+$$
+\end{exmp}
+
 \begin{rem}
 Le polynôme et la matrice de Bezout sont liés par l'égalité matricielle
 \begin{equation}
+	\label{pmB}
 	\delta(g) = \bold{x} B(g) \bold{y}^T
 \end{equation}
 où $\bold{x} = (1, x,\cdots, x^{m-1})$ et $\bold{y} = (1, y,\cdots, y^{m-1})$ sont des vecteurs de monômes de $\C[x]$ et $\C[y]$. (Attention, on emploie encore ici la notation ${\bold x}$ pour un vecteur de $\C[x]^m$, notation qui était utilisée précédemment pour désigner la base des monômes ${\bold x}$ mais en pratique cette confusion n'est pas gênante).
@@ -96,35 +118,13 @@ qui est une égalité entre éléments de $\C[x]$. En projetant sur $A_x$ on a
 $\delta(g)_\beta = g(x)\delta(1)_\beta$
 et comme ceci est vrai pour tout $\beta\in\N$, on obtient bien la relation~(\ref{relations}).
 \end{proof}
+
 \begin{rem}
 En disant la  proposition autrement, chaque colonne de $B(1)$ donne, lorsqu'elle est multipliée par $g$ modulo $A_x$, la colonne de même indice de $B(g)$.
 \end{rem}
+
 \begin{exmp}
-Pour $f = x^2 - 3x + 2$, et $g = x^3$ on a
-$$
-\begin{array}{c|ccc}
-\delta(1) & 1 & y & y^2\\
-\hline
-1 & -3 & 1 & 0\\
-x & 1 & 0 & 0\\
-x^2 & 0 & 0 & 0
-\end{array}
-\hspace{1cm}
-\begin{array}{c|ccc}
-\delta(x^3) & 1 & y & y^2\\
-\hline
-1 & 0 & 0 & -2\\
-x & 0 & -2 & 3\\
-x^2 & -2 & 3 & -1
-\end{array}
-$$
-La proposition \ref{relations_prop} dit que, modulo $A_x$,
-\begin{align} \nonumber
-	(-3 + x)x^3 &= -2x^2 \\ \nonumber
-	(1)x^3 &= -2x + 3x^2 \\ \nonumber
-	(0)x^3 &= -2 + 3x - x^2
-\end{align}
-ce qui se vérifie facilement.
+Reprenant l'exemple précédent, la Proposition \ref{relations_prop} dit que, modulo $A_x$, on a les égalités $(-3 + x)x^3 = -2x^2$, $(1)x^3 = -2x + 3x^2$, $(0)x^3 = -2 + 3x - x^2$, qui se vérifient facilement.
 \end{exmp}
 
 \begin{rem}
@@ -397,8 +397,5 @@ ce qui est bien conforme à la formule de Barnett généralisée.
 On peut remplacer la matrice de Gauss par toute matrice permettant de transformer une colonne donnée en une colonne possédant un seul élément non nul, comme par exemple une matrice orthogonale de Householder. C'est le choix qui sera fait dans l'implémentation en Octave proposée en annexe.
 
 \end{rem}
-
-%Nous voyons donc que la matrice compagnon peut être calculée à partir de matrices de Bezout,
-%phénomène qui n'est pas, en une variable, particulièrement intéressant, mais qui sera, dans le cas multivariable, pleinement exploité pour le calcul des matrices compagnon et de la structure de l'algèbre quotient $A$.
 
 \end{document}
