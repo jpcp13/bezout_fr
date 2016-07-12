@@ -131,17 +131,19 @@ pour chaque point $(u, v) \in U\times V$ on calcule le déterminant numérique d
 pour finir on interpole l'ensemble des valeurs obtenues par le polynôme cherché $\delta(x^\gamma)$.
 \end{enumerate}
 
+Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des monômes de $\delta(x^\gamma)$ ainsi que les points de Fourier utilisés pour l'évaluation de $\delta(x^\gamma)$. Prenons l'exemple d'un système polynomial $<f>$ de multidegré $(d_1, \cdots, d_n)$, c'est-à-dire que pour tous $i, j = 1..n$ le degré de $f_i$ en la variable $x_j$ est inférieur ou égal à $d_j$. Fixons alors un entier $k$ compris entre $0$ et $n$ et adoptons la convention que $x_0 = 1$. On voit alors facilement que $\delta(x_k)$, polynôme en $x, y$, est de multidegré $(d_1, 2d_2, \cdots, nd_n)$ en $x$
+et de multidegré $(nd_1, (n-1)d_2, \cdots, d_n)$ en $y$. Nous pouvons donc choisir d'évaluer $\delta(x_k)$ sur l'ensemble des points de Fourier $(u, v) \in U\times V$ o\`u $U = \prod_{j=1..n} F_{jd_j}$ et $V = \prod_{j=1..n} F_{(n-j+1)d_j}$, $F_m$ désignant les racines complexes $m$-ièmes de l'unité.
 \begin{algorithm}[H]
 \caption{Function \texttt{FourierBezout}\\ renvoie $B_j = B(x_j)$  la matrice de Bezout construite à partir d'un système polynômial $f$ et d'une variable $x_j$.}\label{algo:01}
 %\begin{minipage}{14.cm}
 %\end{minipage}
-\textbf{Input\ }
+\textbf{Input}
   \begin{tabular}[t]{ll}
-    $\vecb{f}$  : &  système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$,\\ {} & de multi-degré $(d_1, \cdots, d_n)$.\\
+    $\vecb{f}$  : &  système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$,\\ {} & de multidegré $(d_1, \cdots, d_n)$.\\
      $\vecb{j}$ : & un entier compris entre $0$ et $n$.
   \end{tabular}
 
-\textbf{Output\ }
+\textbf{Output}
   \begin{tabular}[t]{ll}
       $\vecb{B_j}$ : & la matrice de Bezout $B(x_j)$ associée à la variable $x_j$,\\
       {} & (par convention on pose $x_0 = 1$).
