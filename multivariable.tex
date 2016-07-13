@@ -131,33 +131,35 @@ pour chaque point $(u, v) \in U\times V$ on calcule le déterminant numérique d
 pour finir on interpole l'ensemble des valeurs obtenues par le polynôme cherché $\delta(x^\gamma)$.
 \end{enumerate}
 
-Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des monômes de $\delta(x^\gamma)$ ainsi que les points de Fourier utilisés pour l'évaluation de $\delta(x^\gamma)$. Prenons l'exemple d'un système polynomial $<f>$ de multidegré $(d_1, \cdots, d_n)$, c'est-à-dire que pour tous $i, j = 1..n$ le degré de $f_i$ en la variable $x_j$ est inférieur ou égal à $d_j$. Fixons alors un entier $k$ compris entre $0$ et $n$ et adoptons la convention que $x_0 = 1$. On voit alors facilement que $\delta(x_k)$, polynôme en $x, y$, est de multidegré $(d_1, 2d_2, \cdots, nd_n)$ en $x$
-et de multidegré $(nd_1, (n-1)d_2, \cdots, d_n)$ en $y$. Nous pouvons donc choisir d'évaluer $\delta(x_k)$ sur l'ensemble des points de Fourier $(u, v) \in U\times V$ o\`u $U = \prod_{j=1..n} F_{jd_j}$ et $V = \prod_{j=1..n} F_{(n-j+1)d_j}$, $F_m$ désignant les racines complexes $m$-ièmes de l'unité.
+Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des monômes de $\delta(x^\gamma)$ ainsi que les points de Fourier utilisés pour l'évaluation de $\delta(x^\gamma)$. Prenons l'exemple d'un système polynomial $<f>$ de multidegré $(d_1, \cdots, d_n)$, c'est-à-dire que pour tous $i, j = 1..n$ le degré de $f_i$ en la variable $x_j$ est inférieur ou égal à $d_j$. Fixons alors un entier $k$ compris entre $0$ et $n$ et adoptons la convention que $x_0 = 1$. On voit alors facilement que $\delta(x_k)$, polynôme en $x, y$, est de multidegré $(d_1, 2d_2, \cdots, nd_n)$ en $x$ et de multidegré $(nd_1, (n-1)d_2, \cdots, d_n)$ en $y$.
+ Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisissons donc $U = \prod_{j=1..n} U_j, V = \prod_{j=1..n} V_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$ et $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ et o\`u $\theta_j$ est choisi de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}).
+
 \begin{algorithm}[H]
-\caption{Function \texttt{FourierBezout}\\ renvoie $B_j = B(x_j)$  la matrice de Bezout construite à partir d'un système polynômial $f$ et d'une variable $x_j$.}\label{algo:01}
+\caption{Fonction \texttt{FourierEvaluation}, construit la matrice $C_k$, indexée par $u, v$, contenant les évaluations du polynôme de Bezout $\delta(x_k)$ aux points $(u, v) \in U\times V$.}\label{algo:01}
 %\begin{minipage}{14.cm}
 %\end{minipage}
-\textbf{Input}
+\vecb{Input}
   \begin{tabular}[t]{ll}
-    $\vecb{f}$  : &  système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$,\\ {} & de multidegré $(d_1, \cdots, d_n)$.\\
-     $\vecb{j}$ : & un entier compris entre $0$ et $n$.
-  \end{tabular}
+    $\vecb{f}$: & système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$,\\ {} & de multidegré $(d_1, \cdots, d_n)$.\\
 
-\textbf{Output}
+     $\vecb{k}$: & un entier compris entre $0$ et $n$.
+  \end{tabular}\\
+\vecb{Output}
   \begin{tabular}[t]{ll}
-      $\vecb{B_j}$ : & la matrice de Bezout $B(x_j)$ associée à la variable $x_j$,\\
-      {} & (par convention on pose $x_0 = 1$).
+      $\vecb{C_k}$: & la matrice des évaluations $\delta(x_k)(u, v)$
   \end{tabular}
 %\end{minipage}
 \begin{algorithmic}
-\Function{$B_j \gets$ \texttt{FourierBezout}}{ $f, x_j$ }
+\Function{$C_k \gets$ \texttt{FourierEvaluation}}{$f, k$}
 	\State Création des points de Fourier $U = \prod_{j=1..n} F_{jd_j}$ et $V = \prod_{j=1..n} F_{(n-j+1)d_j}$
-	\State $C \gets \texttt{zeros}(D, D)$
+  \State $D \gets \prod_{j=1..n}jd_j$
+	\State $C_k \gets \texttt{zeros}(D, D)$
 	\For{$(u, v) \in U\times V$}
+      \State $m \gets \texttt{zeros}(n, n)$
    		\For{$(i, j) \gets 1..n$}
-      		\State $m(i, j) \gets \Delta_j f_i(u, v)$
+      		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$
    		\EndFor
-		\State $C(u, v) \gets \texttt{det}(m)$
+		\State $C_k(u, v) \gets \texttt{det}(m)$
 	\EndFor
 \EndFunction
 \end{algorithmic}
