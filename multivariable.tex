@@ -9,7 +9,7 @@
 Dans le cas univariable, examiné à la section précédente, la structure de $A_x$ se compose d'une part d'une base, en l'occurence la base des monômes, d'autre part de la matrice compagnon, exprimant l'endomorphisme de multiplication par $x$ dans la base. Ces deux éléments peuvent être obtenus soit directement par lecture des coefficients de $f$, soit à partir des matrices de Bezout $B(1), B(x)$. \\
 Dans le le cas multivariable, que nous allons développer dans cette section, ni une base ni les matrices compagnon
 (matrices des opérateurs
-$x_j = \left\vert
+$x_j : \left\vert
 \begin{array}{c}
 A \mapsto A \\
 h \mapsto x_jh
@@ -132,7 +132,7 @@ pour finir on interpole l'ensemble des valeurs obtenues par le polynôme cherch�
 \end{enumerate}
 
 Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des monômes de $\delta(x^\gamma)$ ainsi que les points de Fourier utilisés pour l'évaluation de $\delta(x^\gamma)$. Prenons l'exemple d'un système polynomial $<f>$ de multidegré $(d_1, \cdots, d_n)$, c'est-à-dire que pour tous $i, j = 1..n$ le degré de $f_i$ en la variable $x_j$ est inférieur ou égal à $d_j$. Fixons alors un entier $k$ compris entre $0$ et $n$ et adoptons la convention que $x_0 = 1$. On voit alors facilement que $\delta(x_k)$, polynôme en $x, y$, est de multidegré $(d_1, 2d_2, \cdots, nd_n)$ en $x$ et de multidegré $(nd_1, (n-1)d_2, \cdots, d_n)$ en $y$.
- Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisissons donc $U = \prod_{j=1..n} U_j, V = \prod_{j=1..n} V_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$ et $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ et o\`u $\theta_j$ est choisi de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}).
+ Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisissons donc $U = \prod_{j=1..n} U_j, V = \prod_{j=1..n} V_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$ et $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ et o\`u $\theta_j$ est choisi de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}). Ceci est réalisé par exemple si $\theta_j = e^{i\pi/j}$
 
 \begin{algorithm}[H]
 \caption{Fonction \texttt{FourierEvaluation}, construit la matrice $C_k$, indexée par $u, v$, contenant les évaluations du polynôme de Bezout $\delta(x_k)$ aux points $(u, v) \in U\times V$.}\label{algo:01}
