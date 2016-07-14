@@ -148,8 +148,9 @@ Les considérations précédentes nous permettent d'écrire l'algorithme :
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
+
 Les ensembles de points de Fourier $U$ et $V$ peuvent maintenant être utilisés pour construire la matrice d'évaluation du polynôme de Bezout :
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Construction de la matrice d'évaluation du polynôme de Bezout}\label{evaluation}
 \begin{algorithmic}
 \Function{evaluation}{$f, k$} \Comment{$f = (f_1,\cdots,f_n)$ système polynomial}\\
@@ -158,20 +159,21 @@ Les ensembles de points de Fourier $U$ et $V$ peuvent maintenant être utilisés
 \State $D \gets \prod_{j=1..n}jd_j$
 \State $C_k \gets \textsc{zeros}(D, D)$
 \For{$(u, v) \in U\times V$}
-      \State $m \gets \textsc{zeros}(n, n)$
+      \State $\Delta(x_k) \gets \textsc{zeros}(n, n)$
    		\For{$i, j=1..n$}
-      		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$ \Comment{$\delta_{i,j}(x_k)$ défini à la formule (\ref{finite_diff})}
+      		\State $\Delta(x_k)(i, j) \gets \delta_{i,j}(x_k)(u, v)$ \Comment{$\delta_{i,j}(x_k)$ défini à la formule (\ref{finite_diff})}
    		\EndFor
-		\State $C_k(u, v) \gets \textsc{det}(m)$
+		\State $C_k(u, v) \gets \textsc{det}(\Delta(x_k))$
 	\EndFor
 \State \textbf{return} $C_k$
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
 
+Tandis que l'on a $C^k_{u,v} = \delta(x_k)(u, v)$, la matrice de Bezout $B(x_k) = \left[b_{\alpha\beta}\right]$ est définie par le développement $\delta(x_k) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\beta$. Ceci montre que $C^k$ est la transformée de Fourier discrète de la matrice $B_k$, c'est-à-dire que si $F_U$ désigne la matrice $F_u = \left[ u^\alpha \right]_{u\in U, \alpha \in D}$
+et $F_V$ désigne la matrice $F_v = \left[ v^\beta \right]_{v\in V, \beta \in \bar{D}}$ alors on a $C^k = F_uB^kF_v^T$.
 
 \subsection{Formules de Barnett et structure de l'algèbre quotient.}
-
 Rappelons que dans notre hypothèse où l'idéal est zéro-dimensionel, la dimension de l'algèbre quotient $A = \C[\bold{x}]/<f>$ est finie, ce qui assure l'existence d'une base et de matrices compagnon $X_1,\cdots, X_n$ (matrices des opérateurs de multiplication par les variables dans la base considérée). Nous allons montrer que le procédé mis en oeuvre dans la section \ref{Bar_gen}, consistant en manipulations sur les colonnes des matrices de Bezout $B_0, \cdots, B_n $, permettra de construire une base de $A_x$ ainsi que les matrices compagnons associées.\\
 Rappelons tout d'abord un certain nombre de propriétés algébriques du polynôme $\delta(1)$ et des matrices de Bezout $B_j$.
 
