@@ -165,20 +165,39 @@ Les considérations précédentes nous permettent d'écrire l'algorithme :
 % \end{algorithm}
 
 \begin{algorithm}
-\caption{Euclid’s algorithm}\label{euclid}
-\begin{algorithmic}[1]
-\Function{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
-\State $r\gets a\bmod b$
-\While{$r\not=0$}\Comment{We have the answer if r is 0}
-\State $a\gets b$
-\State $b\gets r$
-\State $r\gets a\bmod b$
-\EndWhile\label{euclidendwhile}
-\State \textbf{return} $b$\Comment{The gcd is b}
+\caption{Construction des points de Fourier}\label{fourierPoints}
+\begin{algorithmic}
+\Function{fourierPoints}{$d$} \Comment{multidegré $d = (d_1,\cdots,d_n)$}
+\For{$j=1..n$} \Comment{construction des facteurs $U_j, V_j$}
+\State $U_j \gets$ ensemble des racines de $X^{jd_j}-1$
+\State $V_j \gets$ ensemble des racines de $X^{(n-j+1)d_j}-e^{i\pi/j}$
+\EndFor
+\State $U \gets \prod_{j=1..n}U_j$
+\State $V \gets \prod_{j=1..n}V_j$
+\State \textbf{return} $U, V$
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
 
+\begin{algorithm}
+\caption{Construction de la matrice d'évaluation du polynôme de Bezout}\label{evaluation}
+\begin{algorithmic}
+\Function{evaluation}{$f, k$} \Comment{$f = (f_1,\cdots,f_n)$ système polynomial}\\
+\Comment{ $k$ entier, $0\le k \le n$}
+\State $U, V \gets \textsc{fourierPoints}(d)$
+\State $D \gets \prod_{j=1..n}jd_j$
+\State $C_k \gets \textsc{zeros}(D, D)$
+\For{$(u, v) \in U\times V$}
+      \State $m \gets \textsc{zeros}(n, n)$
+   		\For{$i, j=1..n$}
+      		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$
+   		\EndFor
+		\State $C_k(u, v) \gets \textsc{det}(m)$
+	\EndFor
+\State \textbf{return} $C_k$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
 
 % \begin{algorithm}
 % \SetAlgoLined
