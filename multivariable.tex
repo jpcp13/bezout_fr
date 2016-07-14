@@ -157,20 +157,23 @@ Les ensembles de points de Fourier $U$ et $V$ peuvent maintenant être utilisés
 \Comment{ $k$ entier, $0\le k \le n$}
 \State $U, V \gets \textsc{fourierPoints}(d)$
 \State $D \gets \prod_{j=1..n}jd_j$
-\State $C_k \gets \textsc{zeros}(D, D)$
+\State $C^{(k)} \gets \textsc{zeros}(D, D)$
 \For{$(u, v) \in U\times V$}
-      \State $\Delta(x_k) \gets \textsc{zeros}(n, n)$
+      \State $\Delta \gets \textsc{zeros}(n, n)$
    		\For{$i, j=1..n$}
-      		\State $\Delta(x_k)(i, j) \gets \delta_{i,j}(x_k)(u, v)$ \Comment{$\delta_{i,j}(x_k)$ défini à la formule (\ref{finite_diff})}
+      		\State $\Delta_{i,j} \gets \delta_{i,j}(x_k)(u, v)$ \Comment{$\delta_{i,j}(x_k)$ défini à la formule (\ref{finite_diff})}
    		\EndFor
-		\State $C_k(u, v) \gets \textsc{det}(\Delta(x_k))$
+		\State $C^{(k)}_{u, v} \gets \textsc{det}(\Delta)$
 	\EndFor
-\State \textbf{return} $C_k$
+\State \textbf{return} $C^{(k)}$
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
 
-Tandis que l'on a $C^k_{u,v} = \delta(x_k)(u, v)$, la matrice de Bezout $B(x_k) = \left[b_{\alpha\beta}\right]$ est définie par le développement $\delta(x_k) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\beta$. Ceci montre que $C^k$ est la transformée de Fourier discrète de la matrice $B_k$, c'est-à-dire que si $F_U$ désigne la matrice $F_u = \left[ u^\alpha \right]_{u\in U, \alpha \in D}$
+Rappelons que la matrice de Bezout $B^{(k)} = \left[b^{(k)}_{\alpha\beta}\right]_{\alpha\beta}$ est définie par $\delta^{(k)}(x, y) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} x^\alpha y^\beta$. On a donc $C^{(k)}_{u,v} = \delta^{(k)}(u, v) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} u^\alpha v^\beta$, ce qui s'écrit comme produit de matrices
+$$ \left[C^{(k)}_{u,v}\right]_{u,v} = \left[u^\alpha\right]_{u,\alpha} \left[b^{(k)}_{\alpha,\beta}\right]_{\alpha, \beta} \left[v^\beta\right]_{v, \beta}^T $$
+
+Ceci montre que $C^k$ est la transformée de Fourier discrète de la matrice $B_k$, c'est-à-dire que si $F_U$ désigne la matrice $F_u = \left[ u^\alpha \right]_{u\in U, \alpha \in D}$
 et $F_V$ désigne la matrice $F_v = \left[ v^\beta \right]_{v\in V, \beta \in \bar{D}}$ alors on a $C^k = F_uB^kF_v^T$.
 
 \subsection{Formules de Barnett et structure de l'algèbre quotient.}
