@@ -133,36 +133,6 @@ Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des m
  Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisissons donc $U = \prod_{j=1..n} U_j, V = \prod_{j=1..n} V_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$ et $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ et o\`u $\theta_j$ est choisi de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}). Ceci est réalisé par exemple si $\theta_j = e^{i\pi/j}$.
 
 Les considérations précédentes nous permettent d'écrire l'algorithme :
-% \begin{algorithm}[H]
-% \caption{Fonction \texttt{FourierEvaluation}, construit la matrice $C_k$, indexée par $u, v$, contenant les évaluations du polynôme de Bezout $\delta(x_k)$ aux points $(u, v) \in U\times V$.}\label{algo:01}
-% %\begin{minipage}{14.cm}
-% %\end{minipage}
-% \vecb{Input}
-%   \begin{tabular}[t]{ll}
-%     $\vecb{f}$: & système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$,\\ {} & de multidegré $(d_1, \cdots, d_n)$.\\
-%
-%      $\vecb{k}$: & un entier compris entre $0$ et $n$.
-%   \end{tabular}\\
-% \vecb{Output}
-%   \begin{tabular}[t]{ll}
-%       $\vecb{C_k}$: & la matrice des évaluations $\delta(x_k)(u, v)$
-%   \end{tabular}
-% %\end{minipage}
-% \begin{algorithmic}
-% \Function{$C_k \gets$ \texttt{FourierEvaluation}}{$f, k$}
-% 	\State Création des points de Fourier $U = \prod_{j=1..n} F_{jd_j}$ et $V = \prod_{j=1..n} F_{(n-j+1)d_j}$
-%   \State $D \gets \prod_{j=1..n}jd_j$
-% 	\State $C_k \gets \texttt{zeros}(D, D)$
-% 	\For{$(u, v) \in U\times V$}
-%       \State $m \gets \texttt{zeros}(n, n)$
-%    		\For{$(i, j) \gets 1..n$}
-%       		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$
-%    		\EndFor
-% 		\State $C_k(u, v) \gets \texttt{det}(m)$
-% 	\EndFor
-% \EndFunction
-% \end{algorithmic}
-% \end{algorithm}
 
 \begin{algorithm}
 \caption{Construction des points de Fourier}\label{fourierPoints}
@@ -178,7 +148,7 @@ Les considérations précédentes nous permettent d'écrire l'algorithme :
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
-
+Les ensembles de points de Fourier $U$ et $V$ peuvent maintenant être utilisés pour construire la matrice d'évaluation du polynôme de Bezout :
 \begin{algorithm}
 \caption{Construction de la matrice d'évaluation du polynôme de Bezout}\label{evaluation}
 \begin{algorithmic}
@@ -190,7 +160,7 @@ Les considérations précédentes nous permettent d'écrire l'algorithme :
 \For{$(u, v) \in U\times V$}
       \State $m \gets \textsc{zeros}(n, n)$
    		\For{$i, j=1..n$}
-      		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$
+      		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$ \Comment{$\delta_{i,j}(x_k)$ défini à la formule (\ref{finite_diff})}
    		\EndFor
 		\State $C_k(u, v) \gets \textsc{det}(m)$
 	\EndFor
@@ -199,26 +169,6 @@ Les considérations précédentes nous permettent d'écrire l'algorithme :
 \end{algorithmic}
 \end{algorithm}
 
-% \begin{algorithm}
-% \SetAlgoLined
-% \KwData{$\bold{(d_1, \cdots, d_n)}$, multidegré d'un système polynomial.}
-% \KwResult{$\bold{U, V}$, ensembles de points de Fourier}
-% \For{$j=1..n$}{
-% $U_j \leftarrow$ ensemble des racines du polynôme $X^{jd_j}-1$\;
-% $V_j \leftarrow$ ensemble des racines du polynôme $X^{(n-j+1)d_j}-e^{i\pi/j}$\;}
-% $U \leftarrow \prod_{j=1..n}U_j$\;
-% $V \leftarrow \prod_{j=1..n}V_j$\;
-%
-% \caption{Création des ensembles de points de Fourier $U, V$}
-% \end{algorithm}
-
-% \begin{algorithm}
-% \SetAlgoLined
-% \KwData{$\bold{f = (f_1, \cdots, f_n)}$ système polynomial, de multidegré $(d_1, \cdots, d_n)$; $\vecb{k}$, entier compris entre $0$ et $n$; $\bold{U, V}$ ensembles de points de Fourier.}
-% \KwResult{$\bold{C_k}$, matrice indéxée par $(u, v) \in U\times V$ et contenant les évaluations $\delta(x_k)(u, v)$ }
-%
-% \caption{Création de la matrice $C_k$ d'évaluation du Bezoutien $\delta(x_k)$}
-% \end{algorithm}
 
 \subsection{Formules de Barnett et structure de l'algèbre quotient.}
 
