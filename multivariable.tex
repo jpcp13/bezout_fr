@@ -78,8 +78,6 @@ dont le déterminant fournit les polynômes de Bezout
 Les familles de mônomes apparaissant dans ces polynômes sont
 $\bold{x} = (1, x_2, x_2^2, x_1, x_1x_2, x_1x_2^2)$ et $\bold{y} = (1, y_1, y_1y_2, y_1^2, y_1^2y_2, y_1^3)$.
 Les polynômes de Bezout s'écrivent sous forme de tableaux faisant apparaitre les matrices de Bezout
-
-
 $$\begin{array}{c|cccccc}
 	\delta(1) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
@@ -132,42 +130,73 @@ pour finir on interpole l'ensemble des valeurs obtenues par le polynôme cherch�
 \end{enumerate}
 
 Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des monômes de $\delta(x^\gamma)$ ainsi que les points de Fourier utilisés pour l'évaluation de $\delta(x^\gamma)$. Prenons l'exemple d'un système polynomial $<f>$ de multidegré $(d_1, \cdots, d_n)$, c'est-à-dire que pour tous $i, j = 1..n$ le degré de $f_i$ en la variable $x_j$ est inférieur ou égal à $d_j$. Fixons alors un entier $k$ compris entre $0$ et $n$ et adoptons la convention que $x_0 = 1$. On voit alors facilement que $\delta(x_k)$, polynôme en $x, y$, est de multidegré $(d_1, 2d_2, \cdots, nd_n)$ en $x$ et de multidegré $(nd_1, (n-1)d_2, \cdots, d_n)$ en $y$.
- Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisissons donc $U = \prod_{j=1..n} U_j, V = \prod_{j=1..n} V_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$ et $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ et o\`u $\theta_j$ est choisi de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}). Ceci est réalisé par exemple si $\theta_j = e^{i\pi/j}$
+ Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisissons donc $U = \prod_{j=1..n} U_j, V = \prod_{j=1..n} V_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$ et $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ et o\`u $\theta_j$ est choisi de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}). Ceci est réalisé par exemple si $\theta_j = e^{i\pi/j}$.
+
+Les considérations précédentes nous permettent d'écrire l'algorithme :
+% \begin{algorithm}[H]
+% \caption{Fonction \texttt{FourierEvaluation}, construit la matrice $C_k$, indexée par $u, v$, contenant les évaluations du polynôme de Bezout $\delta(x_k)$ aux points $(u, v) \in U\times V$.}\label{algo:01}
+% %\begin{minipage}{14.cm}
+% %\end{minipage}
+% \vecb{Input}
+%   \begin{tabular}[t]{ll}
+%     $\vecb{f}$: & système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$,\\ {} & de multidegré $(d_1, \cdots, d_n)$.\\
+%
+%      $\vecb{k}$: & un entier compris entre $0$ et $n$.
+%   \end{tabular}\\
+% \vecb{Output}
+%   \begin{tabular}[t]{ll}
+%       $\vecb{C_k}$: & la matrice des évaluations $\delta(x_k)(u, v)$
+%   \end{tabular}
+% %\end{minipage}
+% \begin{algorithmic}
+% \Function{$C_k \gets$ \texttt{FourierEvaluation}}{$f, k$}
+% 	\State Création des points de Fourier $U = \prod_{j=1..n} F_{jd_j}$ et $V = \prod_{j=1..n} F_{(n-j+1)d_j}$
+%   \State $D \gets \prod_{j=1..n}jd_j$
+% 	\State $C_k \gets \texttt{zeros}(D, D)$
+% 	\For{$(u, v) \in U\times V$}
+%       \State $m \gets \texttt{zeros}(n, n)$
+%    		\For{$(i, j) \gets 1..n$}
+%       		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$
+%    		\EndFor
+% 		\State $C_k(u, v) \gets \texttt{det}(m)$
+% 	\EndFor
+% \EndFunction
+% \end{algorithmic}
+% \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{Fonction \texttt{FourierEvaluation}, construit la matrice $C_k$, indexée par $u, v$, contenant les évaluations du polynôme de Bezout $\delta(x_k)$ aux points $(u, v) \in U\times V$.}\label{algo:01}
-%\begin{minipage}{14.cm}
-%\end{minipage}
-\vecb{Input}
-  \begin{tabular}[t]{ll}
-    $\vecb{f}$: & système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$,\\ {} & de multidegré $(d_1, \cdots, d_n)$.\\
-
-     $\vecb{k}$: & un entier compris entre $0$ et $n$.
-  \end{tabular}\\
-\vecb{Output}
-  \begin{tabular}[t]{ll}
-      $\vecb{C_k}$: & la matrice des évaluations $\delta(x_k)(u, v)$
-  \end{tabular}
-%\end{minipage}
-\begin{algorithmic}
-\Function{$C_k \gets$ \texttt{FourierEvaluation}}{$f, k$}
-	\State Création des points de Fourier $U = \prod_{j=1..n} F_{jd_j}$ et $V = \prod_{j=1..n} F_{(n-j+1)d_j}$
-  \State $D \gets \prod_{j=1..n}jd_j$
-	\State $C_k \gets \texttt{zeros}(D, D)$
-	\For{$(u, v) \in U\times V$}
-      \State $m \gets \texttt{zeros}(n, n)$
-   		\For{$(i, j) \gets 1..n$}
-      		\State $m(i, j) \gets \delta_{i,j}(x_k)(u, v)$
-   		\EndFor
-		\State $C_k(u, v) \gets \texttt{det}(m)$
-	\EndFor
-\EndFunction
-\end{algorithmic}
+\SetAlgoLined
+\KwData{$\vecb{d}$, multidegré $(d_1, \cdots, d_n)$ d'un système de polynômes $f$.}
+\KwResult{$U$ et $V$ ensembles de points de Frourier utilisés pour l'évaluation du polynôme de Bezout}
+initialization\;
+\While{not at end of this document}{
+read current\;
+\eIf{understand}{
+go to next section\;
+current section becomes this one\;
+}{
+go back to the beginning of current section\;
+}
+}
+\caption{Création des ensembles points de Fourier $U$ et $V$}
 \end{algorithm}
 
-\begin{rem}
-Les polynômes de Bezout les plus généraux s'obtiennent à partir de différents $\delta(x^\gamma)$ par linéarité mais en pratique, dans cet article, seuls les polynômes $\delta(1),\delta(x_1),\cdots,\delta(x_n)$ seront considérés.
-\end{rem}
+\begin{algorithm}[H]
+\SetAlgoLined
+\KwData{$\vecb{f}$, système $(f_1, \cdots, f_n)$ de $n$ polynômes de $\C^n$, de multidegré $(d_1, \cdots, d_n)$; $\vecb{k}$, entier compris entre $0$ et $n$.}
+\KwResult{$\vecb{C_k}$, matrice indéxée par $(u, v) \in U\times V$ et contenant les évaluations $\delta(x_k)(u, v)$ }
+initialization\;
+\While{not at end of this document}{
+read current\;
+\eIf{understand}{
+go to next section\;
+current section becomes this one\;
+}{
+go back to the beginning of current section\;
+}
+}
+\caption{How to write algorithms}
+\end{algorithm}
 
 \subsection{Formules de Barnett et structure de l'algèbre quotient.}
 
