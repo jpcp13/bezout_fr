@@ -163,26 +163,43 @@ Les considérations précédentes nous permettent d'écrire l'algorithme :
 % \EndFunction
 % \end{algorithmic}
 % \end{algorithm}
-\begin{algorithm}
-\SetAlgoLined
-\KwData{$\bold{(d_1, \cdots, d_n)}$, multidegré d'un système polynomial.}
-\KwResult{$\bold{U, V}$, ensembles de points de Fourier}
-\For{$j=1..n$}{
-$U_j \leftarrow$ ensemble des racines du polynôme $X^{jd_j}-1$\;
-$V_j \leftarrow$ ensemble des racines du polynôme $X^{(n-j+1)d_j}-e^{i\pi/j}$\;}
-$U \leftarrow \prod_{j=1..n}U_j$\;
-$V \leftarrow \prod_{j=1..n}V_j$\;
-
-\caption{Création des ensembles de points de Fourier $U, V$}
-\end{algorithm}
 
 \begin{algorithm}
-\SetAlgoLined
-\KwData{$\bold{f = (f_1, \cdots, f_n)}$ système polynomial, de multidegré $(d_1, \cdots, d_n)$; $\vecb{k}$, entier compris entre $0$ et $n$; $\bold{U, V}$ ensembles de points de Fourier.}
-\KwResult{$\bold{C_k}$, matrice indéxée par $(u, v) \in U\times V$ et contenant les évaluations $\delta(x_k)(u, v)$ }
-
-\caption{Création de la matrice $C_k$ d'évaluation du Bezoutien $\delta(x_k)$}
+\caption{Euclid’s algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Function{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
+\State $r\gets a\bmod b$
+\While{$r\not=0$}\Comment{We have the answer if r is 0}
+\State $a\gets b$
+\State $b\gets r$
+\State $r\gets a\bmod b$
+\EndWhile\label{euclidendwhile}
+\State \textbf{return} $b$\Comment{The gcd is b}
+\EndFunction
+\end{algorithmic}
 \end{algorithm}
+
+
+% \begin{algorithm}
+% \SetAlgoLined
+% \KwData{$\bold{(d_1, \cdots, d_n)}$, multidegré d'un système polynomial.}
+% \KwResult{$\bold{U, V}$, ensembles de points de Fourier}
+% \For{$j=1..n$}{
+% $U_j \leftarrow$ ensemble des racines du polynôme $X^{jd_j}-1$\;
+% $V_j \leftarrow$ ensemble des racines du polynôme $X^{(n-j+1)d_j}-e^{i\pi/j}$\;}
+% $U \leftarrow \prod_{j=1..n}U_j$\;
+% $V \leftarrow \prod_{j=1..n}V_j$\;
+%
+% \caption{Création des ensembles de points de Fourier $U, V$}
+% \end{algorithm}
+
+% \begin{algorithm}
+% \SetAlgoLined
+% \KwData{$\bold{f = (f_1, \cdots, f_n)}$ système polynomial, de multidegré $(d_1, \cdots, d_n)$; $\vecb{k}$, entier compris entre $0$ et $n$; $\bold{U, V}$ ensembles de points de Fourier.}
+% \KwResult{$\bold{C_k}$, matrice indéxée par $(u, v) \in U\times V$ et contenant les évaluations $\delta(x_k)(u, v)$ }
+%
+% \caption{Création de la matrice $C_k$ d'évaluation du Bezoutien $\delta(x_k)$}
+% \end{algorithm}
 
 \subsection{Formules de Barnett et structure de l'algèbre quotient.}
 
