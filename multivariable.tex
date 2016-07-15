@@ -173,13 +173,12 @@ Les ensembles de points de Fourier $U$ et $V$ peuvent maintenant être utilisés
 Rappelons que la matrice de Bezout $B^{(k)} = \left[b^{(k)}_{\alpha\beta}\right]_{\alpha\beta}$ est définie par $\delta^{(k)}(x, y) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} x^\alpha y^\beta$. On a donc $C^{(k)}_{u,v} = \delta^{(k)}(u, v) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} u^\alpha v^\beta$, ce qui s'écrit comme produit de matrices
 $\left[C^{(k)}_{u,v}\right]_{u,v} = \left[u^\alpha\right]_{u,\alpha} \left[b^{(k)}_{\alpha,\beta}\right]_{\alpha, \beta} \left[v^\beta\right]_{v, \beta}^T$.
 Définissons alors les matrices de Fourier $F_u, F_v$ par $F_u = \left[ u^\alpha \right]_{u, \alpha}$ et $F_v = \left[ v^\beta \right]_{v, \beta}$. On obtient alors la relation d'évaluation-interpolation entre les matrices $B^{(k)}$ et $C^{(k)}$
-\begin{equation}
-C^{(k)} = F_uB^{(k)} F_v^T
-\end{equation}
-
-
-
-
+$$C^{(k)} = F_uB^{(k)} F_v^T$$
+ Grâce au choix fait dans l'Algorithme \ref{fourierPoints} les matrices $F_u$ et $F_v$ sont unitaires et la matrice $B^{(k)}$ s'obtient alors facilement par la relation
+ \begin{equation}
+ B^{(k)} = F_u^*C^{(k)} \overline{F_v}
+ \end{equation}
+Une implémentation de l'algorithme de construction des matrices de Bezout, réalisée en Python, est disponible sur le site web \cite{jp_code}.
 
 \subsection{Formules de Barnett et structure de l'algèbre quotient.}
 Rappelons que dans notre hypothèse où l'idéal est zéro-dimensionel, la dimension de l'algèbre quotient $A = \C[\bold{x}]/<f>$ est finie, ce qui assure l'existence d'une base et de matrices compagnon $X_1,\cdots, X_n$ (matrices des opérateurs de multiplication par les variables dans la base considérée). Nous allons montrer que le procédé mis en oeuvre dans la section \ref{Bar_gen}, consistant en manipulations sur les colonnes des matrices de Bezout $B_0, \cdots, B_n $, permettra de construire une base de $A_x$ ainsi que les matrices compagnons associées.\\
