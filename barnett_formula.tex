@@ -3,14 +3,14 @@
 \begin{document}
 
 
-\subsection{Formule de Barnett et structure de l'algèbre quotient.}
-Rappelons que dans notre hypothèse où l'idéal est zéro-dimensionel, la dimension de l'algèbre quotient $A = \C[\bold{x}]/<f>$ est finie, ce qui assure l'existence d'une base et de matrices compagnon $X_1,\cdots, X_n$ (matrices des opérateurs de multiplication par les variables dans la base considérée). Nous allons montrer que le procédé mis en oeuvre dans la section \ref{Bar_gen}, consistant en manipulations sur les colonnes des matrices de Bezout $B_0, \cdots, B_n $, permettra de construire une base de $A_x$ ainsi que les matrices compagnons associées.\\
-Rappelons tout d'abord un certain nombre de propriétés algébriques du polynôme $\delta(1)$ et des matrices de Bezout $B_j$.
+\subsection{Formules de Barnett et structure de l'algèbre quotient.}
+Rappelons que dans notre hypothèse où l'idéal est zéro-dimensionel, la dimension de l'algèbre quotient $A = \C[\bold{x}]/\left<f\right>$ est finie, ce qui assure l'existence d'une base et de matrices compagnon $X_1,\cdots, X_n$ (matrices des opérateurs de multiplication par les variables dans la base considérée). Nous allons montrer que le même procédé mis en oeuvre dans la section \ref{Bar_gen}, consistant en manipulations sur les colonnes des matrices de Bezout $B(1), B(x_1), \cdots, B(x_n)$, permet ici aussi de construire une base de $A_x$ ainsi que les matrices compagnons associées.\\
+Rappelons tout d'abord un certain nombre de propriétés algébriques du polynôme $\delta(1)$ et des matrices de Bezout $B(x_k)$.
 
-\subsubsection{Propriétés algébriques du polynôme $\delta(1)$ et de la matrice $B_0$}
-Les propriétés qui suivent sont de nature algébrique et seront données sans démonstration. Le lecteur intéressé pourra consulter les détails dans \cite{jpc, CM}. Comme dans la proposition \ref{Barnett}, définissons de nouvelles familles dans $A_x$ par
+\subsubsection{Propriétés algébriques du polynôme $\delta(1)$ et de la matrice $B(1)$}
+Les propriétés qui suivent sont de nature algébrique et seront données sans démonstration. Le lecteur intéressé pourra consulter les détails dans \cite{jpc, CM}. Comme dans la Proposition \ref{Barnett}, définissons de nouvelles familles d'éléments de $A_x$ par
 \begin{equation}
-		\hat{\bold{x}}_j  =  \bold{x}B_j, \quad j=0\cdots n
+		\hat{\bold{x}}_k  =  \bold{x}B(x_k), \quad k=0\cdots n
 \end{equation}
 
 \begin{exmp}
@@ -26,9 +26,9 @@ En reprenant l'exemple précédent nous avons
 
 \begin{prop}
 \label{xj}
-Pour tout $j=1\cdots n$ on a
+Pour tout $k=1\cdots n$ on a
 \begin{equation}
-    \hat{\bold{x}}_0x_j = \hat{\bold{x}}_j
+    \hat{\bold{x}}_0x_k = \hat{\bold{x}}_k
 \end{equation}
 \end{prop}
 
@@ -38,24 +38,14 @@ Les relations ci-dessus sont faciles à vérifier sur l'exemple précédent. Jus
 Chacune des familles $\bold{x}$ et $\hat{\bold{x}}$ est génératrice dans $A_x$.
 \end{prop}
 
-
-
-
-%\begin{figure}[!h]
-%	\includegraphics[scale=0.3]{relations_svd}
-%\end{figure}
-
 \subsubsection{Processus de réduction}
-La proposition précédente fournit un début de structure de l'algèbre $A_x$. Pour l'instant nous avons une famille génératrice $\bold{x}$ de $A_x$ ainsi que des matrices de Bezout $B(x_j)$.
-Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B_j$, on peut fabriquer une base de $A_x$ et des matrices compagnon $X_j$.
-Illustrons les calculs à partir de l'exemple \ref{ex_bez_multi}.\\
-Le rang de $B_0$ est $5$. La première colonne de $B_0$ est nulle mais celle de $B_2$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
-Multiplions $\bold{x}$ à droite par la matrice de Gauss $P$ dont la $5$ième colonne vaut $(1, 0, 0, 0, 1, 0)^{T}$, et multiplions les matrices de Bezout à gauche par $P^{-1}$, ce qui revient à soustraire la $5$ième ligne à la première.
-Les polynômes de Bezout se reécrivent\\
-
-\resizebox{\linewidth}{!}{$
+La proposition précédente fournit un début de structure de l'algèbre $A_x$. Nous avons pour l'instant une famille génératrice $\bold{x}$ de $A_x$ ainsi que des matrices de Bezout $B(x_k)$. Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B(x_k)$, on peut fabriquer une base de $A_x$ et des matrices compagnon $X_k$.\\
+Illustrons les calculs à partir de l'Exemple \ref{ex:bez_multi}. Le rang de $B(1)$ est $5$. La première colonne de $B(x_1)$ est nulle mais celle de $B(x_2)$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
+Multiplions $\bold{x}$ à droite par la matrice de Gauss $P$ dont la $5$ième colonne vaut $(1, 0, 0, 0, 1, 0)^{T}$, et multiplions les matrices de Bezout à gauche par $P^{-1}$, ce qui revient à soustraire la cinquième ligne à la première.
+Les matrices de Bezout $B(1), B(x_1), B(x_2)$ s'écrivent:
+$$
 \begin{array}{c|cccccc}
-	\delta(1) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(1) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1 &  &  &  &  &  & 1\\
 	x_2 &  & -1 &  &  & -1 & \\
@@ -63,10 +53,10 @@ Les polynômes de Bezout se reécrivent\\
 	x_1 &  &  &  & 1 &  & \\
 	1+x_1x_2 &  &  & -1 &  &  & \\
 	x_1x_2^2 &  & -1 &  &  &  &
-\end{array}
-\hspace{0.2cm}
+\end{array}$$
+$$
 \begin{array}{c|cccccc}
-	\delta(x_1) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_1) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1 &  &  &  & 1 & 1 & \\
 	x_2 &  &  &  &  &  & \\
@@ -77,7 +67,7 @@ Les polynômes de Bezout se reécrivent\\
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|cccccc}
-	\delta(x_2) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_2) & 1 & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1 &  &  &  & -1 &  & \\
 	x_2 &  & -1 & -1 &  &  & 1\\
@@ -86,22 +76,21 @@ Les polynômes de Bezout se reécrivent\\
 	1+x_1x_2 & -1 &  &  & 1 &  & \\
 	x_1x_2^2 &  &  & -1 &  &  &
 \end{array}
-$}
-La première colonne de $B_2$ contient maintenant un seul coefficient non nul, indexé par $1 + x_1x_2$, on peut donc, en projetant les trois bezoutiens sur $A_x$, supprimer la première colonne et la cinquième ligne dans les trois matrices. On obtient\\
-
-\resizebox{\linewidth}{!}{$
+$$
+La première colonne de $B(x_2)$ contient maintenant un seul coefficient non nul, indexé par $1 + x_1x_2$. On peut donc, en projetant les trois bezoutiens sur $A_x$, supprimer la première colonne et la cinquième ligne dans les trois matrices:
+$$
 \begin{array}{c|ccccc}
-	\delta(1) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(1) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  &  &  &  & 1 \\
 	x_2  & -1 &  &  & -1 & \\
 	x_2^2  &  &  &  &  & \\
 	x_1  &  &  & 1 &  & \\
 	x_1x_2^2  & -1 &  &  &  &
-\end{array}
-\hspace{0.2cm}
+\end{array}$$
+$$
 \begin{array}{c|ccccc}
-	\delta(x_1)  & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_1)  & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  &  & 1 & 1 & \\
 	x_2  &  &  &  &  & \\
@@ -111,7 +100,7 @@ La première colonne de $B_2$ contient maintenant un seul coefficient non nul, i
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|ccccc}
-	\delta(x_2) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_2) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  &  & -1 &  & \\
 	x_2  & -1 & -1 &  &  & 1 \\
@@ -119,23 +108,22 @@ La première colonne de $B_2$ contient maintenant un seul coefficient non nul, i
 	x_1  & -1 &  &  &  & \\
 	x_1x_2^2 &  & -1 &  &  &
 \end{array}
-$}\\
+$$
 
-Maintenant, la deuxième colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas. La relation est $x_2 + x_1x_2^{2} = 0$. La matrice $P$ est définie par sa cinquième colonne $(0, 1, 0, 0, 1)^{T}$. Le vecteur $\bold{x}$ devient $(1, x_2, x_2^{2}, x_1, x_2 + x_1x_2^{2})$. On soustrait la cinquième ligne à la deuxième. Les bezoutiens se reécrivent\\
-
-\resizebox{\linewidth}{!}{$
+La deuxième colonne de $B(1)$ est nulle, celle de $B(x_2)$ ne l'est pas. La relation est $x_2 + x_1x_2^{2} = 0$. La matrice $P$ est définie par sa cinquième colonne $(0, 1, 0, 0, 1)^{T}$. Le vecteur $\bold{x}$ devient $(1, x_2, x_2^{2}, x_1, x_2 + x_1x_2^{2})$. On soustrait la cinquième ligne à la deuxième. Les bezoutiens s'écrivent:
+$$
 \begin{array}{c|ccccc}
-	\delta(1) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(1) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  &  &  &  & 1 \\
 	x_2  &  &  &  & -1 & \\
 	x_2^2  &  &  &  &  & \\
 	x_1  &  &  & 1 &  & \\
 	x_2 + x_1x_2^2  & -1 &  &  &  &
-\end{array}
-\hspace{0.2cm}
+\end{array}$$
+$$
 \begin{array}{c|ccccc}
-	\delta(x_1)  & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_1)  & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  &  & 1 & 1 & \\
 	x_2  &  &  & 1 &  & \\
@@ -145,7 +133,7 @@ Maintenant, la deuxième colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|ccccc}
-	\delta(x_2) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_2) & y_1 & y_1y_2 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  &  & -1 &  & \\
 	x_2  & -1 &  &  &  & 1 \\
@@ -153,13 +141,13 @@ Maintenant, la deuxième colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas
 	x_1  & -1 &  &  &  & \\
 	x_2 + x_1x_2^2 &  & -1 &  &  &
 \end{array}
-$}\\
+$$
 
-La deuxième colonne de $B_2$ contient un seul coefficient non nul, en cinquième ligne, on peut donc supprimer les deuxièmes colonnes et les cinquièmes lignes. On obtient\\
+La deuxième colonne de $B_2$ contient un seul coefficient non nul, en cinquième ligne, on peut donc supprimer les deuxièmes colonnes et les cinquièmes lignes:
 
 $$
 \begin{array}{c|cccc}
-	\delta(1) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(1) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &   &  &  & 1 \\
 	x_2  &  &  & -1 & \\
@@ -168,7 +156,7 @@ $$
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|cccc}
-	\delta(x_1)  & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_1)  & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & 1 & 1 & \\
 	x_2  &  & 1 &  & \\
@@ -177,29 +165,28 @@ $$
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|cccc}
-	\delta(x_2) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_2) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & -1 &  & \\
 	x_2  & -1 &  &  & 1 \\
 	x_2^2  & -1 &  & -1 & \\
 	x_1  & -1 &  &  &
 \end{array}
-$$\\
+$$
+La première colonne de $B(1)$ est nulle, celle de $B(x_2)$ ne l'est pas. La relation est $x_2 + x_2^{2} + x_1 = 0$. La matrice $P$ est définie par sa quatrième colonne $(0, 1, 1, 1)^{T}$. Le vecteur $\bold{x}$ devient $(1, x_2, x_2^{2},  x_2 + x_2^{2} + x_1)$. On soustrait la quatrième ligne à la deuxième et à la troisième. Les bezoutiens s'écrivent:
 
-Maintenant, la première colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas. La relation est $x_2 + x_2^{2} + x_1 = 0$. La matrice $P$ est définie par sa quatrième colonne $(0, 1, 1, 1)^{T}$. Le vecteur $\bold{x}$ devient $(1, x_2, x_2^{2},  x_2 + x_2^{2} + x_1)$. On soustrait la quatrième ligne à la deuxième et à la troisième. Les bezoutiens se reécrivent\\
-
-\resizebox{\linewidth}{!}{$
+$$
 \begin{array}{c|cccc}
-	\delta(1) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(1) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &   &  &  & 1 \\
 	x_2  &  & -1 & -1 & \\
 	x_2^2  &  & -1 &  & \\
 	x_2 + x_2^{2} + x_1  &  & 1 &  &
-\end{array}
-\hspace{0.2cm}
+\end{array}$$
+$$
 \begin{array}{c|cccc}
-	\delta(x_1)  & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_1)  & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & 1 & 1 & \\
 	x_2  &  &  &  & \\
@@ -208,20 +195,18 @@ Maintenant, la première colonne de $B_0$ est nulle, celle de $B_2$ ne l'est pas
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|cccc}
-	\delta(x_2) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_2) & y_1 & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  & -1 &  & \\
 	x_2  &  &  &  & 1 \\
 	x_2^2  &  &  & -1 & \\
 	x_2 + x_2^{2} + x_1  & -1 &  &  &
-\end{array}
-$}
+\end{array}$$
 
-La première colonne de $B_2$ contient un seul coefficient non nul, en quatrième ligne, on peut donc supprimer les premières colonnes et les quatrièmes lignes. On obtient\\
-
+La première colonne de $B_2$ contient un seul coefficient non nul, en quatrième ligne, on peut donc supprimer les premières colonnes et les quatrièmes lignes:
 $$
 \begin{array}{c|ccc}
-	\delta(1) & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(1) & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  &  &  & 1 \\
 	x_2  & -1 & -1 & \\
@@ -229,7 +214,7 @@ $$
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|ccc}
-	\delta(x_1) & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_1) & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  & 1 & 1 & \\
 	x_2  & 1 &  & -1\\
@@ -237,27 +222,26 @@ $$
 \end{array}
 \hspace{0.2cm}
 \begin{array}{c|ccc}
-	\delta(x_2) & y_1^2 & y_1^2y_2 & y_1^3 \\
+	B(x_2) & y_1^2 & y_1^2y_2 & y_1^3 \\
 	\hline
 	1  & -1 &  & \\
 	x_2  &  &  & 1 \\
 	x_2^2  &  & -1 &
-\end{array}
-$$
-A ce stade, la matrice de $\delta(1)$ est inversible, le processus de réduction est terminé. On vérifie facilement que les familles $\bold{x} = (1, x_2, x_2^{2})$ et $\bold{y} = (y_1, y_1^{2}, y_1^{3})$ sont des bases de $A$, dont les bases de Horner associées sont $\hat{\bold{x}} = (-x_2-x_2^{2}, -x_{2}, 1)$ et $\hat{\bold{y}} = (y_1^{3}, -y_1^{2}-y_1^{2}y_2, -y_1^{2})$. La dimension de $A$ est donc ici égale à $3$.\\
+\end{array}$$
+A ce stade, la matrice $B(1)$ est inversible et le processus de réduction est donc terminé. On vérifie que les familles $\bold{x} = (1, x_2, x_2^{2})$ et $\bold{y} = (y_1, y_1^{2}, y_1^{3})$ sont des bases de $A$, dont les bases de Horner associées sont $\hat{\bold{x}} = (-x_2-x_2^{2}, -x_{2}, 1)$ et
+$\hat{\bold{y}} = (y_1^{3}, -y_1^{2}-y_1^{2}y_2, -y_1^{2})$. La dimension de $A$ est ici égale à~$3$.
 
-Plus généralement nous formulons la conjecture suivante (\cite{jpc} p.57)
+D'une façon générale nous formulons la conjecture suivante (\cite{jpc} p.57)
 \begin{conj}
-Lorsque le processus de réduction est terminé, c'est-à-dire lorsque la matrice de $\delta(1)$ est inversible et que toutes les matrices $\delta(x_j), j=0, \cdots, n$ sont de même taille et indexées par des familles de polynômes $\bold{x, y}$, alors chacune des familles $\bold{x, y}$ est une base de $A$.
+Lorsque le processus de réduction est terminé, c'est-à-dire lorsque la matrice $B(1)$ est inversible et que toutes les matrices $B(x_k), k=0, \cdots, n$ sont de même taille et indexées par des familles de polynômes $\bold{x, y}$, alors chacune des familles $\bold{x, y}$ est une base de $A$.
 \end{conj}
 
 \begin{rem}
-Nous insistons particulièrement sur le fait que la conjecture précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il était possible d'obtenir en fin de processus des tailles de $\delta(1)$ différentes suivant que l'on considère les relations en $x$ ou en $y$ lors du processus de réduction. Dans ce cas, cette différence de taille finale est un phénomène qui reste à éclaircir.
+Nous insistons sur le fait que la conjecture précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il est possible d'obtenir en fin de processus des tailles de $\delta(1)$ différentes suivant que l'on considère les relations en $x$ ou en $y$ lors du processus de réduction. Le cas échéant, cette différence de taille finale est un phénomène qui reste à éclaircir.
 \end{rem}
 
-
-\subsubsection{Formule de Barnett et matrices compagnon}
-Reprenons l'exemple \label{ex_bez_multi} et définissons $X_1, X_2$ par les quotients
+\subsubsection{Formules de Barnett et matrices compagnon}
+Reprenons l'exemple précédent et définissons les matrices $X_1, X_2$ par les quotients
 \begin{equation}
 	X_1 = B(x_1)B(1)^{-1} =
 	\begin{bmatrix}
@@ -272,24 +256,24 @@ Reprenons l'exemple \label{ex_bez_multi} et définissons $X_1, X_2$ par les quot
 		0 & 1 & -1
 	\end{bmatrix}
 \end{equation}
-On vérifie facilement que $X_1, X_2$ sont les matrices de multiplication par $x_1, x_2$ dans la base $\bold{x}$. $X_1, X_2$ sont donc des matrices compagnon, pour la base $\bold{x}$ et nous retrouvons donc dans la situation décrite à la section \ref{Bar}. Plus généralement nous avons
+On vérifie que $X_1, X_2$ sont les matrices de multiplication par les variables $x_1, x_2$ dans la base $\bold{x}$. $X_1, X_2$ sont donc des matrices compagnon, pour la base $\bold{x}$ et nous retrouvons dans la situation décrite à la section \ref{Bar}. D'une façon générale nous avons:
 \begin{prop}
 \label{Barnett_multi}
-Lorsque le processus de réduction est terminé, que les matrices de Bezout s'écrivent dans des bases $\bold{x, y}$, alors les matrices compagnon $X_j$, c'est à dire les matrices de multiplication par $x_j$ dans la base $\bold{x}$, peuvent se calculer grâce aux {\bf formules de Barnett}
+Lorsque le processus de réduction est terminé et que les matrices de Bezout sont écrites dans des bases $\bold{x, y}$, alors les matrices compagnon $X_j$, c'est à dire les matrices de multiplication par $x_j$ dans la base $\bold{x}$, peuvent se calculer grâce aux {\bf formules de Barnett}
 \begin{equation}
 	X_j = B(x_j)B(1)^{-1}
 \end{equation}
 \end{prop}
 
 \begin{rem}
-D'une manière similaire au cas univariable, nous avons aussi, pour tout $j=1,\cdots,n$,\\
-$B(x_j)^{T}B(1)^{-T}$ est la matrice de multiplication par $y_j$ dans la base $\bold{y}$ \\
-$B(1)^{-1}B(x_j)$ est la matrice de multiplication par $x_j$ dans la base $\hat{\bold{x}}$ \\
-$B(1)^{-T}B(x_j)^{T}$ est la matrice de multiplication par $y_j$ dans la base $\hat{\bold{y}}$
+Comme dans le cas univariable nous avons pour tout $k=1,\cdots,n$,\\
+$B(x_k)^{T}B(1)^{-T}$ est la matrice de multiplication par $y_k$ dans la base $\bold{y}$ \\
+$B(1)^{-1}B(x_k)$ est la matrice de multiplication par $x_k$ dans la base $\hat{\bold{x}}$ \\
+$B(1)^{-T}B(x_k)^{T}$ est la matrice de multiplication par $y_k$ dans la base $\hat{\bold{y}}$
 \end{rem}
 
 \subsubsection{Calcul numérique des racines}
-D'une manière similaire au cas univariable, comme indiqué dans la proposition \ref{compan2roots}, les racines numériques du système polynomial $f_1, \cdots, f_n$ s'obtiennent en calculant les valeurs propres des matrices compagnons (\cite{AS}).\\
+Comme dans le cas univariable (voir Proposition \ref{compan2roots}) les racines numériques du système polynomial $f_1, \cdots, f_n$ s'obtiennent en calculant les valeurs propres des matrices compagnons (voir \cite{AS}).\\
 Dans l'exemple précédent, les matrices $X_1, X_2$ fournissent les valeurs propres
 $$
 \begin{array}{c|c}
@@ -300,7 +284,6 @@ $$
 	0.66236 - 0.56228i & -0.87744 - 0.74486i
 \end{array}
 $$
-Comme l'algèbre $A$ est commutative, les matrices $X_1, X_2$ commutent et ont donc les mêmes vecteurs propres. Lors du calcul il faut donc faire attention d'ordonner les valeurs propres pour qu'elles correspondent aux mêmes vecteurs propres.
-Dans l'exemple précédent on vérifie facilement que les couples $(x_1, x_2)$ ci-dessus sont bien numériquement solutions du système $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
+Puisque l'algèbre $A$ est commutative, les matrices $X_1, X_2$ commutent et ont donc les mêmes vecteurs propres. Lors du calcul il faut donc faire attention d'ordonner les valeurs propres pour qu'elles correspondent aux mêmes vecteurs propres. Dans l'exemple précédent on vérifie facilement que les couples $(x_1, x_2)$ ci-dessus sont bien racines du système $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
 
 \end{document}

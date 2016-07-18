@@ -27,7 +27,7 @@ Nous supposerons dorénavant que l'idéal $\left<f\right>$ est {\bf zéro-dimens
 \subsection{Construction des polynômes et des matrices de Bezout}
 
 \subsubsection{Extension de la Définition \ref{def_bez} au cas multivariable}
-\label{def_bez_multi}
+
 
 \begin{defn}
 Soit $x^\gamma = x_1^{\gamma_1}\cdots x_n^{\gamma_n} \in \C[x]$ un monôme.
@@ -49,7 +49,7 @@ En développant $\delta(g) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\bet
 \end{defn}
 
 \begin{exmp}
-\label{ex_bez_multi}
+\label{ex:bez_multi}
 Fixons $n = 2$ et considérons $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
 Nous allons calculer les matrices de Bezout $B(1), B(x_1), B(x_2)$,  qui vont servir à la construction des matrices compagnon $X_1, X_2$, comme nous le verrons plus loin. Pour commencer, calculons à partir des formules (\ref{finite_diff})
 \begin{align}
@@ -133,7 +133,7 @@ Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des m
  Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisirons donc $U = \prod_{j=1..n} U_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$. De même nous choisirons $V = \prod_{j=1..n} V_j$ de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}). Ceci est réalisé par exemple lorsque $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ avec $\theta_j = e^{i\pi/j}$. Les considérations précédentes nous permettent maintenant d'écrire l'algorithme :
 
 \begin{algorithm}
-\caption{Construction des ensembles de points de Fourier}\label{fourierPoints}
+\caption{Construction des ensembles de points de Fourier servant à l'évaluation du polynôme de Bezout $\delta(x_k)$}\label{fourierPoints}
 \begin{algorithmic}
 \Function{fourierPoints}{$d$} \Comment{multidegré $d = (d_1,\cdots,d_n)$}
 \For{$j=1..n$} \Comment{construction des facteurs $U_j, V_j$}
@@ -149,11 +149,10 @@ Pour implémenter cet algorithm concrètement on doit préciser l'ensemble des m
 
 Les ensembles de points de Fourier $U$ et $V$ peuvent être utilisés pour construire la matrice d'évaluation du polynôme de Bezout:
 \begin{algorithm}[H]
-\caption{Construction de la matrice d'évaluation du polynôme de Bezout}\label{evaluation}
+\caption{Construction de la matrice d'évaluation du polynôme de Bezout $\delta(x_k)$}\label{evaluationMatrix}
 \begin{algorithmic}
-\Function{evaluation}{$f, k$} \Comment{$f = (f_1,\cdots,f_n)$ système polynomial}\\
-\Comment{ $k$ entier, $0\le k \le n$}
-\State $U, V \gets \textsc{fourierPoints}(d)$
+\Function{evaluation}{$f, k$} \Comment{$f = (f_1,\cdots,f_n)$ système polynomial}
+\State $U, V \gets \textsc{fourierPoints}(d)$ \Comment{$d$ multidegré de $f$}
 \State $D \gets \prod_{j=1..n}jd_j$
 
 \State $C^{(k)} \gets \textsc{zeros}(D, D)$
@@ -178,9 +177,5 @@ $$C^{(k)} = F_uB^{(k)} F_v^T$$
  B^{(k)} = F_u^*C^{(k)} \overline{F_v}
  \end{equation}
 La construction des matrices de Bezout, inspirée des considérations précédentes, a été impléméntée en Python et publiée sur le site \cite{jp_code}.
-
-
-
-
 
 \end{document}
