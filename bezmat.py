@@ -3,6 +3,7 @@ import numpy as np
 import scipy.linalg as la
 import scipy.fftpack as ft
 
+
 def _GH(n, deg, dx, dy):
 	fn = np.prod(range(1, n+1))
 	Gx = []; Hx = []; Gy = []; Hy = []
@@ -92,3 +93,72 @@ def _B(n, C, H, K):
 		KHC = np.conjugate(K.T).dot(HC.T)/Dy
 		B[i] = KHC.T
 	return np.around(B).real.astype(int)
+
+def _bezout(deg, m):
+	fshape = [d+1 for d in deg]
+	n = len(deg)
+	dx = [(i+1)*deg[i] for i in range(n)]
+	dy = [(n-i)*deg[i] for i in range(n)]
+	Gx, Gy, Hx, Hy = _GH(n, deg, dx, dy)
+	H, K = _HK(Hx, Hy)
+	F = _F(n, deg, fshape, m)
+	J = _J(F, n, fshape, dx, dy, Gx, Gy)
+	C = _C(n, J)
+	B = _B(n, C, H, K)
+	return B
+
+def build_ixy(deg, k):
+	n = len(deg)
+	ix = ()
+	iy = ()
+	for j in range(n):
+		if j < k:
+			ix = ix + (slice(None),)
+			iy = (slice(None),) + iy
+		elif j == k:
+			ix = ix + (slice(-deg[k], None),)
+			iy = (slice(-deg[n-1-k], None),) + iy
+		else:
+			ix = ix + (slice(None, -deg[j]),)
+			iy = (slice(None, -deg[n-1-j]),) + iy
+	return ix, iy
+
+def permut(deg):
+	n = len(deg)
+	dx = [(i+1)*deg[i] for i in range(n)]
+	dy = [(n-i)*deg[i] for i in range(n)]
+	Dx, Dy = np.prod(dx), np.prod(dy)
+	aax = np.arange(Dx, dtype=int).reshape(dx[::-1]).transpose(range(n-1,-1,-1))
+	aay = np.arange(Dy, dtype=int).reshape(dy[::-1]).transpose(range(n-1,-1,-1))
+	ax = np.zeros(0, dtype=int)
+	ay = np.zeros(0, dtype=int)
+	for k in range(n):
+		ix, iy = build_ixy(deg, k)
+		tx = (np.arange(n)*(n-1) + k) % n
+		ty = (n-1 - tx) % n
+		ay = np.concatenate(( ay, np.transpose(aay[iy], ty).reshape(Dy/n) ))
+		ax = np.concatenate(( ax, np.transpose(aax[ix], tx).reshape(Dx/n) ))
+	return ax, ay
+
+def block_triang(deg, B):
+	n = len(deg)
+	ax, ay = permut(deg)
+	for k in range(n+1):
+		B[k] = np.fliplr(B[k][np.ix_(ax,ay)])
+	return B
+
+def block_triang(deg, B):
+	n = len(deg)
+	ax, ay = permut(deg)
+	for k in range(n+1):
+		B[k] = np.fliplr(B[k][np.ix_(ax,ay)])
+	return B
+
+def block_size(deg):
+	n = len(deg)
+	dx = [(i+1)*deg[i] for i in range(n)]
+	Dx = np.prod(dx)
+	bls = np.zeros(0, dtype=int)
+	for i in range(n):
+		bls = np.concatenate(( bls, np.ones(deg[i], dtype=int)*Dx/(n*deg[i]) ))
+	return bls

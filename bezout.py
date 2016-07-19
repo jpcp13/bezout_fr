@@ -1,45 +1,5 @@
 
 
-def build_ixy(k):
-	ix = ()
-	iy = ()
-	for j in range(n):
-		if j < k:
-			ix = ix + (slice(None),)
-			iy = (slice(None),) + iy
-		elif j == k:
-			ix = ix + (slice(-deg[k], None),)
-			iy = (slice(-deg[n-1-k], None),) + iy
-		else:
-			ix = ix + (slice(None, -deg[j]),)
-			iy = (slice(None, -deg[n-1-j]),) + iy
-	return ix, iy
-
-def permut():
-	aax = np.arange(Dx, dtype=int).reshape(dx[::-1]).transpose(range(n-1,-1,-1))
-	aay = np.arange(Dy, dtype=int).reshape(dy[::-1]).transpose(range(n-1,-1,-1))
-	ax = np.zeros(0, dtype=int)
-	ay = np.zeros(0, dtype=int)
-	for k in range(n):
-		ix, iy = build_ixy(k)
-		tx = (np.arange(n)*(n-1) + k) % n
-		ty = (n-1 - tx) % n
-		ay = np.concatenate(( ay, np.transpose(aay[iy], ty).reshape(Dy/n) ))
-		ax = np.concatenate(( ax, np.transpose(aax[ix], tx).reshape(Dx/n) ))
-	return ax, ay
-
-def block_triang():
-	ax, ay = permut()
-	for k in range(n+1):
-		B[k] = np.fliplr(B[k][np.ix_(ax,ay)])
-	return B
-
-def block_size():
-	bls = np.zeros(0, dtype=int)
-	for i in range(n):
-		bls = np.concatenate(( bls, np.ones(deg[i], dtype=int)*Dx/(n*deg[i]) ))
-	return bls
-
 ############################################# fcts sage #######################################
 
 def rand_poly(j, m):
@@ -153,44 +113,35 @@ def _jPZ():
 
 ##################" debut programme python / sage ######################
 
-# import matplotlib.pyplot as plt
-# import numpy as np
-# import scipy.linalg as la
-# import scipy.fftpack as ft
+import matplotlib.pyplot as plt
+import bezmat as bm
+
 # import time
 # import sys
 # import scipy.io as sio
-import bezmat as bm
 
-deg = [2, 3]
-fshape = [d+1 for d in deg]
-n = len(deg)
-dx = [(i+1)*deg[i] for i in range(n)]
-dy = [(n-i)*deg[i] for i in range(n)]
 
-m = 5	# nombre de monomes
+deg = [2, 3, 4]
+m = 20	# nombre de monomes
+B = bm._bezout(deg, m)
+B = bm.block_triang(deg, B)
+plt.spy(B[0]); plt.grid(); plt.savefig('ref.png')
+
+bls = bm.block_size(deg)
+
 # R = PolynomialRing(QQ, 'x', n)
 # x = R.gens()
 # xx = [x[0]**0] + list(x)
-
-
 # P = [rand_poly(n-1, m) for i in range(n)] + xx
 #~ a = [ZZ.random_element() for _ in range(7)]
 #~ P = [a[0]*x[0]**3*x[1]**2 + a[1]*x[0] + a[2]*x[1]**2 + a[3], a[4]*x[0]*x[1]**4 + a[5]*x[0]**3 + a[6]*x[1]] + xx
 # degrees, coeffs, nb_monomials = poly2sparse(P)
-
 # jac = jacobian(P[:n], x)
 # F = [poly2prism(p) for p in P]
 
-Gx, Gy, Hx, Hy = bm._GH(n, deg, dx, dy)
-H, K = bm._HK(Hx, Hy)
-F = bm._F(n, deg, fshape, m)
-J = bm._J(F, n, fshape, dx, dy, Gx, Gy)
-C = bm._C(n, J)
-B = bm._B(n, C, H, K)
-#
-#
-# plt.spy(B[0]); plt.grid(); plt.savefig('ref.png')
+
+
+
 #
 # bls = block_size()
 # B = block_triang()
