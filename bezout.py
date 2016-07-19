@@ -185,12 +185,9 @@ m = 5	# nombre de monomes
 Gx, Gy, Hx, Hy = bm._GH(n, deg, dx, dy)
 H, K = bm._HK(Hx, Hy)
 F = bm._F(n, deg, fshape, m)
-i, j = 2, 1
-
-e = bm.evaluate(F, n, fshape, dx, dy, Gx, Gy, i, j)
-# J = _J()
-# C = _C()
-# B = _B()
+J = bm._J(F, n, fshape, dx, dy, Gx, Gy)
+C = bm._C(n, J)
+B = bm._B(n, C, H, K)
 #
 #
 # plt.spy(B[0]); plt.grid(); plt.savefig('ref.png')
