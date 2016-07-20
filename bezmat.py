@@ -162,3 +162,6 @@ def block_size(deg):
 	for i in range(n):
 		bls = np.concatenate(( bls, np.ones(deg[i], dtype=int)*Dx/(n*deg[i]) ))
 	return bls
+
+def _t(B):
+	return np.transpose(B.astype(float), (1, 2, 0))
