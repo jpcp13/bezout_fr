@@ -40,7 +40,7 @@ def _F(n, deg, fshape, m):
 	F = [];
 	for i in range(n):
 		degrees = _degrees(n, deg, m)
-		coeffs = np.random.randint(-10, 10, size=(m))
+		coeffs = np.random.randint(-2, 2, size=(m))
 		f = sparse2prism(deg, fshape, degrees, coeffs)
 		F.append(f)
 	degrees = np.zeros((1, n), dtype=int)
@@ -163,5 +163,6 @@ def block_size(deg):
 		bls = np.concatenate(( bls, np.ones(deg[i], dtype=int)*Dx/(n*deg[i]) ))
 	return bls
 
-def _t(B):
-	return np.transpose(B.astype(float), (1, 2, 0))
+def _save(B):
+	x = B.reshape(np.prod(B.shape))
+	np.savetxt('/home/jp/Recherche/bezout/julia/jl/B.txt', x)
