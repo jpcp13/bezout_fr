@@ -8,13 +8,10 @@ Dans le processus de réduction, la première étape consiste à calculer le noy
 La méthode éprouvée pour cela, implémentée dans des packages d'algèbre linéaire numérique comme Matlab/Octave, Numpy ou Julia, est d'effectuer une factorisation QR ``rank revealing'' de $B(1)$, que nous appellerons factorisation QRP, c'est-à-dire accompagnée de pivots sur les colonnnes. L'expérience montre que cette approche est souvent efficace mais peut s'avérer délicate à mettre en oeuvre si la taille de la matrice augmente. Montrons le sur un exemple.
 
 \begin{exmp}
-Nous choisissons $n = 4$,
-\begin{align}
-f_1 & = x_0^2x_1^2x_2x_3^2 - x_0^2x_1x_2^2x_3^2 - x_0^3x_1x_3^2 + x_0x_1^2x_2x_3^2 + x_0x_1^2x_3^2 + x_0^3x_2 - x_1^2x_3^2 + x_0^2x_2 + x_0x_1x_2 + x_1x_2x_3 + x_2^2 + x_2x_3 + 1,\nonumber\\
-f_2 & = x_0^3x_1^2x_2x_3^2 + x_0^3x_1x_2^2 - x_0^2x_1^2x_2^2 + x_0^2x_1x_2x_3^2 - x_0^3x_1^2 + x_0^2x_1^2x_3 - x_0^3x_2x_3 + x_0x_1x_2^2x_3 + x_0^3x_3^2 - x_0x_1x_2x_3^2 + x_0x_1x_2^2 - x_0^3x_3 + x_0x_1x_2x_3 + x_1^2x_2x_3 - x_1^2x_3^2 - x_0^2x_1 + x_0x_1 + x_2^2 + x_3^2 - x_1 + 1,\nonumber\\
-f_3 & =  -x_0^2x_1^2x_2^2x_3^2 - x_0^3x_1^2x_2x_3 - x_0^3x_2^2x_3^2 - x_0^3x_1x_2x_3 + x_0x_1x_2^2x_3^2 + x_0^3x_1 - x_1x_2x_3^2 + x_2^2x_3^2 + x_1^2x_3 - x_0x_2x_3 + x_0^2 + x_2^2 - x_0x_3 + x_1,\nonumber\\
-f_4 & =  x_0^2x_1^2x_2^2x_3 + x_0^3x_1x_3^2 - x_0^3x_1x_2 - x_0^3x_3^2 - x_0x_1^2x_3^2 - x_0x_1x_2x_3 - x_1^2x_3^2 + x_1x_2^2 - x_1x_3^2 + x_3^2 - x_0 - 1 \nonumber
-\end{align}
+Nous choisissons $n = 4$ et un système polynomial $f$ de multidegré $d = (2, 2, 2, 2)$. Chaque polynôme possède $m = 15$ monômes. Les degrés sont choisis aléatoirement suivant une loi uniforme entre $0$ et $2$:
+\input{degrees.tex}
+Les coefficients, entiers, sont choisis aléatoirement suivant une loi uniforme entre $-5$ et $5$:
+\input{coeffs.tex}
 \end{exmp}
 \begin{center}
 \includegraphics[width=8cm]{../png/B0.png}
