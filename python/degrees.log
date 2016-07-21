@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  21 JUL 2016 17:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  21 JUL 2016 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -50,7 +50,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Here is how much of TeX's memory you used:
  206 strings out of 493304
  2210 string characters out of 6139872
- 56880 words of memory out of 5000000
+ 73880 words of memory out of 5000000
  3748 multiletter control sequences out of 15000+600000
  3640 words of font info for 14 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -58,7 +58,7 @@ Here is how much of TeX's memory you used:
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-Output written on degrees.pdf (1 page, 24329 bytes).
+Output written on degrees.pdf (1 page, 24849 bytes).
 PDF statistics:
  20 PDF objects out of 1000 (max. 8388607)
  13 compressed objects within 1 object stream
