@@ -36,28 +36,44 @@ def sparse2prism(deg, fshape, degrees, coeffs):
 		f[tuple(degrees[k])] = coeffs[k]
 	return f
 
-def _save2latex(filename, f_degs, n, m, i):
+def _degs2latex(filename, f_degs, n, m, i):
 	outfile = open(filename, 'a')
 	outfile.write('$$\\begin{array}{c|' + 'c'*m + '} \n')
-	outfile.write(('f_%1d ' + '& '*m + '\\\ \n') %(i+1))
+	outfile.write(('f_%1d ' + '&'*m + '\\\ \n') %(i+1))
 	outfile.write('\\hline \n')
 	for j in range(n):
 		outfile.write(('d_%1d ') %(j+1))
 		for k in range(m):
-			outfile.write('& %1d ' %f_degs[k, j])
+			outfile.write('&%2d' %f_degs[k, j])
 		outfile.write('\\\ \n')
+	outfile.write('\\end{array}$$ \n')
+	outfile.close()
+
+def _coeffs2latex(filename, f_coeffs, n, m):
+	outfile = open(filename, 'w')
+	outfile.write('$$\\begin{array}{' + 'r'*n + '} \n')
+	for i in range(n-1):
+		outfile.write('f_%1d & ' %(i+1))
+	outfile.write('f_%1d \\\ \n' %n)
+	outfile.write('\\hline \n')
+	for k in range(m):
+		for i in range(n-1):
+			outfile.write('%2d & ' %f_coeffs[k, i])
+		outfile.write('%2d \\\ \n' %f_coeffs[k, n-1])
 	outfile.write('\\end{array}$$ \n')
 	outfile.close()
 
 def _F(n, deg, fshape, m):
 	F = [];
+	coeffs_table = np.empty((m, n), dtype=int)
 	for i in range(n):
 		degrees = _degrees(n, deg, m)
-		_save2latex('degrees.txt', degrees, n, m, i)
+		_degs2latex('degrees.txt', degrees, n, m, i)
 		coeffs = np.random.randint(-2, 2, size=(m))
+		coeffs_table[:, i] = coeffs
 		f = sparse2prism(deg, fshape, degrees, coeffs)
 		F.append(f)
-
+	_coeffs2latex('coeffs.txt', coeffs_table, n, m)
 	degrees = np.zeros((1, n), dtype=int)
 	coeffs = [1]
 	f = sparse2prism(deg, fshape, degrees, coeffs)
