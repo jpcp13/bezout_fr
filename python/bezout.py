@@ -11,8 +11,4 @@ B = bm.block_triang(deg, B)
 
 bm._save(B)
 
-plt.spy(B[0]); plt.grid(); plt.savefig('ref.png')
-
-
-
-
+plt.spy(B[0]); plt.grid(); plt.savefig('../png/ref.png')
