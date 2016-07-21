@@ -174,18 +174,12 @@ def permut(deg):
 	return ax, ay
 
 def block_triang(deg, B):
+	Btri = np.copy(B)
 	n = len(deg)
 	ax, ay = permut(deg)
 	for k in range(n+1):
-		B[k] = np.fliplr(B[k][np.ix_(ax,ay)])
-	return B
-
-def block_triang(deg, B):
-	n = len(deg)
-	ax, ay = permut(deg)
-	for k in range(n+1):
-		B[k] = np.fliplr(B[k][np.ix_(ax,ay)])
-	return B
+		Btri[k] = np.fliplr(B[k][np.ix_(ax,ay)])
+	return Btri
 
 def block_size(deg):
 	n = len(deg)
