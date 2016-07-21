@@ -65,15 +65,17 @@ def _coeffs2latex(filename, f_coeffs, n, m):
 
 def _F(n, deg, fshape, m):
 	F = [];
+	outfile = open('../tex/degrees.tex', 'w')
+	outfile.close()
 	coeffs_table = np.empty((m, n), dtype=int)
 	for i in range(n):
 		degrees = _degrees(n, deg, m)
-		_degs2latex('degrees.txt', degrees, n, m, i)
+		_degs2latex('../tex/degrees.tex', degrees, n, m, i)
 		coeffs = np.random.randint(-2, 2, size=(m))
 		coeffs_table[:, i] = coeffs
 		f = sparse2prism(deg, fshape, degrees, coeffs)
 		F.append(f)
-	_coeffs2latex('coeffs.txt', coeffs_table, n, m)
+	_coeffs2latex('../tex/coeffs.tex', coeffs_table, n, m)
 	degrees = np.zeros((1, n), dtype=int)
 	coeffs = [1]
 	f = sparse2prism(deg, fshape, degrees, coeffs)
