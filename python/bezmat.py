@@ -165,4 +165,4 @@ def block_size(deg):
 
 def _save(B):
 	x = B.reshape(np.prod(B.shape))
-	np.savetxt('/home/jp/Recherche/bezout/julia/jl/B.txt', x)
+	np.savetxt('/home/jp/Recherche/bezout/article/julia/B.txt', x)

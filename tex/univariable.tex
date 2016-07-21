@@ -6,7 +6,6 @@
 
 \section{Cas univariable}
 \label{univariable}
-\cite{jp_code}
 Rappelons quelques faits connus sur les polynômes à une variable.
 Soit $f(x) = a_0x^d + \dots + a_{d-1}x + a_d$ un polynôme en la variable complexe $x$. Notons $<f(x)>$ l'idéal engendré par $f(x)$ dans l'anneau $\C[x]$ et $A_x = \C[x]/<f(x)>$  son algèbre quotient; de même notons $A_y = \C[y]/<f(y)>$. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A_x$ ou l'endomorphisme de multiplication par $x$ dans $A_x$. Une base du $\C$-espace vectoriel $A_x$ est la {\bf base des monômes} $\bold{x} = (1, x,\cdots, x^{d-1})$.
 
@@ -255,7 +254,7 @@ x & 0 & -2 & 3\\
 x^2 & -2 & 3 & -1
 \end{array}
 $$
-mais alors $B(1)$ n'est plus inversible. Nous allons cependant montrer, grâce aux relations~(\ref{relations}), que si {\bf on projette les deux polynômes de Bezout sur le quotient $A_x$} alors les matrices $B(g)$ et $B(1)$ sont redimensionnées à la même taille, $B(1)$ est inversible et la formule~(\ref{BG}) s'applique. Illustrons le procédé sur l'exemple ci-dessus. Puisque $B(1)$ n'est pas inversible, on peut trouver une combinaison linéaire de colonnes qui s'annule, ici c'est la troisième colonne qui est nulle. En la multipliant par $x^3$, et en appliquant les relations~(\ref{relations}), on obtient que la troisième colonne de $B(x^3)$ est aussi nulle. Mais cette colonne vaut $-2 + 3x - x^2$ ce qui entraine que, dans le quotient,
+mais alors $B(1)$ n'est plus inversible. Nous allons cependant montrer, grâce aux relations~(\ref{relations}), que si on projette les deux polynômes de Bezout sur le quotient $A_x$ alors les matrices $B(g)$ et $B(1)$ sont redimensionnées à la même taille, $B(1)$ est inversible et la formule~(\ref{BG}) s'applique. Illustrons le procédé sur l'exemple ci-dessus. Puisque $B(1)$ n'est pas inversible, on peut trouver une combinaison linéaire de colonnes qui s'annule, ici c'est la troisième colonne qui est nulle. En la multipliant par $x^3$, et en appliquant les relations~(\ref{relations}), on obtient que la troisième colonne de $B(x^3)$ est aussi nulle. Mais cette colonne vaut $-2 + 3x - x^2$ ce qui entraine que, dans le quotient,
 $-2 + 3x - x^2 = 0$ (ce n'est pas une surprise car ce dernier polynôme n'est autre que $-f$; ceci est dû au fait que l'exemple choisi est particulièrement simple, mais nous verrons dans le cas multidimensionnel que les relations nulles dans le quotient ainsi générées sont loin d'être triviales).
 
 En vue d'automatiser les calculs, traduisons le procédé précédent en termes d'algèbre matricielle.
@@ -394,7 +393,7 @@ Nous avons bien obtenu des matrices de Bezout de même taille, avec $B(1)$ inver
 ce qui est bien conforme à la formule de Barnett généralisée.
 
 \begin{rem}
-On peut remplacer la matrice de Gauss par toute matrice permettant de transformer une colonne donnée en une colonne possédant un seul élément non nul, comme par exemple une matrice orthogonale de Householder. C'est le choix qui sera fait dans l'implémentation en Octave proposée en annexe.
+On peut remplacer la matrice de Gauss par toute matrice permettant de transformer une colonne donnée en une colonne possédant un seul élément non nul, comme par exemple une matrice orthogonale de Householder. C'est le choix qui sera fait dans l'implémentation en Julia proposée en \cite{jp_code}.
 
 \end{rem}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 JUL 2016 18:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 JUL 2016 22:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,33 +694,33 @@ LaTeX Info: Redefining \nameref on input line 62.
 
  (./abstract.tex) (./introduction.tex)
 (./univariable.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 11.
+LaTeX Font Info:    Try loading font information for U+msa on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 11.
+LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 11.
+d on input line 10.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 13.
+(hyperref)                removing `math shift' on input line 12.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 13.
+(hyperref)                removing `subscript' on input line 12.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 13.
+(hyperref)                removing `math shift' on input line 12.
 
 
-Overfull \hbox (4.17833pt too wide) in paragraph at lines 35--36
+Overfull \hbox (4.17833pt too wide) in paragraph at lines 34--35
 []\OT1/cmr/bx/n/10 Proposition 1. \OT1/cmr/m/it/10 La ma-trice com-pa-gnon ad-m
 et $\OML/cmm/m/it/10 f$ \OT1/cmr/m/it/10 comme po-lyn^ome ca-ract^^Seristique
  []
@@ -728,7 +728,7 @@ et $\OML/cmm/m/it/10 f$ \OT1/cmr/m/it/10 comme po-lyn^ome ca-ract^^Seristique
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (3.23944pt too wide) in paragraph at lines 103--104
+Overfull \hbox (3.23944pt too wide) in paragraph at lines 102--103
 \OT1/cmr/m/it/10 et $\OML/cmm/m/it/10 g$\OT1/cmr/m/it/10 . Si on ^^Secrit $\OML
 /cmm/m/it/10 B\OT1/cmr/m/n/10 (1)$ \OT1/cmr/m/it/10 et $\OML/cmm/m/it/10 B\OT1/
 cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 dans le m^eme
@@ -940,7 +940,7 @@ Here is how much of TeX's memory you used:
  12252 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 67i,14n,38p,805b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,14n,38p,799b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -960,7 +960,7 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (20 pages, 641042 bytes).
+Output written on bezout_fr.pdf (20 pages, 640964 bytes).
 PDF statistics:
  356 PDF objects out of 1000 (max. 8388607)
  302 compressed objects within 4 object streams
