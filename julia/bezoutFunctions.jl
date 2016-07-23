@@ -180,5 +180,5 @@ function plots(bez::Array{Float64, 3}, beztri::Array{Float64, 3}, B::Array{Float
     plot(log10(1e-16 + abs(diag(R))), "r*")
     subplot(2, 2, 4)
     plot(log10(1e-16 + abs(diag(flipdim(B[:, :, n+1], 2), i_start))), "r*")
-    savefig("bez_beztri.png")
+    savefig("../png/bez_beztri.png")
 end
