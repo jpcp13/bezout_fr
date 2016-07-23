@@ -190,6 +190,6 @@ def block_size(deg):
 		bls = np.concatenate(( bls, np.ones(deg[i], dtype=int)*Dx/(n*deg[i]) ))
 	return bls
 
-def _save2text(B):
-	x = B.reshape(np.prod(B.shape))
-	np.savetxt('../julia/B.txt', x, fmt='%8d')
+def _save2text(arrayname, filename):
+	x = arrayname.reshape(np.prod(arrayname.shape))
+	np.savetxt(filename, x, fmt='%8d')

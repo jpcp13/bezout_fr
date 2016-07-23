@@ -170,17 +170,15 @@ end
 
 function plots(bez::Array{Float64, 3}, beztri::Array{Float64, 3}, B::Array{Float64, 3}, i_start::Int)
     clf()
-    subplot(1, 2, 1)
+    subplot(2, 2, 1)
     spy(bez[:, :, n+1])
+    subplot(2, 2, 2)
+    spy(beztri[:, :, n+1])
     F = qrfact(bez[:,:,n+1], Val{true})
     Q, R, p = F[:Q], F[:R], F[:p]
-    subplot(1, 2, 2)
+    subplot(2, 2, 3)
     plot(log10(1e-16 + abs(diag(R))), "r*")
-    savefig("bez_diagR.png")
-    clf()
-    subplot(1, 2, 1)
-    spy(beztri[:, :, n+1])
-    subplot(1, 2, 2)
+    subplot(2, 2, 4)
     plot(log10(1e-16 + abs(diag(flipdim(B[:, :, n+1], 2), i_start))), "r*")
-    savefig("beztri_diagR.png")
+    savefig("bez_beztri.png")
 end
