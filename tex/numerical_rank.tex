@@ -29,13 +29,13 @@ Cependant il parait difficile d'exploiter cette structure pour le calcul du rang
 On constate qu'il est difficile, à partir de ces valeurs de fixer un seuil en dessous duquel les termes peuvent être considérés comme négligeables. On aurait tendance à fixer naturellement le seuil entre les indices $295$ et $296$ ce qui donne $295$ comme rang numérique de $B(1)$. C'est la valeur fournie par la fonction rank de numpy. Or $B(1)$ est une matrice à coefficients entiers et on peut donc calculer son rang exact au moyen d'un logiciel de calcul symbolique. Pour le logiciel Sage le rang de la matrice à coefficient entiers $B(1)$ vaut $296$, en contradiction avec la valeur obtenue par la factorisation numérique QRP.
 
 Nous pouvons cependant améliorer, dans une certaine mesure, la situation précédente en exploitant une propriété de $B(1)$. En effet, en permutant lignes et colones de cette matrice d'une certaine façon, on peut arriver à une structure bloc-triangulaire de $B(1)$.
-% \begin{center}
-% \includegraphics[width=8cm]{../png/B0_tri.png}
-% \end{center}
-En factorisant la matrice bloc après bloc, les éléments diagonaux vont alors décroitre uniquement à l'intérieur de chaque bloc, ce qui permet à la fin de préserver un saut numérique plus grand que dans la première approche. Le graphique ci dessous montre la nouvelle disposition des éléments diagonaux pour le même exemple que précédemment, traité de la deuxième façon.
-% \begin{center}
-% \includegraphics[width=8cm]{../png/bloc_triang.png}
-% \end{center}
+\begin{center}
+\includegraphics[width=8cm]{../png/beztri.png}
+\end{center}
+En appliquant à la matrice une factorisation QRP bloc après bloc, les éléments diagonaux vont alors décroitre uniquement à l'intérieur de chaque bloc, ce qui permet de préserver un saut numérique plus grand que dans la première approche. Le graphique ci dessous montre la nouvelle disposition des éléments diagonaux pour le même exemple que précédemment, traité de la deuxième façon.
+\begin{center}
+\includegraphics[width=8cm]{../png/diagRtri.png}
+\end{center}
 On voit que, malgré une décroissance rapide des éléments diagonaux dans chaque bloc, la plus petite taille de ceux-ci permet au plus petit élément ``non-nul" d'être beaucoup plus grand que le epsilon machine, ce qui facilite le calcul du rang numérique.
 
 \end{document}

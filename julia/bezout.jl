@@ -1,5 +1,5 @@
 
-using Plotly
+using PyPlot
 include("bezoutFunctions.jl")
 
 """ début programme """
