@@ -170,21 +170,22 @@ end
 
 function plots(bez::Array{Float64, 3}, beztri::Array{Float64, 3}, B::Array{Float64, 3}, i_start::Int)
     clf()
-    subplot(2, 2, 1)
+    subplot(2, 1, 1)
     spy(bez[:, :, n+1])
-	xlabel("matrice de Bezout B(1)")
-    subplot(2, 2, 2)
-    spy(beztri[:, :, n+1])
-	xlabel("B(1) sous forme bloc_triangulaire")
+    xlabel("matrice de Bezout B(1)")
+    # subplot(2, 1, 2)
+    # spy(beztri[:, :, n+1])
+    # xlabel("B(1) sous forme bloc_triangulaire")
     F = qrfact(bez[:,:,n+1], Val{true})
     Q, R, p = F[:Q], F[:R], F[:p]
-    subplot(2, 2, 3)
+    subplot(2, 1, 2)
     plot(log10(1e-16 + abs(diag(R))), "r*")
     grid("on")
-    subplot(2, 2, 4)
-    plot(log10(1e-16 + abs(diag(flipdim(B[:, :, n+1], 2), i_start))), "r*")
-    grid("on")
-    savefig("../png/bez_beztri.png")
+    xlabel("termes diagonaux de R")
+    # subplot(2, 2, 4)
+    # plot(log10(1e-16 + abs(diag(flipdim(B[:, :, n+1], 2), i_start))), "r*")
+    # grid("on")
+    savefig("../png/bez_diagR.png")
 end
 
 function bloc_qrp_plot(B0::Array{Float64, 2}, fn::Int, s::Int)
@@ -197,4 +198,3 @@ function bloc_qrp_plot(B0::Array{Float64, 2}, fn::Int, s::Int)
 	end
 	return dR
 end
-	
