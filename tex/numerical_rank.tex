@@ -15,10 +15,20 @@ Cependant il parait difficile d'exploiter cette structure pour le calcul du rang
     \includegraphics[width=0.48\textwidth]{../png/diagR.png}
   \end{center}
 % \end{wrapfigure}
- On s'aperçoit que les derniers termes non nuls décroissent très vite, et qu'il peut devenir difficile de choisir un seuil au dessus duquel les termes diagonaux seront déclarés ``non nuls''. Le ``saut'' entre termes ``non-nuls'' et termes proches du epsilon machine a tendance à diminuer à mesure que la taille de la matrice augmente, ce qui rend le calcul du rang numérique difficile.
+ On s'aperçoit que les derniers termes non nuls décroissent très vite, et qu'il peut devenir difficile de choisir un seuil au dessus duquel les termes diagonaux seront déclarés ``non nuls''. Le ``saut'' entre termes ``non-nuls'' et termes proches du epsilon machine a tendance à diminuer à mesure que la taille de la matrice augmente, ce qui rend le calcul du rang numérique difficile. Pour cet exemple, voici la table des termes de la diagonale entre les indices $294$ et $297$.
+ $$
+ \begin{array}{c|c}
+ 	i & \vert R_{i,i}\vert \\
+ 	\hline
+ 	294  & 1e-4 \\
+ 	295 & 1e-6 \\
+ 	296 & 1e-11 \\
+ 	297 & 1e-11 \\
+ \end{array}
+ $$
+On constate qu'il est difficile, à partir de ces valeurs de fixer un seuil en dessous duquel les termes peuvent être considérés comme négligeables. On aurait tendance à fixer naturellement le seuil entre les indices $295$ et $296$ ce qui donne $295$ comme rang numérique de $B(1)$. C'est la valeur fournie par la fonction rank de numpy. Or $B(1)$ est une matrice à coefficients entiers et on peut donc calculer son rang exact au moyen d'un logiciel de calcul symbolique. Pour le logiciel Sage le rang de la matrice à coefficient entiers $B(1)$ vaut $296$, en contradiction avec la valeur obtenue par la factorisation numérique QRP.
 
-
-Nous pouvons cependant améliorer un peu la situation précédente, en exploitant une propriété de $B(1)$. En effet, en permutant lignes et colones de cette matrice d'une certaine façon, on peut arriver à une structure bloc-triangulaire de $B(1)$.
+Nous pouvons cependant améliorer, dans une certaine mesure, la situation précédente en exploitant une propriété de $B(1)$. En effet, en permutant lignes et colones de cette matrice d'une certaine façon, on peut arriver à une structure bloc-triangulaire de $B(1)$.
 % \begin{center}
 % \includegraphics[width=8cm]{../png/B0_tri.png}
 % \end{center}
