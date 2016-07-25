@@ -41,3 +41,5 @@ i_start = size(B, 1)-m
 # plot(log10(1e-16 + abs(diag(flipdim(B[:, :, n+1], 2), i_start))), "r*")
 
 plots(bez, beztri, B, i_start)
+
+dR = bloc_qrp_plot(beztri[:,:,n+1], fn, s)

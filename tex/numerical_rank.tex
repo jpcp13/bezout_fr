@@ -12,12 +12,15 @@ Nous choisissons $n = 4$ et un système polynomial $f$ de multidegré $d = (2, 2
 \input{degrees.tex}
 Les coefficients, entiers, sont choisis aléatoirement suivant une loi uniforme entre $-5$ et $5$:
 \input{coeffs.tex}
+
+La matrice de Bezout $B(1)$ est de taille $576$. Si on effectue une factorisation QRP sur cette matrice, on sait que les éléments diagonaux seront triés en ordre décroissant, voir figure ci-dessous.
 \end{exmp}
 \begin{center}
-\includegraphics[width=8cm]{../png/B0.png}
+\includegraphics[width=15cm]{../png/bez_beztri.png}
 \end{center}
 
-Ce système est de multidegré $(3, 2, 2, 2)$, la matrice de Bezout $B(1)$ est de taille $576$. Si on effectue une factorisation QRP sur cette matrice, on sait que les éléments diagonaux seront triés en ordre décroissant, voir figure ci-dessous.
+
+
 \begin{center}
 \includegraphics[width=8cm]{../png/qrp.png}
 \end{center}

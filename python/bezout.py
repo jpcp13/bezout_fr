@@ -5,7 +5,7 @@ import scipy.io as sio
 # import sys
 
 deg = [2,2,2,2]
-m = 20	# nombre de monomes
+m = 15	# nombre de monomes
 
 B = bm._bezout(deg, m)
 bm._save2text(B, '../julia/B.txt')

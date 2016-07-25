@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  21 JUL 2016 22:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  25 JUL 2016 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -844,47 +844,91 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 6.
 
 (./degrees.tex [14]) (./coeffs.tex)
-<../png/B0.png, id=231, 578.16pt x 433.62pt>
-File: ../png/B0.png Graphic file (type png)
- <use ../png/B0.png>
-Package pdftex.def Info: ../png/B0.png used on input line 17.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
- [15]
-<../png/qrp.png, id=237, 578.16pt x 433.62pt>
-File: ../png/qrp.png Graphic file (type png)
- <use ../png/qrp.png>
-Package pdftex.def Info: ../png/qrp.png used on input line 22.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+<../png/bez_beztri.png, id=231, 586.8324pt x 442.2924pt>
+File: ../png/bez_beztri.png Graphic file (type png)
 
-<../png/B0_tri.png, id=238, 578.16pt x 433.62pt>
-File: ../png/B0_tri.png Graphic file (type png)
- <use ../png/B0_tri.png>
-Package pdftex.def Info: ../png/B0_tri.png used on input line 28.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+<use ../png/bez_beztri.png>
+Package pdftex.def Info: ../png/bez_beztri.png used on input line 19.
+(pdftex.def)             Requested size: 426.79134pt x 321.67622pt.
 
-[16 <../png/B0.png> <../png/qrp.png>]
-<../png/bloc_triang.png, id=244, 578.16pt x 433.62pt>
-File: ../png/bloc_triang.png Graphic file (type png)
+Overfull \hbox (81.79134pt too wide) in paragraph at lines 19--20
+ [] 
+ []
 
-<use ../png/bloc_triang.png>
-Package pdftex.def Info: ../png/bloc_triang.png used on input line 32.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-) (./experiments.tex
+[15]
+
+LaTeX Warning: File `../png/qrp.png' not found on input line 25.
+
+
+! Package pdftex.def Error: File `../png/qrp.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \includegraphics[width=8cm]{../png/qrp.png}
+                                                
+? 
+[16 <../png/bez_beztri.png>]
+
+LaTeX Warning: File `../png/B0_tri.png' not found on input line 31.
+
+
+! Package pdftex.def Error: File `../png/B0_tri.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 ...ludegraphics[width=8cm]{../png/B0_tri.png}
+                                                  
+? 
+[17]
+
+LaTeX Warning: File `../png/bloc_triang.png' not found on input line 35.
+
+
+! Package pdftex.def Error: File `../png/bloc_triang.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 ...raphics[width=8cm]{../png/bloc_triang.png}
+                                                  
+? 
+[18]) (./experiments.tex
 Overfull \hbox (5.27733pt too wide) in paragraph at lines 16--16
 [] 
  []
 
-[17 <../png/B0_tri.png> <../png/bloc_triang.png>]
-File: ../png/B0.png Graphic file (type png)
- <use ../png/B0.png>
-Package pdftex.def Info: ../png/B0.png used on input line 20.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-File: ../png/B0_tri.png Graphic file (type png)
 
-<use ../png/B0_tri.png>
-Package pdftex.def Info: ../png/B0_tri.png used on input line 26.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+LaTeX Warning: File `../png/B0.png' not found on input line 20.
 
+
+! Package pdftex.def Error: File `../png/B0.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20   \includegraphics[width=8cm]{../png/B0.png}
+                                                 
+? 
+
+LaTeX Warning: File `../png/B0_tri.png' not found on input line 26.
+
+
+! Package pdftex.def Error: File `../png/B0_tri.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ...ludegraphics[width=8cm]{../png/B0_tri.png}
+                                                  
+? 
+[19]
 Overfull \hbox (7.34883pt too wide) in paragraph at lines 28--30
 \OT1/cmr/m/n/10 Une fois le pro-ces-sus de r^^Seduction ter-min^^Se on ob-tient
  des ma-trices $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (1)\OML/cmm/m/it/10 ; B\OT1/c
@@ -892,31 +936,46 @@ mr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; j \OT1/cmr/m
 /n/10 =
  []
 
-[18] <../png/f_rac.png, id=255, 578.16pt x 433.62pt>
-File: ../png/f_rac.png Graphic file (type png)
- <use ../png/f_rac.png>
-Package pdftex.def Info: ../png/f_rac.png used on input line 31.
-(pdftex.def)             Requested size: 512.17883pt x 284.54257pt.
 
-Overfull \hbox (167.17883pt too wide) in paragraph at lines 31--32
+LaTeX Warning: File `../png/f_rac.png' not found on input line 31.
+
+
+! Package pdftex.def Error: File `../png/f_rac.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 ...height=10cm, width=18cm]{../png/f_rac.png}
+                                                  
+? 
+
+Overfull \hbox (167.2903pt too wide) in paragraph at lines 31--32
  [] 
  []
 
-<../png/f_rac_hist.png, id=256, 578.16pt x 433.62pt>
-File: ../png/f_rac_hist.png Graphic file (type png)
+[20]
 
-<use ../png/f_rac_hist.png>
-Package pdftex.def Info: ../png/f_rac_hist.png used on input line 35.
-(pdftex.def)             Requested size: 512.17883pt x 284.54257pt.
+LaTeX Warning: File `../png/f_rac_hist.png' not found on input line 35.
 
-Overfull \hbox (167.17883pt too wide) in paragraph at lines 35--36
+
+! Package pdftex.def Error: File `../png/f_rac_hist.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 ...t=10cm, width=18cm]{../png/f_rac_hist.png}
+                                                  
+? 
+
+Overfull \hbox (167.2903pt too wide) in paragraph at lines 35--36
  [] 
  []
 
-[19 <../png/f_rac.png>]) (./conclusion.tex) (./bibliography.tex [20 <../png/f_r
-ac_hist.png>])
+[21]) (./conclusion.tex) (./bibliography.tex [22])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
- [21]
+ [23]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
  (./bezout_fr.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
@@ -930,10 +989,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 9096 strings out of 493304
- 131515 string characters out of 6139872
+ 9079 strings out of 493304
+ 131096 string characters out of 6139872
  245607 words of memory out of 5000000
- 12252 multiletter control sequences out of 15000+600000
+ 12232 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  67i,14n,38p,799b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -956,10 +1015,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (21 pages, 641956 bytes).
+Output written on bezout_fr.pdf (23 pages, 326494 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
- 175 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 363 PDF objects out of 1000 (max. 8388607)
+ 312 compressed objects within 4 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 
