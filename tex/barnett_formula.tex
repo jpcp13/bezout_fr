@@ -39,6 +39,7 @@ Chacune des familles $\bold{x}$ et $\hat{\bold{x}}$ est génératrice dans $A_x$
 \end{prop}
 
 \subsubsection{Processus de réduction}
+\label{sec:reduction_process}
 La proposition précédente fournit un début de structure de l'algèbre $A_x$. Nous avons pour l'instant une famille génératrice $\bold{x}$ de $A_x$ ainsi que des matrices de Bezout $B(x_k)$. Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B(x_k)$, on peut fabriquer une base de $A_x$ et des matrices compagnon $X_k$.\\
 Illustrons les calculs à partir de l'Exemple \ref{ex:bez_multi}. Le rang de $B(1)$ est $5$. La première colonne de $B(x_1)$ est nulle mais celle de $B(x_2)$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
 Multiplions $\bold{x}$ à droite par la matrice de Gauss $P$ dont la $5$ième colonne vaut $(1, 0, 0, 0, 1, 0)^{T}$, et multiplions les matrices de Bezout à gauche par $P^{-1}$, ce qui revient à soustraire la cinquième ligne à la première.
@@ -233,6 +234,7 @@ $\hat{\bold{y}} = (y_1^{3}, -y_1^{2}-y_1^{2}y_2, -y_1^{2})$. La dimension de $A$
 
 D'une façon générale nous formulons la conjecture suivante (\cite{jpc} p.57)
 \begin{conj}
+	\label{conjecture}
 Lorsque le processus de réduction est terminé, c'est-à-dire lorsque la matrice $B(1)$ est inversible et que toutes les matrices $B(x_k), k=0, \cdots, n$ sont de même taille et indexées par des familles de polynômes $\bold{x, y}$, alors chacune des familles $\bold{x, y}$ est une base de $A$.
 \end{conj}
 

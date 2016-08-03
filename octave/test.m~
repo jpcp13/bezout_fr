@@ -1,0 +1,37 @@
+%a = reshape(1:24, [2 3 4])
+%save -6 octave_a.mat a 
+
+global epsi
+load np_B.mat
+%Bls = cumsum(bls);
+blsx0 = bls;
+blsy0 = bls;
+epsi = 1e-10;
+[Dx, Dy, n1] = size(B);
+n = n1 - 1;
+
+R0 = B(:, :, 1);
+[Q, R, P, blsx, blsy] = triang_block (R0, blsx0, blsy0);
+
+triang_test = norm(tril(R, -1))
+%plot(log10(eps+abs(diag(R, -0))), 'r.-');grid; pause
+test = norm(Q*R*P - R0)
+sx = sum(blsx)
+sy = sum(blsy)
+for j = 1:n+1
+  B(:, :, j) = Q'*B(:, :, j)*P';
+  end
+rel = [];
+for j = 2:n+1
+  rel = [rel B(:, sy+1:Dy, j)];
+  end
+[q, r, p] = qr(rel');
+nbr = sum (abs (diag (r)) > epsi) % nbr = nombre de nouvelles relations
+rel = r(1: nbr, :)';
+for k =1:1
+  x = rel(:, k);
+  [Q1 R1] = qr_giv (R, sx, x);
+  testQR = norm(B(:,:,1) - Q1*R1)
+  test_tril = norm(tril(R1,-2))
+  plot(log10(eps+abs(diag(R1, -1))), '*r'); grid; pause
+  endfor

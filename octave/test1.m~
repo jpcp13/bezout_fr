@@ -1,0 +1,54 @@
+%a = reshape(1:24, [2 3 4])
+%save -6 octave_a.mat a 
+
+load np_B.mat
+epsi = 1e-10
+[Dx, Dy, n1] = size(B)
+
+n = n1 - 1;
+
+Q = eye(Dx);
+R = reshape(B(:, :, 1), Dx, Dy);
+P = eye(Dy);
+rdef = 0;
+u = 0;
+left_cols = [];
+right_cols = [];
+for j = 1:length(bls)
+	blsj = bls(j)
+	idx = u - rdef + 1: u + blsj;
+	idy = u + 1: u + blsj;
+	[q, r, p] = qr(R(idx, idy));
+	s = sum(abs(diag(r)) > epsi);
+	rdef = rdef + blsj - s;
+	left_cols = [left_cols u + 1: u + s];
+	right_cols = [right_cols u + s + 1: u + blsj];
+	u = u + blsj; % mise à jour u
+	Q(:, idx) = Q(:, idx)*q;
+	R(idx, :) = q'*R(idx, :);
+	R(:, idy) = R(:, idy)*p;
+	P(idy, :) = p'*P(idy, :);
+	spy(abs(R)>epsi)
+	grid on
+	pause	
+end
+R = R(:, [left_cols right_cols]);
+P = P([left_cols right_cols], :);
+
+for j = 1:n+1
+	B(:, :, j) = Q'*B(:, :, j)*P';
+end
+
+rel = []
+for j = 2:n+1
+	rel = [rel; B(Dx - rdef + 1: Dx, :, j)];
+end
+rel = orth(rel', epsi)';
+nbr = size(rel)(1);
+
+%for k = 1:nbr
+%	x = rel(k, :);
+%	[Q1, R1] = qrinsert(eye(Dx, Dy), R, 1, x, 'row');
+%	s = sum(abs(diag(R1)) > epsi);
+%	ker = Q1(2:end, s+1:end)';
+	

@@ -1,0 +1,8 @@
+D = 512
+R = rand(D, D);
+C = zeros(D, D);
+for u = 1:D
+	for v = 1:D
+		C(u,v) = R(u, v)**2;
+	endfor
+endfor

@@ -4,7 +4,7 @@ include("bezoutFunctions.jl")
 
 """ début programme """
 
-epsi = 1e-9
+epsi = 1e-7
 n = 4
 d = 2
 D = prod(d:d:n*d)

@@ -18,5 +18,3 @@ plt.spy(B[0]); plt.grid()
 plt.subplot(1, 2, 2)
 plt.spy(B[0]); plt.grid()
 plt.savefig('../png/B0_B0tri.png')
-
-

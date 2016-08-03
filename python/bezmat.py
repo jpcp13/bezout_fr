@@ -71,7 +71,7 @@ def _F(n, deg, fshape, m):
 	for i in range(n):
 		degrees = _degrees(n, deg, m)
 		_degs2latex('../tex/degrees.tex', degrees, n, m, i)
-		coeffs = np.random.randint(-9, 9, size=(m))
+		coeffs = np.random.randint(-3, 3, size=(m))
 		coeffs_table[:, i] = coeffs
 		f = sparse2prism(deg, fshape, degrees, coeffs)
 		F.append(f)

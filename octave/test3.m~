@@ -1,0 +1,58 @@
+%a = reshape(1:24, [2 3 4])
+%save -6 octave_a.mat a 
+
+load np_B.mat
+epsi = 1e-10
+[Dx, Dy, n1] = size(B)
+
+n = n1 - 1;
+
+Q = eye(Dx);
+R = B(:, :, 1);
+P = eye(Dy);
+rdef = 0;
+s = 0;
+left_cols = [];
+right_cols = [];
+Bls = cumsum(bls);
+for j = 1:length(bls)
+	idx = s + 1: Bls(j);
+	idy = s + 1: s + bls(j);
+	[q, r, p] = svd(R(idx, idy));
+	dr = diag(r);
+	ds = sum(abs(dr) > epsi);
+	Q(:, idx) = Q(:, idx)*q;
+	R(idx, :) = q'*R(idx, :);
+	R(:, idy) = R(:, idy)*p;
+	P(idy, :) = p'*P(idy, :);
+	R = [R(:, 1:s + ds) R(:, s + bls(j) + 1:Dy) R(:, s + ds + 1:s + bls(j))];
+	P = [P(1:s + ds, :); P(s + bls(j) + 1:Dy, :); P(s + ds + 1:s + bls(j), :)];
+	P(s+1:s+ds, :) = R(s+1:s+ds, :)*P;
+	R(s+1:s+ds, :) = [zeros(ds, s) eye(ds) zeros(ds, Dy-s-ds)];
+	s = s + ds;
+	spy(abs(R)>epsi)
+	grid on
+	pause	
+end
+
+test = norm(Q*R*P - B(:, :, 1))
+%spy(abs(R)>epsi)
+
+
+for j = 1:n+1
+	B(:, :, j) = Q'*B(:, :, j)*P';
+end
+
+rel = []
+for j = 2:n+1
+	rel = [rel; B(Dx - rdef + 1: Dx, :, j)];
+end
+rel = orth(rel', epsi)';
+nbr = size(rel)(1);
+
+%for k = 1:nbr
+%	x = rel(k, :);
+%	[Q1, R1] = qrinsert(eye(Dx, Dy), R, 1, x, 'row');
+%	s = sum(abs(diag(R1)) > epsi);
+%	ker = Q1(2:end, s+1:end)';
+	
