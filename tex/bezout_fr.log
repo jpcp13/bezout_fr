@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  26 JUL 2016 10:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.5)  6 AUG 2016 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,79 +888,38 @@ Overfull \hbox (5.27733pt too wide) in paragraph at lines 16--16
 [] 
  []
 
+File: ../png/bez.png Graphic file (type png)
+<use ../png/bez.png>
+Package pdftex.def Info: ../png/bez.png used on input line 20.
+(pdftex.def)             Requested size: 227.62204pt x 171.55525pt.
+ [17 <../png/diagRfinal.png>]
+File: ../png/beztri.png Graphic file (type png)
+ <use ../png/beztri.png>
+Package pdftex.def Info: ../png/beztri.png used on input line 26.
+(pdftex.def)             Requested size: 227.62204pt x 171.55525pt.
 
-LaTeX Warning: File `../png/B0.png' not found on input line 20.
+<../png/ref.png, id=256, 578.16pt x 433.62pt>
+File: ../png/ref.png Graphic file (type png)
+ <use ../png/ref.png>
+Package pdftex.def Info: ../png/ref.png used on input line 31.
+(pdftex.def)             Requested size: 512.17883pt x 284.54257pt.
 
-
-! Package pdftex.def Error: File `../png/B0.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20   \includegraphics[width=8cm]{../png/B0.png}
-                                                 
-? 
-[17 <../png/diagRfinal.png>]
-
-LaTeX Warning: File `../png/B0_tri.png' not found on input line 26.
-
-
-! Package pdftex.def Error: File `../png/B0_tri.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 ...ludegraphics[width=8cm]{../png/B0_tri.png}
-                                                  
-? 
-
-Overfull \hbox (7.34883pt too wide) in paragraph at lines 28--30
-\OT1/cmr/m/n/10 Une fois le pro-ces-sus de r^^Seduction ter-min^^Se on ob-tient
- des ma-trices $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (1)\OML/cmm/m/it/10 ; B\OT1/c
-mr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; j \OT1/cmr/m
-/n/10 =
- []
-
-[18]
-
-LaTeX Warning: File `../png/f_rac.png' not found on input line 31.
-
-
-! Package pdftex.def Error: File `../png/f_rac.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 ...height=10cm, width=18cm]{../png/f_rac.png}
-                                                  
-? 
-
-Overfull \hbox (167.2903pt too wide) in paragraph at lines 31--32
+Overfull \hbox (167.17883pt too wide) in paragraph at lines 31--32
  [] 
  []
 
+[18] <../png/ref1.png, id=261, 578.16pt x 433.62pt>
+File: ../png/ref1.png Graphic file (type png)
+ <use ../png/ref1.png>
+Package pdftex.def Info: ../png/ref1.png used on input line 35.
+(pdftex.def)             Requested size: 512.17883pt x 284.54257pt.
 
-LaTeX Warning: File `../png/f_rac_hist.png' not found on input line 35.
-
-
-! Package pdftex.def Error: File `../png/f_rac_hist.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.35 ...t=10cm, width=18cm]{../png/f_rac_hist.png}
-                                                  
-? 
-
-Overfull \hbox (167.2903pt too wide) in paragraph at lines 35--36
+Overfull \hbox (167.17883pt too wide) in paragraph at lines 35--36
  [] 
  []
 
-[19]) (./conclusion.tex) (./bibliography.tex [20])
+[19 <../png/ref.png>]) (./conclusion.tex) (./bibliography.tex [20 <../png/ref1.
+png>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
  [21]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
@@ -976,10 +935,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
  ) 
 Here is how much of TeX's memory you used:
- 9152 strings out of 493304
- 132202 string characters out of 6139872
+ 9157 strings out of 493304
+ 132345 string characters out of 6139872
  246887 words of memory out of 5000000
- 12308 multiletter control sequences out of 15000+600000
+ 12316 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  67i,14n,38p,1624b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1002,10 +961,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (21 pages, 397770 bytes).
+Output written on bezout_fr.pdf (21 pages, 417223 bytes).
 PDF statistics:
- 363 PDF objects out of 1000 (max. 8388607)
+ 367 PDF objects out of 1000 (max. 8388607)
  306 compressed objects within 4 object streams
  88 named destinations out of 1000 (max. 500000)
- 170 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

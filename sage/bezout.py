@@ -236,11 +236,11 @@ def plot_octave():
 	rac = rac_real + rac_imag*1j
 	X1 = rac.transpose()
 	jPZ = _jPZ(rac.transpose())
-	plt.close()
+	plt.subplot(1, 2, 2)
 	#plt.plot(np.log10(2**-52 + abs(np.transpose(jPZ[:,:]))))
 	for i in range(n):
 		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
-	plt.grid();plt.savefig('ref1.png')
+	plt.grid();plt.savefig('../png/ref1.png')
 
 ##################" debut programme python / sage ######################
 
@@ -252,8 +252,8 @@ import time
 import sys
 import scipy.io as sio
 
-deg = [4, 4, 4]
-m = 18
+deg = [3, 3, 3]
+m = 15
 n = len(deg)
 R = PolynomialRing(QQ, 'x', n)
 x = R.gens()
@@ -307,10 +307,13 @@ XX, X = _XX_chow()
 jPZ = _jPZ(X)
 
 plt.close()
+plt.subplot(1, 2, 1)
 #plt.plot(np.log10(2**-52 + abs(np.transpose(jPZ[:,:]))))
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
-plt.grid();plt.savefig('ref.png')
+plt.grid();plt.savefig('../png/ref.png')
+
+plot_octave()
 
 I = R.ideal(P[:n])
 dim = I.vector_space_dimension()
