@@ -161,9 +161,7 @@ def block_right_kernel(B):
 	return X1
 
 def reduct():
-	nr, nc = BB[0].nrows(
-
-	), BB[0].ncols()
+	nr, nc = BB[0].nrows(), BB[0].ncols()
 	ker_basis = BB[0].left_kernel().basis_matrix()
 	print 'ker_size = ', ker_basis.nrows()
 	relations = matrix(QQ, 0 , nc)
@@ -240,8 +238,17 @@ def plot_octave():
 	#plt.plot(np.log10(2**-52 + abs(np.transpose(jPZ[:,:]))))
 	for i in range(n):
 		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
-	plt.grid();plt.savefig('../png/ref1.png')
+	plt.grid();plt.savefig('../png/ref.png')
 
+def _dim2tex(filename, dim):
+	outfile = open(filename, 'w')
+	outfile.write('$ %4d $' %dim)
+	outfile.close()
+
+def _rank(B0):
+	nr, nc = B0.nrows(), B0.ncols()
+	ker_basis = B0.left_kernel().basis_matrix()
+	return Dx - ker_basis.nrows()
 ##################" debut programme python / sage ######################
 
 import matplotlib.pyplot as plt
@@ -289,6 +296,8 @@ for k in range(n+1):
 	Bk = matrix(QQ, B[k])
 	BB.append(Bk[:, :])
 
+_dim2tex('../tex/dim0.txt', _rank(BB[0]))
+
 r = 1
 while r > 0:
 	r, BB = reduct()
@@ -318,3 +327,7 @@ plot_octave()
 I = R.ideal(P[:n])
 dim = I.vector_space_dimension()
 print 'dim =', dim
+
+_dim2tex('../tex/dim.txt', dim)
+
+
