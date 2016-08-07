@@ -240,9 +240,19 @@ def plot_octave():
 		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 	plt.grid();plt.savefig('../png/ref.png')
 
-def _dim2tex(filename, dim):
+def int2tex(filename, i):
 	outfile = open(filename, 'w')
-	outfile.write('$ %4d $' %dim)
+	outfile.write('$%3d$' %i)
+	outfile.close()
+
+def list2tex(filename, l):
+	outfile = open(filename, 'w')
+	outfile.write('[')
+	for i in range(len(l)-1):
+		li = l[i]
+		outfile.write('%1d ,' %li)
+	l1 = l[-1]
+	outfile.write('%1d]' %l1)
 	outfile.close()
 
 def _rank(B0):
@@ -259,9 +269,12 @@ import time
 import sys
 import scipy.io as sio
 
-deg = [3, 3, 3]
+deg = [3,3,3]
+list2tex('../txt/deg.txt', deg)
 m = 15
 n = len(deg)
+int2tex('../txt/n.txt', n)
+
 R = PolynomialRing(QQ, 'x', n)
 x = R.gens()
 xx = [x[0]**0] + list(x)
@@ -270,6 +283,7 @@ fshape = [d+1 for d in deg]
 dx = [(i+1)*deg[i] for i in range(n)]
 dy = [(n-i)*deg[i] for i in range(n)]
 fn, Dx, Dy = factorial(n), prod(dx), prod(dy)
+_dim2tex('../txt/Dx.txt', Dx)
 
 P = [rand_poly(n-1, m) for i in range(n)] + xx
 #~ a = [ZZ.random_element() for _ in range(7)]
@@ -296,7 +310,7 @@ for k in range(n+1):
 	Bk = matrix(QQ, B[k])
 	BB.append(Bk[:, :])
 
-_dim2tex('../tex/dim0.txt', _rank(BB[0]))
+int2tex('../txt/dim0.txt', _rank(BB[0]))
 
 r = 1
 while r > 0:
@@ -328,6 +342,6 @@ I = R.ideal(P[:n])
 dim = I.vector_space_dimension()
 print 'dim =', dim
 
-_dim2tex('../tex/dim.txt', dim)
+int2tex('../txt/dim.txt', dim)
 
 
