@@ -283,7 +283,7 @@ fshape = [d+1 for d in deg]
 dx = [(i+1)*deg[i] for i in range(n)]
 dy = [(n-i)*deg[i] for i in range(n)]
 fn, Dx, Dy = factorial(n), prod(dx), prod(dy)
-_dim2tex('../txt/Dx.txt', Dx)
+int2tex('../txt/Dx.txt', Dx)
 
 P = [rand_poly(n-1, m) for i in range(n)] + xx
 #~ a = [ZZ.random_element() for _ in range(7)]
@@ -343,5 +343,3 @@ dim = I.vector_space_dimension()
 print 'dim =', dim
 
 int2tex('../txt/dim.txt', dim)
-
-
