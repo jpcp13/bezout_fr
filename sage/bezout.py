@@ -269,8 +269,9 @@ import time
 import sys
 import scipy.io as sio
 
-deg = [2,2,2,2]
+deg = [2,2,2]
 list2tex('../txt/deg.txt', deg)
+
 m = 15
 n = len(deg)
 int2tex('../txt/n.txt', n)
@@ -305,11 +306,35 @@ plt.close()
 #plt.subplot(1, 2, 1)
 plt.spy(B[0])
 plt.savefig('../png/bez.png')
+qq, rr, pp = la.qr(B[0], pivoting=True)
+dr = rr.diagonal()
+plt.close()
+plt.semilogy(abs(dr)+1e-18, '*')
+plt.grid()
+plt.savefig('../png/bez_diag.png')
+
+bls = block_size()
 
 B = block_triang()
 plt.close()
 plt.spy(B[0])
 plt.savefig('../png/beztri.png')
+DR = np.empty(Dx)
+idx = 0
+for s in bls:
+	bb = B[0][idx:idx+s, idx:idx+s]
+	qq, rr, pp = la.qr(bb, pivoting=True)
+	dr = rr.diagonal()
+	DR[idx:idx+s] = dr
+	idx += s
+plt.close()
+plt.semilogy(abs(DR)+1e-18, '*')
+plt.grid()
+plt.savefig('../png/beztri_diag.png')
+
+
+
+
 
 print 'debut sage'
 BB = []
@@ -325,7 +350,7 @@ while r > 0:
 
 Bred = _Bred()
 
-bls = block_size()
+
 
 sio.savemat('np_B.mat', {'Bred':np.transpose(Bred.astype(float), (1, 2, 0)), 'B':np.transpose(B.astype(float), (1, 2, 0)), 'deg':deg, 'bls':bls,})
 

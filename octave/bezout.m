@@ -60,8 +60,12 @@ epsi = 1e-9
 
 B0 = B;
 [B, decal] = triang_block_giv (B, bls);
-delta = 1;
+B1 = B(:,:,1);
+adb = abs(diag(B1, decal));
+semilogy(adb+1e-15)
 
+
+delta = 1;
 while delta > 0
   [B, decal1] = grand_reduc (B, decal);
   delta = decal1 - decal;
