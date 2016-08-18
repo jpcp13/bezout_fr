@@ -229,8 +229,8 @@ def _jPZ(X):
 
 def plot_octave():
 	os.system("sh test.sh")
-	rac_real = np.loadtxt('rac_real.txt')
-	rac_imag = np.loadtxt('rac_imag.txt')
+	rac_real = np.loadtxt('../txt/rac_real.txt')
+	rac_imag = np.loadtxt('../txt/rac_imag.txt')
 	rac = rac_real + rac_imag*1j
 	X1 = rac.transpose()
 	jPZ = _jPZ(rac.transpose())
@@ -269,7 +269,7 @@ import time
 import sys
 import scipy.io as sio
 
-deg = [3,3,3]
+deg = [2,2,2,2]
 list2tex('../txt/deg.txt', deg)
 m = 15
 n = len(deg)
@@ -299,10 +299,17 @@ Gx, Gy, Hx, Hy = _GH()
 H, K = _HK()
 J = _J()
 C = _C()
+
 B = _B()
+plt.close()
+#plt.subplot(1, 2, 1)
+plt.spy(B[0])
+plt.savefig('../png/bez.png')
 
 B = block_triang()
-
+plt.close()
+plt.spy(B[0])
+plt.savefig('../png/beztri.png')
 
 print 'debut sage'
 BB = []
