@@ -34,13 +34,13 @@ Nous pouvons cependant améliorer, dans une certaine mesure, la situation préc�
 \end{center}
 En appliquant à la matrice une factorisation QRP bloc après bloc, les termes diagonaux vont alors décroitre uniquement à l'intérieur de chaque bloc. Le graphique ci dessous montre la nouvelle disposition des termes diagonaux à la fin de la factorisation QRP, en traitant les blocs l'un après l'autre.
 \begin{center}
-\includegraphics[width=8cm]{../png/diagRtri.png}
+\includegraphics[width=8cm]{../png/diag_beztri.png}
 \end{center}
 On voit que, malgré une décroissance rapide des termes diagonaux dans chaque bloc, la petite taille de ceux-ci permet au plus petit terme ``non-nul" d'être nettement grand que dans la factorisation QRP appliquée globalement à $B(1)$. Le calcul du rang numérique est facilité et l'on trouve ici un rang égal à $296$, qui correspond au nombre de termes dans la figure ci-dessus et qui coincide avec le véritable rang de $B(1)$.
 Enfin la dernière figure montre la disposition des termes diagonaux dans la matrice finale, une fois les réductions faites, comme expliqué dans la section \ref{sec:reduction_process}. On voit que la disposition des termes est toujours bonne.
  Le rang de la nouvelle matrice est $253$, c'est la dimension du quotient $A$, d'après la Conjecture \ref{conjecture}.
 \begin{center}
-\includegraphics[width=8cm]{../png/diagRfinal.png}
+\includegraphics[width=8cm]{../png/diag_beztri_final.png}
 \end{center}
 
 \end{document}

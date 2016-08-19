@@ -60,9 +60,8 @@ epsi = 1e-9
 
 B0 = B;
 [B, decal] = triang_block_giv (B, bls);
-B1 = B(:,:,1);
-adb = abs(diag(B1, decal));
-semilogy(adb+1e-15)
+dbt = diag(B(:,:,1), decal);
+save -ascii diag_beztri.txt dbt
 
 
 delta = 1;
@@ -73,9 +72,12 @@ while delta > 0
 endwhile
 dim = D - decal
 
+
 B(dim+1:end, :, :) = [];
 B(:, 1:decal, :) = [];
 B(:, :, 1) = triu(B(:, :, 1));
+dbtf = diag(B(:,:,1), 0);
+save -ascii diag_beztri_final.txt dbtf
 
 X = zeros(dim, dim, n);
 for j = 1:n

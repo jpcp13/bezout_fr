@@ -235,10 +235,20 @@ def plot_octave():
 	X1 = rac.transpose()
 	jPZ = _jPZ(rac.transpose())
 	plt.subplot(1, 2, 2)
-	#plt.plot(np.log10(2**-52 + abs(np.transpose(jPZ[:,:]))))
 	for i in range(n):
 		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
-	plt.grid();plt.savefig('../png/ref.png')
+	plt.grid()
+	plt.savefig('../png/ref.png')
+	plt.close()
+	diag_beztri = np.loadtxt('../txt/diag_beztri.txt')
+	plt.semilogy(abs(diag_beztri)+1e-18, '*-')
+	plt.grid()
+	plt.savefig('../png/diag_beztri.png')
+	plt.close()
+	diag_beztri_final = np.loadtxt('../txt/diag_beztri_final.txt')
+	plt.semilogy(abs(diag_beztri_final)+1e-18, '*-')
+	plt.grid()
+	plt.savefig('../png/diag_beztri_final.png')
 
 def int2tex(filename, i):
 	outfile = open(filename, 'w')
@@ -269,7 +279,7 @@ import time
 import sys
 import scipy.io as sio
 
-deg = [2,2,2]
+deg = [3,3,3]
 list2tex('../txt/deg.txt', deg)
 
 m = 15
