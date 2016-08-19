@@ -102,7 +102,7 @@ def rand_poly(j, m):
 		if j > 0:
 			p += rand_poly(j-1, m-k)*x[j]**k
 		else:
-			coeff = ZZ.random_element(0.5, distribution='gaussian')
+			coeff = ZZ.random_element(0.6, distribution='gaussian')
 			p += coeff*x[j]**k
 	return p
 
@@ -238,7 +238,7 @@ def plot_octave():
 	for i in range(n):
 		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 	plt.grid()
-	plt.savefig('../png/ref.png')
+	plt.savefig('../png/roots.png')
 	plt.close()
 	diag_beztri = np.loadtxt('../txt/diag_beztri.txt')
 	plt.semilogy(abs(diag_beztri)+1e-18, '*-')
@@ -252,7 +252,7 @@ def plot_octave():
 
 def int2tex(filename, i):
 	outfile = open(filename, 'w')
-	outfile.write('$%3d$' %i)
+	outfile.write('%3d' %i)
 	outfile.close()
 
 def list2tex(filename, l):
@@ -279,10 +279,10 @@ import time
 import sys
 import scipy.io as sio
 
-deg = [3,3,3]
+deg = [5,3,4]
 list2tex('../txt/deg.txt', deg)
 
-m = 15
+m = 16000
 n = len(deg)
 int2tex('../txt/n.txt', n)
 
@@ -319,7 +319,7 @@ plt.savefig('../png/bez.png')
 qq, rr, pp = la.qr(B[0], pivoting=True)
 dr = rr.diagonal()
 plt.close()
-plt.semilogy(abs(dr)+1e-18, '*')
+plt.semilogy(abs(dr)+1e-16, '*')
 plt.grid()
 plt.savefig('../png/bez_diag.png')
 
@@ -338,7 +338,7 @@ for s in bls:
 	DR[idx:idx+s] = dr
 	idx += s
 plt.close()
-plt.semilogy(abs(DR)+1e-18, '*')
+plt.semilogy(abs(DR)+1e-16, '*')
 plt.grid()
 plt.savefig('../png/beztri_diag.png')
 
@@ -376,7 +376,8 @@ plt.subplot(1, 2, 1)
 #plt.plot(np.log10(2**-52 + abs(np.transpose(jPZ[:,:]))))
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
-plt.grid();plt.savefig('../png/ref.png')
+plt.grid()
+plt.savefig('../png/roots.png')
 
 plot_octave()
 
