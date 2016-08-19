@@ -250,10 +250,11 @@ def plot_octave():
 	plt.grid()
 	plt.savefig('../png/diag_beztri_final.png')
 
-def int2tex(filename, i):
+def num2tex(filename, x, f):
 	outfile = open(filename, 'w')
-	outfile.write('%3d' %i)
+	outfile.write(f %x)
 	outfile.close()
+
 
 def list2tex(filename, l):
 	outfile = open(filename, 'w')
@@ -284,7 +285,7 @@ list2tex('../txt/deg.txt', deg)
 
 m = 16000
 n = len(deg)
-int2tex('../txt/n.txt', n)
+num2tex('../txt/n.txt', n, '%3d')
 
 R = PolynomialRing(QQ, 'x', n)
 x = R.gens()
@@ -294,7 +295,7 @@ fshape = [d+1 for d in deg]
 dx = [(i+1)*deg[i] for i in range(n)]
 dy = [(n-i)*deg[i] for i in range(n)]
 fn, Dx, Dy = factorial(n), prod(dx), prod(dy)
-int2tex('../txt/Dx.txt', Dx)
+num2tex('../txt/Dx.txt', Dx, '%3d')
 
 P = [rand_poly(n-1, m) for i in range(n)] + xx
 #~ a = [ZZ.random_element() for _ in range(7)]
@@ -352,15 +353,14 @@ for k in range(n+1):
 	Bk = matrix(QQ, B[k])
 	BB.append(Bk[:, :])
 
-int2tex('../txt/dim0.txt', _rank(BB[0]))
+num2tex('../txt/dim0.txt', _rank(BB[0]), '%3d')
 
 start_time = timeit.default_timer()
 r = 1
 while r > 0:
 	r, BB = reduct()
-
 sage_reduct_time = timeit.default_timer() - start_time
-
+num2tex('../txt/sage_reduct_time.txt', sage_reduct_time, '%e')
 
 Bred = _Bred()
 
@@ -389,6 +389,10 @@ I = R.ideal(P[:n])
 start_time = timeit.default_timer()
 dim = I.vector_space_dimension()
 sage_dimension_time = timeit.default_timer() - start_time
-print 'dim =', dim
 
-int2tex('../txt/dim.txt', dim)
+print 'dim =', dim
+num2tex('../txt/dim.txt', dim, '%3d')
+num2tex('../txt/sage_dim_time.txt', sage_dimension_time, '%e')
+
+
+
