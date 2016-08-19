@@ -59,11 +59,13 @@ epsi = 1e-9
 %endfor
 
 B0 = B;
+tic
 [B, decal] = triang_block_giv (B, bls);
+triang_time = toc
 dbt = diag(B(:,:,1), decal);
 save -ascii diag_beztri.txt dbt
 
-
+tic
 delta = 1;
 while delta > 0
   [B, decal1] = grand_reduc (B, decal);
@@ -71,7 +73,7 @@ while delta > 0
   decal = decal1
 endwhile
 dim = D - decal
-
+reductions_time = toc
 
 B(dim+1:end, :, :) = [];
 B(:, 1:decal, :) = [];

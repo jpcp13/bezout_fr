@@ -102,7 +102,7 @@ def rand_poly(j, m):
 		if j > 0:
 			p += rand_poly(j-1, m-k)*x[j]**k
 		else:
-			coeff = ZZ.random_element(0.6, distribution='gaussian')
+			coeff = ZZ.random_element(0.5, distribution='gaussian')
 			p += coeff*x[j]**k
 	return p
 
@@ -275,11 +275,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.linalg as la
 import scipy.fftpack as ft
-import time
+import timeit
 import sys
 import scipy.io as sio
 
-deg = [5,3,4]
+deg = [2,2,2,2]
 list2tex('../txt/deg.txt', deg)
 
 m = 16000
@@ -354,9 +354,13 @@ for k in range(n+1):
 
 int2tex('../txt/dim0.txt', _rank(BB[0]))
 
+start_time = timeit.default_timer()
 r = 1
 while r > 0:
 	r, BB = reduct()
+
+sage_reduct_time = timeit.default_timer() - start_time
+
 
 Bred = _Bred()
 
@@ -382,7 +386,9 @@ plt.savefig('../png/roots.png')
 plot_octave()
 
 I = R.ideal(P[:n])
+start_time = timeit.default_timer()
 dim = I.vector_space_dimension()
+sage_dimension_time = timeit.default_timer() - start_time
 print 'dim =', dim
 
 int2tex('../txt/dim.txt', dim)
