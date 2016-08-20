@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 AUG 2016 15:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 AUG 2016 17:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,6 +889,7 @@ Overfull \hbox (68.99881pt too wide) in paragraph at lines 8--9
 [][]
  []
 
+(../txt/sage_reduct_time.txt) (../txt/octave_reduct_time.txt)
 (../txt/sage_reduct_time.txt) (../txt/octave_reduct_time.txt) [17 <../png/diag_
 beztri_final.png>]) (./conclusion.tex) (./bibliography.tex [18pdfTeX warning (e
 xt4): destination with the same identifier (name{figure.1}) has been already us
@@ -913,8 +914,8 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 9116 strings out of 493304
- 131916 string characters out of 6139872
+ 9120 strings out of 493304
+ 132028 string characters out of 6139872
  245689 words of memory out of 5000000
  12257 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
@@ -939,7 +940,7 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (19 pages, 484754 bytes).
+Output written on bezout_fr.pdf (19 pages, 417763 bytes).
 PDF statistics:
  356 PDF objects out of 1000 (max. 8388607)
  300 compressed objects within 3 object streams

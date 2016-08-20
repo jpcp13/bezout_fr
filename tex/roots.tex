@@ -12,12 +12,12 @@ Sur la figure de gauche nous avons les erreurs correspondants à l'algorithme o\
 \input{../txt/sage_reduct_time.txt} secondes). Sur la figure de droite le processus de réduction est effectué en arithmétique flottante (logiciel Octave, temps de calcul
 \input{../txt/octave_reduct_time.txt} secondes). On constate que le temps de calcul en arithmétique flottante est plus court mais au prix d'une dégradation sensible de la qualité des résultats, bien visible sur le plot des histogrammes.
 \begin{center}
-\begin{tabular}{p{8cm}ll}
+\begin{tabular}{p{8cm}lr}
   Processus & Software & Timing \\ \hline
-  Calcul matrices de Bezout & NumPy & 10 secs \\ \hline
-  Réduction matrices de Bezout & SageMath & 5 secs \\
-                              & Octave & 5 secs \\ \hline
-  Calcul valeurs propres & SciPy & 1 secs \\ \hline
+  Calcul matrices de Bezout & NumPy & 0.0 secs \\ \hline
+  Réduction matrices de Bezout & SageMath & $\input{../txt/sage_reduct_time.txt}$ ms \\
+                              & Octave & $\input{../txt/octave_reduct_time.txt}$ ms \\ \hline
+  Calcul valeurs propres & SciPy & 0.0 secs \\ \hline
 \end{tabular}
 \end{center}
 

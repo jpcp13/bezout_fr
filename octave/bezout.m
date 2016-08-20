@@ -76,7 +76,7 @@ while delta > 0
 endwhile
 dim = D - decal
 reduct_time = toc
-save -ascii octave_reduct_time.txt reduct_time
+csvwrite ('octave_reduct_time.txt', round(1000*reduct_time))
 
 B(dim+1:end, :, :) = [];
 B(:, 1:decal, :) = [];

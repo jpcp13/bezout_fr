@@ -280,7 +280,7 @@ import timeit
 import sys
 import scipy.io as sio
 
-deg = [2,2,2,2]
+deg = [2,2,2,1]
 list2tex('../txt/deg.txt', deg)
 
 m = 16000
@@ -360,7 +360,7 @@ r = 1
 while r > 0:
 	r, BB = reduct()
 sage_reduct_time = timeit.default_timer() - start_time
-num2tex('../txt/sage_reduct_time.txt', sage_reduct_time, '%e')
+num2tex('../txt/sage_reduct_time.txt', int(1000*sage_reduct_time), '%d')
 
 Bred = _Bred()
 
@@ -392,7 +392,7 @@ sage_dimension_time = timeit.default_timer() - start_time
 
 print 'dim =', dim
 num2tex('../txt/dim.txt', dim, '%3d')
-num2tex('../txt/sage_dim_time.txt', sage_dimension_time, '%e')
+num2tex('../txt/sage_dim_time.txt', sage_dimension_time, '%g')
 
 
 
