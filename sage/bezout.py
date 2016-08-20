@@ -307,14 +307,16 @@ P = [rand_poly(n-1, m) for i in range(n)] + xx
 jac = jacobian(P[:n], x)
 F = [poly2prism(p) for p in P]
 
+start_time = timeit.default_timer()
 Gx, Gy, Hx, Hy = _GH()
 H, K = _HK()
 J = _J()
 C = _C()
-
 B = _B()
+construction_B_time = timeit.default_timer() - start_time
+num2tex('../txt/construction_B_time.txt', int(1000*construction_B_time), '%d')
+
 plt.close()
-#plt.subplot(1, 2, 1)
 plt.spy(B[0])
 plt.savefig('../png/bez.png')
 qq, rr, pp = la.qr(B[0], pivoting=True)
@@ -368,11 +370,12 @@ Bred = _Bred()
 
 sio.savemat('np_B.mat', {'Bred':np.transpose(Bred.astype(float), (1, 2, 0)), 'B':np.transpose(B.astype(float), (1, 2, 0)), 'deg':deg, 'bls':bls,})
 
-# 'degrees':degrees,
-# 'coeffs':coeffs,
-# 'nb_monomials':nb_monomials
 
+start_time = timeit.default_timer()
 XX, X = _XX_chow()
+eigenstructure_time = timeit.default_timer() - start_time
+num2tex('../txt/eigenstructure_time.txt', int(1000*eigenstructure_time), '%d')
+
 jPZ = _jPZ(X)
 
 plt.close()

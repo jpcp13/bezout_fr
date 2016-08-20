@@ -62,7 +62,7 @@ B0 = B;
 tic
 [B, decal] = triang_block_giv (B, bls);
 triang_time = toc
-save -ascii octave_triang_time.txt triang_time
+csvwrite ('octave_triang_time.txt', round(1000*triang_time))
 
 dbt = diag(B(:,:,1), decal);
 save -ascii diag_beztri.txt dbt

@@ -14,10 +14,11 @@ Sur la figure de gauche nous avons les erreurs correspondants à l'algorithme o\
 \begin{center}
 \begin{tabular}{p{8cm}lr}
   Processus & Software & Timing \\ \hline
-  Calcul matrices de Bezout & NumPy & 0.0 secs \\ \hline
-  Réduction matrices de Bezout & SageMath & $\input{../txt/sage_reduct_time.txt}$ ms \\
-                              & Octave & $\input{../txt/octave_reduct_time.txt}$ ms \\ \hline
-  Calcul valeurs propres & SciPy & 0.0 secs \\ \hline
+  Calcul matrices de Bezout & NumPy & $\input{../txt/construction_B_time.txt}$ ms \\ \hline
+  Réduction matrices de Bezout & SageMath & $\input{../txt/sage_reduct_time.txt}$ ms \\ \hline
+  Calcul noyau de $B(1)$ & Octave & $\input{../txt/octave_triang_time.txt}$ ms \\
+  Réduction matrices de Bezout & Octave & $\input{../txt/octave_reduct_time.txt}$ ms \\ \hline
+  Calcul valeurs propres & SciPy & $\input{../txt/eigenstructure_time.txt}$ ms \\ \hline
 \end{tabular}
 \end{center}
 
