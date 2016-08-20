@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 AUG 2016 18:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 AUG 2016 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -882,25 +882,35 @@ Package pdftex.def Info: ../png/diag_beztri_final.png used on input line 36.
 File: ../png/roots.png Graphic file (type png)
 
 <use ../png/roots.png>
-Package pdftex.def Info: ../png/roots.png used on input line 8.
+Package pdftex.def Info: ../png/roots.png used on input line 9.
 (pdftex.def)             Requested size: 413.99881pt x 227.62082pt.
 
-Overfull \hbox (68.99881pt too wide) in paragraph at lines 8--9
-[][]
+Overfull \hbox (68.99881pt too wide) in paragraph at lines 9--10
+[][] 
  []
 
 (../txt/sage_reduct_time.txt) (../txt/octave_reduct_time.txt)
 (../txt/construction_B_time.txt) (../txt/sage_reduct_time.txt)
 (../txt/octave_triang_time.txt) (../txt/octave_reduct_time.txt)
-(../txt/eigenstructure_time.txt) [17 <../png/diag_beztri_final.png>])
-(./conclusion.tex) (./bibliography.tex [18pdfTeX warning (ext4): destination wi
-th the same identifier (name{figure.1}) has been already used, duplicate ignore
-d
+(../txt/eigenstructure_time.txt) (../txt/sage_dimension_time.txt)
+Overfull \hbox (7.84451pt too wide) in paragraph at lines 16--25
+[][] 
+ []
+
+) (./conclusion.tex [17 <../png/diag_beztri_final.png>]) (./bibliography.tex
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.15 
-      <../png/roots.png>])
+l.13   \bibitem{Golub}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{table.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.13   \bibitem{Golub}
+                       <../png/roots.png>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
  [19]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
@@ -916,10 +926,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 9129 strings out of 493304
- 132262 string characters out of 6139872
+ 9134 strings out of 493304
+ 132362 string characters out of 6139872
  245689 words of memory out of 5000000
- 12257 multiletter control sequences out of 15000+600000
+ 12258 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  67i,14n,38p,1192b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -942,10 +952,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (19 pages, 424972 bytes).
+Output written on bezout_fr.pdf (19 pages, 476132 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
- 86 named destinations out of 1000 (max. 500000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
  175 words of extra memory for PDF output out of 10000 (max. 10000000)
 

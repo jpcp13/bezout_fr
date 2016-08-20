@@ -228,7 +228,7 @@ def _jPZ(X):
 	return jPZ
 
 def plot_octave():
-	os.system("sh test.sh")
+	os.system("sh octave.sh")
 	rac_real = np.loadtxt('../txt/rac_real.txt')
 	rac_imag = np.loadtxt('../txt/rac_imag.txt')
 	rac = rac_real + rac_imag*1j
@@ -280,7 +280,7 @@ import timeit
 import sys
 import scipy.io as sio
 
-deg = [2,2,2,1]
+deg = [2,2,2,2]
 list2tex('../txt/deg.txt', deg)
 
 m = 16000
@@ -355,7 +355,7 @@ for k in range(n+1):
 	Bk = matrix(QQ, B[k])
 	BB.append(Bk[:, :])
 
-num2tex('../txt/dim0.txt', _rank(BB[0]), '%3d')
+num2tex('../txt/dim0.txt', _rank(BB[0]), '%d')
 
 start_time = timeit.default_timer()
 r = 1
@@ -392,10 +392,10 @@ I = R.ideal(P[:n])
 start_time = timeit.default_timer()
 dim = I.vector_space_dimension()
 sage_dimension_time = timeit.default_timer() - start_time
+num2tex('../txt/sage_dimension_time.txt', int(1000*sage_dimension_time), '%d')
 
 print 'dim =', dim
-num2tex('../txt/dim.txt', dim, '%3d')
-num2tex('../txt/sage_dim_time.txt', sage_dimension_time, '%g')
+num2tex('../txt/dim.txt', dim, '%d')
 
-
+os.system("sh latex.sh")
 
