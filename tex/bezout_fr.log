@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  19 AUG 2016 19:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 AUG 2016 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,14 +889,14 @@ Overfull \hbox (68.99881pt too wide) in paragraph at lines 8--9
 [][]
  []
 
-(../txt/sage_reduct_time.txt) (../txt/octave_reduct_time.txt))
-(./conclusion.tex [17 <../png/diag_beztri_final.png>]) (./bibliography.tex
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
+(../txt/sage_reduct_time.txt) (../txt/octave_reduct_time.txt) [17 <../png/diag_
+beztri_final.png>]) (./conclusion.tex) (./bibliography.tex [18pdfTeX warning (e
+xt4): destination with the same identifier (name{figure.1}) has been already us
+ed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.22   \bibitem{clo}
+l.16   \bibitem{jpc}
                      <../png/roots.png>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
  [19]
@@ -939,7 +939,7 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (19 pages, 486416 bytes).
+Output written on bezout_fr.pdf (19 pages, 484754 bytes).
 PDF statistics:
  356 PDF objects out of 1000 (max. 8388607)
  300 compressed objects within 3 object streams
