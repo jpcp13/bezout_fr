@@ -400,5 +400,5 @@ num2tex('../txt/sage_dimension_time.txt', int(1000*sage_dimension_time), '%d')
 print 'dim =', dim
 num2tex('../txt/dim.txt', dim, '%d')
 
-os.system("sh latex.sh")
+#os.system("sh latex.sh")
 
