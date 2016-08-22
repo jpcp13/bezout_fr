@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  20 AUG 2016 19:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  22 AUG 2016 11:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -611,45 +611,62 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 Package: algpseudocode 
 
 Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count127
+\Gm@cntv=\count128
+\c@Gm@tempcnt=\count129
+\Gm@bindingoffset=\dimen131
+\Gm@wd@mp=\dimen132
+\Gm@odd@mp=\dimen133
+\Gm@even@mp=\dimen134
+\Gm@layoutwidth=\dimen135
+\Gm@layoutheight=\dimen136
+\Gm@layouthoffset=\dimen137
+\Gm@layoutvoffset=\dimen138
+\Gm@dimlist=\toks32
 )
-\c@thm=\count127
-\c@conj=\count128
-\c@lem=\count129
-\c@prop=\count130
-\c@cor=\count131
-\c@defn=\count132
-\c@exmp=\count133
- (./bezout_fr.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen139
+)
+\c@thm=\count130
+\c@conj=\count131
+\c@lem=\count132
+\c@prop=\count133
+\c@cor=\count134
+\c@defn=\count135
+\c@exmp=\count136
+
+(./bezout_fr.aux)
 \openout1 = `bezout_fr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count134
-\scratchdimen=\dimen131
+\scratchcounter=\count137
+\scratchdimen=\dimen140
 \scratchbox=\box33
-\nofMPsegments=\count135
-\nofMParguments=\count136
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count137
-\MPscratchDim=\dimen132
-\MPnumerator=\count138
-\makeMPintoPDFobject=\count139
-\everyMPtoPDFconversion=\toks33
+\nofMPsegments=\count138
+\nofMParguments=\count139
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen141
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
+\everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -665,37 +682,72 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 62.
-LaTeX Info: Redefining \dots on input line 62.
-LaTeX Info: Redefining \up on input line 62.
+LaTeX Info: Redefining \degres on input line 67.
+LaTeX Info: Redefining \dots on input line 67.
+LaTeX Info: Redefining \up on input line 67.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 62.
+(frenchb.ldf)                of your document, on input line 67.
 
 \AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 67.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count140
+\c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./bezout_fr.out) (./bezout_fr.out)
 \@outlinefile=\write3
 \openout3 = `bezout_fr.out'.
 
- (./abstract.tex) (./introduction.tex)
-(./univariable.tex
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(./abstract.tex) (./introduction.tex) (./univariable.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 10.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 10.
@@ -719,71 +771,27 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 12.
 
-
-Overfull \hbox (4.17833pt too wide) in paragraph at lines 34--35
-[]\OT1/cmr/bx/n/10 Proposition 1. \OT1/cmr/m/it/10 La ma-trice com-pa-gnon ad-m
-et $\OML/cmm/m/it/10 f$ \OT1/cmr/m/it/10 comme po-lyn^ome ca-ract^^Seristique
- []
-
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (3.23944pt too wide) in paragraph at lines 102--103
-\OT1/cmr/m/it/10 et $\OML/cmm/m/it/10 g$\OT1/cmr/m/it/10 . Si on ^^Secrit $\OML
-/cmm/m/it/10 B\OT1/cmr/m/n/10 (1)$ \OT1/cmr/m/it/10 et $\OML/cmm/m/it/10 B\OT1/
-cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 dans le m^eme
- syst^^Reme d'in-dice $\OT1/cmr/bx/n/10 x \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 
-; x; []  ; x[]\OT1/cmr/m/n/10 )$
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+Overfull \hbox (1.78404pt too wide) in paragraph at lines 315--327
+\OT1/cmr/m/n/10 En r^^Sesum^^Se nous mul-ti-plions le vec-teur d'in-dices $[]$ 
+^^Ra droite par la trans-for-ma-tion de Gauss $\OML/cmm/m/it/10 P \OT1/cmr/m/n/
+10 = []$
  []
 
-[2] [3] [4] [5]) (./multivariable.tex [6]
-Overfull \hbox (5.28955pt too wide) in paragraph at lines 38--41
-\OT1/cmr/m/n/10 qui est un po-lyn^ome en les va-riables $\OML/cmm/m/it/10 x; y$
-\OT1/cmr/m/n/10 . Nous ob-te-nons une ma-trice de diff^^Serences
- []
-
-
-Overfull \hbox (40.68394pt too wide) in paragraph at lines 78--78
-[] 
- []
-
-
-Overfull \hbox (51.20166pt too wide) in paragraph at lines 78--82
+) (./multivariable.tex [4]
+Overfull \hbox (32.63443pt too wide) in paragraph at lines 78--82
 \OT1/cmr/m/n/10 Les fa-milles de m^onomes ap-pa-rais-sant dans ces po-lyn^omes 
 sont $\OT1/cmr/bx/n/10 x \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 ; x[]; x[]; x[]; 
-x[]x[]; x[]x[]\OT1/cmr/m/n/10 )$
+x[]x[]; x[]x[]\OT1/cmr/m/n/10 )$ et $\OT1/cmr/bx/n/10 y \OT1/cmr/m/n/10 = (1\OM
+L/cmm/m/it/10 ; y[]; y[]y[]; y[]; y[]y[]; y[]\OT1/cmr/m/n/10 )$.
  []
 
-[7]
-Overfull \hbox (4.0894pt too wide) detected at line 113
-[] []
- []
-
-
-Overfull \hbox (4.08234pt too wide) in paragraph at lines 133--135
-\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )$. Pr
-e-nons l'exemple d'un syst^^Reme po-ly-no-mial $[]$ de mul-ti-degr^^Se $(\OML/c
-mm/m/it/10 d[]; []  ; d[]\OT1/cmr/m/n/10 )$,
- []
-
-[8]
+[5]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 137.
-
-Overfull \hbox (4.02954pt too wide) in paragraph at lines 151--170
-[]\OT1/cmr/m/n/10 Les en-sembles de points de Fou-rier $\OML/cmm/m/it/10 U$ \OT
-1/cmr/m/n/10 et $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 peuvent ^etre uti-lis^^Ses
- pour construire
- []
-
-
-Overfull \hbox (6.89299pt too wide) in paragraph at lines 172--175
-[]\OT1/cmr/m/n/10 Rappelons que la ma-trice de Be-zout $\OML/cmm/m/it/10 B[] \O
-T1/cmr/m/n/10 = [][]$ est d^^Sefinie par $\OML/cmm/m/it/10 ^^N[]\OT1/cmr/m/n/10
- (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 ) =
- []
-
-[9]) (./barnett_formula.tex
+ [6]) (./barnett_formula.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 10.
@@ -805,36 +813,9 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 10.
 
 
-LaTeX Warning: Reference `ex:bez_multi' on page 10 undefined on input line 44.
+LaTeX Warning: Reference `ex:bez_multi' on page 7 undefined on input line 44.
 
-[10]
-Overfull \hbox (36.76518pt too wide) detected at line 80
-[] []
- []
-
-[11]
-Overfull \hbox (9.39012pt too wide) detected at line 145
-[] []
- []
-
-
-Overfull \hbox (39.85974pt too wide) detected at line 176
-[] [] []
- []
-
-[12]
-Overfull \hbox (5.16814pt too wide) in paragraph at lines 238--239
-[]\OT1/cmr/bx/n/10 Conjecture 1. \OT1/cmr/m/it/10 Lorsque le pro-ces-sus de r^^
-Seduction est ter-min^^Se, c'est-^^Ra-dire lorsque
- []
-
-
-Overfull \hbox (6.17384pt too wide) in paragraph at lines 242--243
-\OT1/cmr/m/n/10 que-ment dans l'hy-poth^^Rese o^^Ru l'id^^Seal est z^^Sero-dime
-nsionnel. Lors de nos exp^^Seriences
- []
-
-[13]) (./numerical_rank.tex
+[7] [8] [9]) (./numerical_rank.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 5.
@@ -844,95 +825,100 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 5.
 
 (../txt/n.txt) (../txt/deg.txt) (../txt/Dx.txt)
-<../png/bez.png, id=224, 578.16pt x 433.62pt>
+<../png/bez.png, id=205, 578.16pt x 433.62pt>
 File: ../png/bez.png Graphic file (type png)
  <use ../png/bez.png>
 Package pdftex.def Info: ../png/bez.png used on input line 14.
-(pdftex.def)             Requested size: 269.09958pt x 201.82309pt.
- [14]
-<../png/bez_diag.png, id=232, 578.16pt x 433.62pt>
+(pdftex.def)             Requested size: 390.37689pt x 292.78012pt.
+ [10]
+<../png/bez_diag.png, id=215, 578.16pt x 433.62pt>
 File: ../png/bez_diag.png Graphic file (type png)
  <use ../png/bez_diag.png>
 Package pdftex.def Info: ../png/bez_diag.png used on input line 20.
-(pdftex.def)             Requested size: 269.09958pt x 201.82309pt.
+(pdftex.def)             Requested size: 390.37689pt x 292.78012pt.
 
-[15 <../png/bez.png> <../png/bez_diag.png>]
-<../png/beztri.png, id=239, 578.16pt x 433.62pt>
+[11 <../png/bez.png> <../png/bez_diag.png>]
+<../png/beztri.png, id=222, 578.16pt x 433.62pt>
 File: ../png/beztri.png Graphic file (type png)
  <use ../png/beztri.png>
-Package pdftex.def Info: ../png/beztri.png used on input line 27.
-(pdftex.def)             Requested size: 269.09958pt x 201.82309pt.
+Package pdftex.def Info: ../png/beztri.png used on input line 28.
+(pdftex.def)             Requested size: 390.37689pt x 292.78012pt.
 
-<../png/diag_beztri.png, id=240, 578.16pt x 433.62pt>
+<../png/diag_beztri.png, id=223, 578.16pt x 433.62pt>
 File: ../png/diag_beztri.png Graphic file (type png)
 
 <use ../png/diag_beztri.png>
-Package pdftex.def Info: ../png/diag_beztri.png used on input line 31.
-(pdftex.def)             Requested size: 269.09958pt x 201.82309pt.
- (../txt/dim0.txt) (../txt/dim.txt) [16 <../png/beztri.png> <../png/diag_beztri
-.png>]
-<../png/diag_beztri_final.png, id=249, 578.16pt x 433.62pt>
+Package pdftex.def Info: ../png/diag_beztri.png used on input line 33.
+(pdftex.def)             Requested size: 390.37689pt x 292.78012pt.
+ (../txt/dim0.txt) (../txt/dim.txt)
+<../png/diag_beztri_final.png, id=226, 578.16pt x 433.62pt>
 File: ../png/diag_beztri_final.png Graphic file (type png)
 
 <use ../png/diag_beztri_final.png>
-Package pdftex.def Info: ../png/diag_beztri_final.png used on input line 36.
-(pdftex.def)             Requested size: 269.09958pt x 201.82309pt.
-) (./roots.tex (../txt/Dx.txt)
-(../txt/dim.txt) <../png/roots.png, id=250, 578.16pt x 433.62pt>
-File: ../png/roots.png Graphic file (type png)
+Package pdftex.def Info: ../png/diag_beztri_final.png used on input line 38.
+(pdftex.def)             Requested size: 390.37689pt x 292.78012pt.
+ [12 <../png/beztri.png>]) (./roots.tex
+(../txt/Dx.txt) (../txt/dim.txt)
+<../png/sage_roots.png, id=232, 578.16pt x 433.62pt>
+File: ../png/sage_roots.png Graphic file (type png)
 
-<use ../png/roots.png>
-Package pdftex.def Info: ../png/roots.png used on input line 9.
-(pdftex.def)             Requested size: 413.99881pt x 227.62082pt.
+<use ../png/sage_roots.png>
+Package pdftex.def Info: ../png/sage_roots.png used on input line 11.
+(pdftex.def)             Requested size: 400.38646pt x 227.62082pt.
 
-Overfull \hbox (68.99881pt too wide) in paragraph at lines 9--10
-[][] 
- []
+<../png/octave_roots.png, id=233, 578.16pt x 433.62pt>
+File: ../png/octave_roots.png Graphic file (type png)
 
-(../txt/sage_reduct_time.txt) (../txt/octave_reduct_time.txt)
-(../txt/construction_B_time.txt) (../txt/sage_reduct_time.txt)
+<use ../png/octave_roots.png>
+Package pdftex.def Info: ../png/octave_roots.png used on input line 17.
+(pdftex.def)             Requested size: 400.38646pt x 227.62082pt.
+ (../txt/construction_B_time.txt)
 (../txt/octave_triang_time.txt) (../txt/octave_reduct_time.txt)
-(../txt/eigenstructure_time.txt) (../txt/sage_dimension_time.txt)
-Overfull \hbox (7.84451pt too wide) in paragraph at lines 16--25
-[][] 
- []
-
-) (./conclusion.tex [17 <../png/diag_beztri_final.png>]) (./bibliography.tex
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
+(../txt/eigenstructure_time.txt) (../txt/sage_reduct_time.txt)
+(../txt/sage_dimension_time.txt) [13 <../png/diag_beztri.png> <../png/diag_bezt
+ri_final.png>]) (./conclusion.tex) (./bibliography.tex [14pdfTeX warning (ext4)
+: destination with the same identifier (name{figure.1}) has been already used, 
+duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.13   \bibitem{Golub}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{table.1}) has been already used, duplicate ignored
+l.10   \bibitem{Barnett}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.13   \bibitem{Golub}
-                       <../png/roots.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
+l.10   \bibitem{Barnett}
+                         <../png/sage_roots.png> <../png/octave_roots.png>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
+
+[15pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.84 \end{document}
+                   ]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (./bezout_fr.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
 Package rerunfilecheck Info: File `bezout_fr.out' has not changed.
 (rerunfilecheck)             Checksum: 7A589C7B8A95C0BFD591940E3CFB73E2;1606.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
  ) 
 Here is how much of TeX's memory you used:
- 9134 strings out of 493304
- 132362 string characters out of 6139872
- 245689 words of memory out of 5000000
- 12258 multiletter control sequences out of 15000+600000
+ 9588 strings out of 493304
+ 139047 string characters out of 6139872
+ 261569 words of memory out of 5000000
+ 12709 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 67i,14n,38p,1192b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,14n,70p,1192b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -952,10 +938,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (19 pages, 476132 bytes).
+Output written on bezout_fr.pdf (15 pages, 501600 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 175 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

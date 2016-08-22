@@ -234,11 +234,13 @@ def plot_octave():
 	rac = rac_real + rac_imag*1j
 	X1 = rac.transpose()
 	jPZ = _jPZ(rac.transpose())
-	plt.subplot(1, 2, 2)
+	plt.close()
 	for i in range(n):
 		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 	plt.grid()
-	plt.savefig('../png/roots.png')
+	plt.xlabel('log10 de l\'erreur')
+	plt.ylabel('nombre de racines')
+	plt.savefig('../png/octave_roots.png')
 	plt.close()
 	diag_beztri = np.loadtxt('../txt/diag_beztri.txt')
 	plt.semilogy(abs(diag_beztri)+1e-18, '*-')
@@ -379,12 +381,13 @@ num2tex('../txt/eigenstructure_time.txt', int(1000*eigenstructure_time), '%d')
 jPZ = _jPZ(X)
 
 plt.close()
-plt.subplot(1, 2, 1)
 #plt.plot(np.log10(2**-52 + abs(np.transpose(jPZ[:,:]))))
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 plt.grid()
-plt.savefig('../png/roots.png')
+plt.xlabel('log10 de l\'erreur')
+plt.ylabel('nombre de racines')
+plt.savefig('../png/sage_roots.png')
 
 plot_octave()
 

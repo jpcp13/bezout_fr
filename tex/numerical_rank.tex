@@ -23,13 +23,15 @@ Cependant il parait difficile d'exploiter cette structure pour le calcul numéri
  On s'aperçoit que les derniers termes non nuls décroissent vite, et qu'il peut devenir difficile de choisir un seuil au dessus duquel les termes diagonaux seront déclarés ``non nuls''. Le saut entre termes ``non-nuls'' et termes proches du epsilon machine a tendance à diminuer à mesure que la taille de la matrice augmente, ce qui rend le calcul du rang numérique difficile.
 
 Nous pouvons cependant améliorer, dans une certaine mesure, la situation précédente en exploitant une propriété de $B(1)$. En effet, en permutant lignes et colones de cette matrice d'une certaine façon, on peut arriver à une structure bloc-triangulaire de $B(1)$.
-\begin{center}
+\begin{figure}[!ht]
+  \centering
 \includegraphics[width=0.78\textwidth]{../png/beztri.png}
-\end{center}
+\end{figure}
 En appliquant à la matrice une factorisation QRP bloc après bloc, les termes diagonaux vont alors décroitre uniquement à l'intérieur de chaque bloc. Le graphique ci dessous montre la nouvelle disposition des termes diagonaux à la fin de la factorisation QRP, en traitant les blocs l'un après l'autre.
-\begin{center}
+\begin{figure}[!ht]
+  \centering
 \includegraphics[width=0.78\textwidth]{../png/diag_beztri.png}
-\end{center}
+\end{figure}
 On voit que, malgré une décroissance rapide des termes diagonaux dans chaque bloc, la petite taille de ceux-ci permet au plus petit terme ``non-nul" d'être nettement grand que dans la factorisation QRP appliquée globalement à $B(1)$. Le calcul du rang numérique est facilité et l'on trouve ici un rang égal à $\input{../txt/dim0.txt}$, qui correspond au nombre de termes dans la figure ci-dessus. Enfin la dernière figure montre la distribution des termes diagonaux dans la matrice finale, une fois les réductions faites, comme expliqué dans la section \ref{sec:reduction_process}. On voit que la distribution des termes est toujours bonne.
  Le rang de la nouvelle matrice est $\input{../txt/dim.txt}$, c'est la dimension du quotient $A$, d'après la Conjecture \ref{conjecture}.
 \begin{center}
