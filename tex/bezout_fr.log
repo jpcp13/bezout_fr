@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.5)  24 AUG 2016 12:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.5)  24 AUG 2016 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,10 +832,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 5.
 
-<../png/bez_diag.png, id=212, 578.16pt x 433.62pt>
-File: ../png/bez_diag.png Graphic file (type png)
- <use ../png/bez_diag.png>
-Package pdftex.def Info: ../png/bez_diag.png used on input line 10.
+<../png/sparsity.png, id=212, 578.16pt x 433.62pt>
+File: ../png/sparsity.png Graphic file (type png)
+ <use ../png/sparsity.png>
+Package pdftex.def Info: ../png/sparsity.png used on input line 10.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
 (../txt/n.txt) (../txt/deg.txt) (../txt/Dx.txt)
@@ -856,11 +856,10 @@ Underfull \hbox (badness 2460) in paragraph at lines 17--17
 /10 (1)$ per-mut^^See sous forme bloc-
  []
 
-<../png/beztri_diag.png, id=214, 578.16pt x 433.62pt>
-File: ../png/beztri_diag.png Graphic file (type png)
-
-<use ../png/beztri_diag.png>
-Package pdftex.def Info: ../png/beztri_diag.png used on input line 19.
+<../png/bez_diag.png, id=214, 578.16pt x 433.62pt>
+File: ../png/bez_diag.png Graphic file (type png)
+ <use ../png/bez_diag.png>
+Package pdftex.def Info: ../png/bez_diag.png used on input line 19.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
 Underfull \hbox (badness 1009) in paragraph at lines 15--20
@@ -941,7 +940,7 @@ l.32
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.32 
-      <../png/bez_diag.png> <../png/beztri_diag.png>]) (./conclusion.tex)
+      <../png/sparsity.png> <../png/bez_diag.png>]) (./conclusion.tex)
 (./bibliography.tex [12pdfTeX warning (ext4): destination with the same identif
 ier (name{figure.3}) has been already used, duplicate ignored
 
@@ -978,7 +977,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
  9639 strings out of 493304
- 139559 string characters out of 6139872
+ 139544 string characters out of 6139872
  262872 words of memory out of 5000000
  12759 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
@@ -1003,7 +1002,7 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (13 pages, 379894 bytes).
+Output written on bezout_fr.pdf (13 pages, 387166 bytes).
 PDF statistics:
  330 PDF objects out of 1000 (max. 8388607)
  284 compressed objects within 3 object streams
