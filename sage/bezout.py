@@ -312,8 +312,8 @@ plt.xlabel('matrix sparsity')
 qq, rr, pp = la.qr(B[0], pivoting=True)
 dr = rr.diagonal()
 plt.subplot(1, 2, 2)
-plt.semilogy(abs(dr)+1e-16, '*')
-plt.xlabel('diagonal terms after QR factorisation')
+plt.spy(B[0])
+plt.xlabel('matrix sparsity')
 plt.grid()
 plt.savefig('../png/bez_diag.png')
 
@@ -321,16 +321,20 @@ bls = block_size()
 
 B = block_triang()
 plt.close()
-plt.subplot(1, 2, 1)
-plt.spy(B[0])
-plt.xlabel('matrix sparsity')
+plt.subplot(3,1, 1)
+
+plt.semilogy(abs(dr)+1e-16, '*')
+plt.xlabel('diagonal terms after QR factorisation')
+plt.grid()
 diag_beztri, diag_beztri_final = load_octave()
-plt.subplot(1, 2, 2)
+plt.subplot(3,1, 2)
 plt.semilogy(abs(diag_beztri)+1e-16, '*-')
 plt.xlabel('diagonal terms after QR factorisation')
 plt.grid()
+plt.subplot(3,1, 3)
+plt.semilogy(abs(diag_beztri_final)+1e-16, '*-')
+plt.grid()
 plt.savefig('../png/beztri_diag.png')
-
 if False:
 	"""
 	plt.close()
@@ -340,10 +344,7 @@ if False:
 	plt.xlabel('log10 de l\'erreur')
 	plt.ylabel('nombre de racines')
 	plt.savefig('../png/octave_roots.png')
-	plt.close()
-	plt.semilogy(abs(diag_beztri_final)+1e-18, '*-')
-	plt.grid()
-	plt.savefig('../png/diag_beztri_final.png')
+
 	"""
 
 if False:
