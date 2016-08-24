@@ -227,30 +227,16 @@ def _jPZ(X):
 		jPZ[:, k:k+1] = Pz
 	return jPZ
 
-def plot_octave():
+def load_octave():
 	os.system("sh octave.sh")
 	rac_real = np.loadtxt('../txt/rac_real.txt')
 	rac_imag = np.loadtxt('../txt/rac_imag.txt')
 	rac = rac_real + rac_imag*1j
 	X1 = rac.transpose()
 	jPZ = _jPZ(rac.transpose())
-	plt.close()
-	for i in range(n):
-		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
-	plt.grid()
-	plt.xlabel('log10 de l\'erreur')
-	plt.ylabel('nombre de racines')
-	plt.savefig('../png/octave_roots.png')
-	plt.close()
 	diag_beztri = np.loadtxt('../txt/diag_beztri.txt')
-	plt.semilogy(abs(diag_beztri)+1e-18, '*-')
-	plt.grid()
-	plt.savefig('../png/diag_beztri.png')
-	plt.close()
 	diag_beztri_final = np.loadtxt('../txt/diag_beztri_final.txt')
-	plt.semilogy(abs(diag_beztri_final)+1e-18, '*-')
-	plt.grid()
-	plt.savefig('../png/diag_beztri_final.png')
+	return diag_beztri, diag_beztri_final
 
 def num2tex(filename, x, f):
 	outfile = open(filename, 'w')
@@ -282,7 +268,7 @@ import timeit
 import sys
 import scipy.io as sio
 
-deg = [2,2,2,2]
+deg = [3,3,3]
 list2tex('../txt/deg.txt', deg)
 
 m = 16000
@@ -319,12 +305,15 @@ construction_B_time = timeit.default_timer() - start_time
 num2tex('../txt/construction_B_time.txt', int(1000*construction_B_time), '%d')
 
 plt.close()
+plt.subplot(1, 2, 1)
 plt.spy(B[0])
-plt.savefig('../png/bez.png')
+plt.xlabel('matrix sparsity')
+#plt.savefig('../png/bez.png')
 qq, rr, pp = la.qr(B[0], pivoting=True)
 dr = rr.diagonal()
-plt.close()
+plt.subplot(1, 2, 2)
 plt.semilogy(abs(dr)+1e-16, '*')
+plt.xlabel('diagonal terms after QR factorisation')
 plt.grid()
 plt.savefig('../png/bez_diag.png')
 
@@ -332,22 +321,46 @@ bls = block_size()
 
 B = block_triang()
 plt.close()
+plt.subplot(1, 2, 1)
 plt.spy(B[0])
-plt.savefig('../png/beztri.png')
-DR = np.empty(Dx)
-idx = 0
-for s in bls:
-	bb = B[0][idx:idx+s, idx:idx+s]
-	qq, rr, pp = la.qr(bb, pivoting=True)
-	dr = rr.diagonal()
-	DR[idx:idx+s] = dr
-	idx += s
-plt.close()
-plt.semilogy(abs(DR)+1e-16, '*')
+plt.xlabel('matrix sparsity')
+diag_beztri, diag_beztri_final = load_octave()
+plt.subplot(1, 2, 2)
+plt.semilogy(abs(diag_beztri)+1e-16, '*-')
+plt.xlabel('diagonal terms after QR factorisation')
 plt.grid()
 plt.savefig('../png/beztri_diag.png')
 
+if False:
+	"""
+	plt.close()
+	for i in range(n):
+		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
+	plt.grid()
+	plt.xlabel('log10 de l\'erreur')
+	plt.ylabel('nombre de racines')
+	plt.savefig('../png/octave_roots.png')
+	plt.close()
+	plt.semilogy(abs(diag_beztri_final)+1e-18, '*-')
+	plt.grid()
+	plt.savefig('../png/diag_beztri_final.png')
+	"""
 
+if False:
+	"""
+	DR = np.empty(Dx)
+	idx = 0
+	for s in bls:
+		bb = B[0][idx:idx+s, idx:idx+s]
+		qq, rr, pp = la.qr(bb, pivoting=True)
+		dr = rr.diagonal()
+		DR[idx:idx+s] = dr
+		idx += s
+	plt.close()
+	plt.semilogy(abs(DR)+1e-16, '*')
+	plt.grid()
+	plt.savefig('../png/beztri_diag.png')
+	"""
 
 
 
@@ -389,7 +402,7 @@ plt.xlabel('log10 de l\'erreur')
 plt.ylabel('nombre de racines')
 plt.savefig('../png/sage_roots.png')
 
-plot_octave()
+
 
 I = R.ideal(P[:n])
 start_time = timeit.default_timer()
