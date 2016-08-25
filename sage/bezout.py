@@ -236,7 +236,7 @@ def load_octave():
 	jPZ = _jPZ(rac.transpose())
 	diag_beztri = np.loadtxt('../txt/diag_beztri.txt')
 	diag_beztri_final = np.loadtxt('../txt/diag_beztri_final.txt')
-	return diag_beztri, diag_beztri_final
+	return jPZ, diag_beztri, diag_beztri_final
 
 def num2tex(filename, x, f):
 	outfile = open(filename, 'w')
@@ -268,7 +268,7 @@ import timeit
 import sys
 import scipy.io as sio
 
-deg = [3,3,3]
+deg = [2,2,2,2]
 list2tex('../txt/deg.txt', deg)
 
 m = 16000
@@ -318,55 +318,6 @@ plt.savefig('../png/sparsity.png')
 
 
 
-plt.close()
-plt.subplot(3,1, 1)
-qq, rr, pp = la.qr(B[0], pivoting=True)
-dr = rr.diagonal()
-plt.semilogy(abs(dr)+1e-16, '*')
-plt.xlabel('not permuted')
-plt.grid()
-diag_beztri, diag_beztri_final = load_octave()
-plt.subplot(3,1, 2)
-plt.semilogy(abs(diag_beztri)+1e-16, '*-')
-plt.xlabel('permuted, before reductions')
-plt.grid()
-plt.subplot(3,1, 3)
-plt.semilogy(abs(diag_beztri_final)+1e-16, '*-')
-plt.xlabel('permuted, after reductions')
-plt.grid()
-plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=0.4)
-
-plt.savefig('../png/bez_diag.png')
-
-if False:
-	"""
-	plt.close()
-	for i in range(n):
-		hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
-	plt.grid()
-	plt.xlabel('log10 de l\'erreur')
-	plt.ylabel('nombre de racines')
-	plt.savefig('../png/octave_roots.png')
-
-	"""
-
-if False:
-	"""
-	DR = np.empty(Dx)
-	idx = 0
-	for s in bls:
-		bb = B[0][idx:idx+s, idx:idx+s]
-		qq, rr, pp = la.qr(bb, pivoting=True)
-		dr = rr.diagonal()
-		DR[idx:idx+s] = dr
-		idx += s
-	plt.close()
-	plt.semilogy(abs(DR)+1e-16, '*')
-	plt.grid()
-	plt.savefig('../png/beztri_diag.png')
-	"""
-
-
 
 print 'debut sage'
 BB = []
@@ -385,10 +336,36 @@ num2tex('../txt/sage_reduct_time.txt', int(1000*sage_reduct_time), '%d')
 
 Bred = _Bred()
 
-
-
 sio.savemat('np_B.mat', {'Bred':np.transpose(Bred.astype(float), (1, 2, 0)), 'B':np.transpose(B.astype(float), (1, 2, 0)), 'deg':deg, 'bls':bls,})
 
+
+
+plt.close()
+plt.subplot(3,1, 1)
+qq, rr, pp = la.qr(B[0], pivoting=True)
+dr = rr.diagonal()
+plt.semilogy(abs(dr)+1e-16, '*')
+plt.xlabel('not permuted')
+plt.grid()
+jPZ, diag_beztri, diag_beztri_final = load_octave()
+plt.subplot(3,1, 2)
+plt.semilogy(abs(diag_beztri)+1e-16, '*-')
+plt.xlabel('permuted, before reductions')
+plt.grid()
+plt.subplot(3,1, 3)
+plt.semilogy(abs(diag_beztri_final)+1e-16, '*-')
+plt.xlabel('permuted, after reductions')
+plt.grid()
+plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=0.4)
+plt.savefig('../png/bez_diag.png')
+
+plt.close()
+for i in range(n):
+	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
+plt.grid()
+plt.xlabel('log10 de l\'erreur')
+plt.ylabel('nombre de racines')
+plt.savefig('../png/octave_roots.png')
 
 start_time = timeit.default_timer()
 XX, X = _XX_chow()
@@ -396,9 +373,7 @@ eigenstructure_time = timeit.default_timer() - start_time
 num2tex('../txt/eigenstructure_time.txt', int(1000*eigenstructure_time), '%d')
 
 jPZ = _jPZ(X)
-
 plt.close()
-#plt.plot(np.log10(2**-52 + abs(np.transpose(jPZ[:,:]))))
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 plt.grid()

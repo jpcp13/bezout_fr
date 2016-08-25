@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.5)  24 AUG 2016 16:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.5)  25 AUG 2016 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -840,86 +840,28 @@ Package pdftex.def Info: ../png/sparsity.png used on input line 10.
 
 (../txt/n.txt) (../txt/deg.txt) (../txt/Dx.txt)
 
-LaTeX Warning: Reference `fig:sparsity_B1' on page 11 undefined on input line 1
-5.
-
-
-LaTeX Warning: Reference `fig:diag_B1' on page 11 undefined on input line 15.
-
-
 Package wrapfig Warning: Collision between wrapping environments on input line 
 16.
 
-
-Underfull \hbox (badness 2460) in paragraph at lines 17--17
-[]\OT1/cmr/m/sc/10 Figure \OT1/cmr/m/n/10 2 { []$\OML/cmm/m/it/10 B\OT1/cmr/m/n
-/10 (1)$ per-mut^^See sous forme bloc-
- []
-
-<../png/bez_diag.png, id=214, 578.16pt x 433.62pt>
+<../png/bez_diag.png, id=216, 578.16pt x 433.62pt>
 File: ../png/bez_diag.png Graphic file (type png)
  <use ../png/bez_diag.png>
 Package pdftex.def Info: ../png/bez_diag.png used on input line 19.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
-Underfull \hbox (badness 1009) in paragraph at lines 15--20
-\OT1/cmr/m/n/10 3$ et un syst^^Reme po-ly-no-mial $\OML/cmm/m/it/10 f$ \OT1/cmr
-/m/n/10 de mul-ti-degr^^Se $[3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it
-/10 ; \OT1/cmr/m/n/10 3]$. Les co-ef-fi-cients, en-tiers, sont choi-sis al^^Sea
-toirement
- []
-
-
-Underfull \hbox (badness 2635) in paragraph at lines 15--20
-\OT1/cmr/m/n/10 sui-vant une loi gaussi^^Renne (fonc-tion ZZ.random[]element(0.
-5, dis-tri-bu-tion='gaussian') de Sage). La ma-
- []
-
-
-Underfull \hbox (badness 2351) in paragraph at lines 15--20
-\OT1/cmr/m/n/10 trice de Be-zout $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (1)$ est de
- taille $162$ et poss^^Rede une cer-taine struc-ture, comme le montre la Fi-
- []
-
-
-Underfull \hbox (badness 1527) in paragraph at lines 15--20
-\OT1/cmr/m/n/10 gure []. Ce-pen-dant il pa-rait dif-fi-cile d'ex-ploi-ter cette
- struc-ture pour le cal-cul num^^Serique du rang de
- []
-
-
-Underfull \hbox (badness 1082) in paragraph at lines 15--20
-\OT1/cmr/m/n/10 la ma-trice $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (1)$. On doit av
-oir re-cours ^^Ra une m^^Sethode num^^Serique g^^Sen^^Serale, par exemple une f
-ac-to-ri-sa-
- []
-
-
-Underfull \hbox (badness 1221) in paragraph at lines 15--20
-\OT1/cmr/m/n/10 tion SVD ou une fac-to-ri-sa-tion QRP ``rank re-vea-ling''. Cho
-i-sis-sons cette deuxi^^Reme m^^Sethode. Les termes
- []
-
-
-Underfull \hbox (badness 1281) in paragraph at lines 15--20
-\OT1/cmr/m/n/10 dia-go-naux du fac-teur tri-an-gu-laire $\OML/cmm/m/it/10 R$ \O
-T1/cmr/m/n/10 se-ront tri^^Ses en ordre d^^Secroissant, comme le montre la Fi-g
-ure [].
- []
 
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 20
 .
 
 (../txt/dim0.txt) (../txt/dim.txt)) (./roots.tex (../txt/Dx.txt)
-(../txt/dim.txt) <../png/sage_roots.png, id=217, 578.16pt x 433.62pt>
+(../txt/dim.txt) <../png/sage_roots.png, id=219, 578.16pt x 433.62pt>
 File: ../png/sage_roots.png Graphic file (type png)
 
 <use ../png/sage_roots.png>
 Package pdftex.def Info: ../png/sage_roots.png used on input line 11.
 (pdftex.def)             Requested size: 400.38646pt x 227.62082pt.
 
-<../png/octave_roots.png, id=218, 578.16pt x 433.62pt>
+<../png/octave_roots.png, id=220, 578.16pt x 433.62pt>
 File: ../png/octave_roots.png Graphic file (type png)
 
 <use ../png/octave_roots.png>
@@ -976,10 +918,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 9639 strings out of 493304
- 139544 string characters out of 6139872
- 262872 words of memory out of 5000000
- 12759 multiletter control sequences out of 15000+600000
+ 9637 strings out of 493304
+ 139519 string characters out of 6139872
+ 262881 words of memory out of 5000000
+ 12757 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  67i,14n,70p,1009b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1002,10 +944,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (13 pages, 387166 bytes).
+Output written on bezout_fr.pdf (13 pages, 409523 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
+ 332 PDF objects out of 1000 (max. 8388607)
+ 286 compressed objects within 3 object streams
  84 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
