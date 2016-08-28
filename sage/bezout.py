@@ -95,14 +95,16 @@ def block_size():
 
 ############################################# fcts sage #######################################
 
-def rand_poly(j, m):
+def rand_poly(j, m, t):
 	# construit un polynome random en j+1 variables 0..j, de degres max(deg, m)
 	p = 0
 	for k in range(min(deg[j], m) + 1):
 		if j > 0:
-			p += rand_poly(j-1, m-k)*x[j]**k
+			p += rand_poly(j-1, m-k, t)*x[j]**k
 		else:
 			coeff = ZZ.random_element(0.5, distribution='gaussian')
+			if coeff != 0:
+				coeff = randint(-t, t)
 			p += coeff*x[j]**k
 	return p
 
@@ -269,6 +271,7 @@ import sys
 import scipy.io as sio
 
 deg = [2,2,2,2]
+t = 3
 list2tex('../txt/deg.txt', deg)
 
 m = 16000
@@ -285,7 +288,7 @@ dy = [(n-i)*deg[i] for i in range(n)]
 fn, Dx, Dy = factorial(n), prod(dx), prod(dy)
 num2tex('../txt/Dx.txt', Dx, '%3d')
 
-P = [rand_poly(n-1, m) for i in range(n)] + xx
+P = [rand_poly(n-1, m, t) for i in range(n)] + xx
 #~ a = [ZZ.random_element() for _ in range(7)]
 #~ P = [a[0]*x[0]**3*x[1]**2 + a[1]*x[0] + a[2]*x[1]**2 + a[3], a[4]*x[0]*x[1]**4 + a[5]*x[0]**3 + a[6]*x[1]] + xx
 

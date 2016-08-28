@@ -59,6 +59,7 @@ epsi = 1e-9
 %endfor
 
 B0 = B;
+B = B/max(max(abs(B(:,:,1))));
 tic
 [B, decal] = triang_block_giv (B, bls);
 triang_time = toc

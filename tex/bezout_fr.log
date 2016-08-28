@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.5)  25 AUG 2016 13:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  28 AUG 2016 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -838,30 +838,73 @@ File: ../png/sparsity.png Graphic file (type png)
 Package pdftex.def Info: ../png/sparsity.png used on input line 10.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-(../txt/n.txt) (../txt/deg.txt) (../txt/Dx.txt)
+(../txt/n.txt) (../txt/deg.txt) (../txt/P.txt) (../txt/Dx.txt)
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-16.
+19.
 
 <../png/bez_diag.png, id=216, 578.16pt x 433.62pt>
 File: ../png/bez_diag.png Graphic file (type png)
  <use ../png/bez_diag.png>
-Package pdftex.def Info: ../png/bez_diag.png used on input line 19.
+Package pdftex.def Info: ../png/bez_diag.png used on input line 22.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
+Underfull \hbox (badness 2735) in paragraph at lines 15--23
+\OT1/cmr/m/n/10 La ma-trice de Be-zout $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (1)$ 
+est de taille $384$ et poss^^Rede une cer-taine struc-ture, comme le montre
+ []
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 20
+
+Underfull \hbox (badness 2671) in paragraph at lines 15--23
+\OT1/cmr/m/n/10 la Fi-gure []1[]. Comme il pa-rait dif-fi-cile d'ex-ploi-ter ce
+tte struc-ture pour le cal-cul num^^Serique du rang
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 15--23
+\OT1/cmr/m/n/10 de la ma-trice $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (1)$, on doit
+ re-cou-rir ^^Ra une m^^Sethode num^^Serique g^^Sen^^Serale, par exemple une fa
+c-to-ri-sa-
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 15--23
+\OT1/cmr/m/n/10 tion SVD ou une fac-to-ri-sa-tion QRP ``rank re-vea-ling''. Cho
+i-sis-sons cette deuxi^^Reme m^^Sethode. Les termes
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 15--23
+\OT1/cmr/m/n/10 dia-go-naux du fac-teur tri-an-gu-laire $\OML/cmm/m/it/10 R$ \O
+T1/cmr/m/n/10 se-ront tri^^Ses en ordre d^^Secroissant, comme le montre la Fi-g
+ure []2[].
+ []
+
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 23
 .
 
-(../txt/dim0.txt) (../txt/dim.txt)) (./roots.tex (../txt/Dx.txt)
-(../txt/dim.txt) <../png/sage_roots.png, id=219, 578.16pt x 433.62pt>
+(../txt/dim0.txt) (../txt/dim.txt) [11pdfTeX warning (ext4): destination with t
+he same identifier (name{figure.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 
+      <../png/sparsity.png> <../png/bez_diag.png>]) (./roots.tex (../txt/Dx.txt
+) (../txt/dim.txt) <../png/sage_roots.png, id=228, 578.16pt x 433.62pt>
 File: ../png/sage_roots.png Graphic file (type png)
 
 <use ../png/sage_roots.png>
 Package pdftex.def Info: ../png/sage_roots.png used on input line 11.
 (pdftex.def)             Requested size: 400.38646pt x 227.62082pt.
 
-<../png/octave_roots.png, id=220, 578.16pt x 433.62pt>
+<../png/octave_roots.png, id=229, 578.16pt x 433.62pt>
 File: ../png/octave_roots.png Graphic file (type png)
 
 <use ../png/octave_roots.png>
@@ -870,41 +913,28 @@ Package pdftex.def Info: ../png/octave_roots.png used on input line 17.
  (../txt/construction_B_time.txt)
 (../txt/octave_triang_time.txt) (../txt/octave_reduct_time.txt)
 (../txt/eigenstructure_time.txt) (../txt/sage_reduct_time.txt)
-(../txt/sage_dimension_time.txt) [11pdfTeX warning (ext4): destination with the
- same identifier (name{figure.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.32 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.32 
-      <../png/sparsity.png> <../png/bez_diag.png>]) (./conclusion.tex)
-(./bibliography.tex [12pdfTeX warning (ext4): destination with the same identif
-ier (name{figure.3}) has been already used, duplicate ignored
+(../txt/sage_dimension_time.txt)) (./conclusion.tex) (./bibliography.tex
+[12pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.10   \bibitem{Barnett}
                         pdfTeX warning (ext4): destination with the same identi
-fier (name{figure.4}) has been already used, duplicate ignored
+fier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.10   \bibitem{Barnett}
-                         <../png/sage_roots.png> <../png/octave_roots.png>])
+                         <../png/sage_roots.png>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
-
-[13pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
-has been already used, duplicate ignored
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.4}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 \end{document}
-                   ]
+                    <../png/octave_roots.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
  (./bezout_fr.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
@@ -918,8 +948,8 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 9637 strings out of 493304
- 139519 string characters out of 6139872
+ 9640 strings out of 493304
+ 139544 string characters out of 6139872
  262881 words of memory out of 5000000
  12757 multiletter control sequences out of 15000+600000
  14468 words of font info for 55 fonts, out of 8000000 for 9000
@@ -944,7 +974,7 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (13 pages, 409523 bytes).
+Output written on bezout_fr.pdf (13 pages, 403627 bytes).
 PDF statistics:
  332 PDF objects out of 1000 (max. 8388607)
  286 compressed objects within 3 object streams
