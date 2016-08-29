@@ -371,12 +371,13 @@ plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, h
 plt.savefig('../png/bez_diag.png')
 
 plt.close()
+plt.subplot(1, 2, 2)
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 plt.grid()
 plt.xlabel('log10 de l\'erreur')
 plt.ylabel('nombre de racines')
-plt.savefig('../png/octave_roots.png')
+#plt.savefig('../png/octave_roots.png')
 
 start_time = timeit.default_timer()
 XX, X = _XX_chow()
@@ -384,13 +385,13 @@ eigenstructure_time = timeit.default_timer() - start_time
 num2tex('../txt/eigenstructure_time.txt', int(1000*eigenstructure_time), '%d')
 
 jPZ = _jPZ(X)
-plt.close()
+plt.subplot(1, 2, 1)
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 plt.grid()
 plt.xlabel('log10 de l\'erreur')
 plt.ylabel('nombre de racines')
-plt.savefig('../png/sage_roots.png')
+plt.savefig('../png/roots.png')
 
 
 """
