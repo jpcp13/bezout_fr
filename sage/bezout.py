@@ -375,7 +375,7 @@ plt.subplot(1, 2, 2)
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 plt.grid()
-plt.xlabel('log10 de l\'erreur')
+plt.xlabel('log10 erreur, arithmetique flottante')
 plt.ylabel('nombre de racines')
 #plt.savefig('../png/octave_roots.png')
 
@@ -389,7 +389,7 @@ plt.subplot(1, 2, 1)
 for i in range(n):
 	hh = plt.hist(np.log10(2**-52 + abs(jPZ[i])), 50)
 plt.grid()
-plt.xlabel('log10 de l\'erreur')
+plt.xlabel('log10 erreur, arithmetique exacte')
 plt.ylabel('nombre de racines')
 plt.savefig('../png/roots.png')
 
