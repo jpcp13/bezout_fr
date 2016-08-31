@@ -394,7 +394,7 @@ plt.ylabel('nombre de racines')
 plt.savefig('../png/roots.png')
 
 
-"""
+
 I = R.ideal(P[:n])
 start_time = timeit.default_timer()
 dim = I.vector_space_dimension()
@@ -403,6 +403,6 @@ num2tex('../txt/sage_dimension_time.txt', int(1000*sage_dimension_time), '%d')
 
 print 'dim =', dim
 num2tex('../txt/dim.txt', dim, '%d')
-"""
+
 #os.system("sh latex.sh")
 
