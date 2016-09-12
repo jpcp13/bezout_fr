@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  30 AUG 2016 15:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  12 SEP 2016 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -648,20 +648,20 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 (./bezout_fr.aux)
 \openout1 = `bezout_fr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count138
@@ -690,17 +690,17 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 70.
-LaTeX Info: Redefining \dots on input line 70.
-LaTeX Info: Redefining \up on input line 70.
+LaTeX Info: Redefining \degres on input line 69.
+LaTeX Info: Redefining \dots on input line 69.
+LaTeX Info: Redefining \up on input line 69.
 
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 70.
+(frenchb.ldf)                of your document, on input line 69.
 
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 70.
+Package hyperref Info: Link coloring OFF on input line 69.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -709,9 +709,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count144
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
 
 (./bezout_fr.out) (./bezout_fr.out)
 \@outlinefile=\write3
@@ -752,17 +752,16 @@ LaTeX Info: Redefining \nameref on input line 70.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./abstract.tex) (./introduction.tex) (./univariable.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
-
+LaTeX Font Info:    Try loading font information for U+msa on input line 77.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 77.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) (./abstract.tex)
+(./univariable.tex
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 10.
@@ -833,63 +832,77 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 5.
 
-<../png/sparsity.png, id=205, 578.16pt x 433.62pt>
+<../png/sparsity.png, id=207, 578.16pt x 433.62pt>
 File: ../png/sparsity.png Graphic file (type png)
  <use ../png/sparsity.png>
 Package pdftex.def Info: ../png/sparsity.png used on input line 10.
 (pdftex.def)             Requested size: 426.79071pt x 227.62082pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 (../txt/n.txt) (../txt/deg.txt) (../txt/P.txt) (../txt/Dx.txt)
-<../png/bez_diag.png, id=211, 578.16pt x 433.62pt>
+<../png/bez_diag.png, id=213, 578.16pt x 433.62pt>
 File: ../png/bez_diag.png Graphic file (type png)
  <use ../png/bez_diag.png>
 Package pdftex.def Info: ../png/bez_diag.png used on input line 20.
 (pdftex.def)             Requested size: 426.79071pt x 227.62082pt.
 
-(../txt/dim0.txt) (../txt/dim.txt) [10pdfTeX warning (ext4): destination with t
-he same identifier (name{figure.1}) has been already used, duplicate ignored
+(../txt/dim0.txt) (../txt/dim.txt) [10]
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.24 
-      <../png/sparsity.png>] [11pdfTeX warning (ext4): destination with the sam
-e identifier (name{figure.2}) has been already used, duplicate ignored
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.24 
-      <../png/bez_diag.png>]) (./roots.tex
-<../png/roots.png, id=235, 578.16pt x 433.62pt>
+) (./roots.tex <../png/roots.png, id=228, 578.16pt x 433.62pt>
 File: ../png/roots.png Graphic file (type png)
- <use ../png/roots.png>
+
+<use ../png/roots.png>
 Package pdftex.def Info: ../png/roots.png used on input line 11.
 (pdftex.def)             Requested size: 426.79071pt x 170.71892pt.
 
-(../txt/Dx.txt) (../txt/dim.txt) (../txt/construction_B_time.txt)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(../txt/Dx.txt) (../txt/dim.txt) [11pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.15 
+      <../png/sparsity.png>] (../txt/construction_B_time.txt)
 (../txt/octave_triang_time.txt) (../txt/octave_reduct_time.txt)
 (../txt/eigenstructure_time.txt) (../txt/sage_reduct_time.txt)
-(../txt/sage_dimension_time.txt)) (./conclusion.tex) (./bibliography.tex
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+(../txt/sage_dimension_time.txt)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./conclusion.tex) (./bibliography.tex [12pdfTeX warning (ext4): destination 
+with the same identifier (name{figure.2}) has been already used, duplicate igno
+red
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.11 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.3
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.11 
+      <../png/bez_diag.png> <../png/roots.png>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
+ [13pdfTeX warning (ext4): destination with the same identifier (name{table.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.10   \bibitem{Barnett}
-                        pdfTeX warning (ext4): destination with the same identi
-fier (name{table.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.10   \bibitem{Barnett}
-                         <../png/roots.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
- [13]
+l.87 \end{document}
+                   ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
  (./bezout_fr.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `bezout_fr.out' has not changed.
-(rerunfilecheck)             Checksum: 7A589C7B8A95C0BFD591940E3CFB73E2;1606.
+(rerunfilecheck)             Checksum: F6E1813C63403E0635EC082E3B78CEE7;1558.
 
 
 LaTeX Warning: There were undefined references.
@@ -897,13 +910,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 9635 strings out of 493304
- 139403 string characters out of 6139872
- 262919 words of memory out of 5000000
- 12755 multiletter control sequences out of 15000+600000
- 14468 words of font info for 55 fonts, out of 8000000 for 9000
+ 9632 strings out of 493304
+ 139335 string characters out of 6139872
+ 261967 words of memory out of 5000000
+ 12753 multiletter control sequences out of 15000+600000
+ 14767 words of font info for 56 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 67i,14n,70p,1406b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,14n,70p,1407b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -915,18 +928,19 @@ e1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/symbols/msbm10.pfb>
-Output written on bezout_fr.pdf (13 pages, 392952 bytes).
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/symbols/msbm10.pfb>
+Output written on bezout_fr.pdf (13 pages, 407254 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
- 83 named destinations out of 1000 (max. 500000)
- 160 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 

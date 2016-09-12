@@ -231,15 +231,14 @@ $$
 \end{array}$$
 A ce stade, la matrice $B(1)$ est inversible et le processus de réduction est donc terminé. On vérifie que les familles $\bold{x} = (1, x_2, x_2^{2})$ et $\bold{y} = (y_1, y_1^{2}, y_1^{3})$ sont des bases de $A$, dont les bases de Horner associées sont $\hat{\bold{x}} = (-x_2-x_2^{2}, -x_{2}, 1)$ et
 $\hat{\bold{y}} = (y_1^{3}, -y_1^{2}-y_1^{2}y_2, -y_1^{2})$. La dimension de $A$ est ici égale à~$3$.
-
-D'une façon générale nous formulons la conjecture suivante (\cite{jpc} p.57)
-\begin{conj}
+D'une façon générale nous avons (\cite{jpc} p.57, \cite{bm}, \cite{tm})
+\begin{prop}
 	\label{conjecture}
 Lorsque le processus de réduction est terminé, c'est-à-dire lorsque la matrice $B(1)$ est inversible et que toutes les matrices $B(x_k), k=0, \cdots, n$ sont de même taille et indexées par des familles de polynômes $\bold{x, y}$, alors chacune des familles $\bold{x, y}$ est une base de $A$.
-\end{conj}
+\end{prop}
 
 \begin{rem}
-Nous insistons sur le fait que la conjecture précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il est possible d'obtenir en fin de processus des tailles de $\delta(1)$ différentes suivant que l'on considère les relations en $x$ ou en $y$ lors du processus de réduction. Le cas échéant, cette différence de taille finale est un phénomène qui reste à éclaircir.
+Nous insistons sur le fait que la proposition précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il est possible d'obtenir en fin de processus des tailles de $\delta(1)$ différentes suivant que l'on considère les relations en $x$ ou en $y$ lors du processus de réduction. Le cas échéant, cette différence de taille finale est un phénomène qui reste à éclaircir.
 \end{rem}
 
 \subsubsection{Formules de Barnett et matrices compagnon}
