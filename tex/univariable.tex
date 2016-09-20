@@ -4,10 +4,10 @@
 
 
 
-\section{Cas univariable}
+\section{Cas d'une variable}
 \label{univariable}
-Rappelons quelques faits connus sur les polynômes à une variable.
-Soit $f(x) = a_0x^d + \dots + a_{d-1}x + a_d$ un polynôme en la variable complexe $x$. Notons $<f(x)>$ l'idéal engendré par $f(x)$ dans l'anneau $\C[x]$ et $A_x = \C[x]/<f(x)>$  son algèbre quotient; de même notons $A_y = \C[y]/<f(y)>$. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A_x$ ou l'endomorphisme de multiplication par $x$ dans $A_x$. Une base du $\C$-espace vectoriel $A_x$ est la {\bf base des monômes} $\bold{x} = (1, x,\cdots, x^{d-1})$.
+Rappelons quelques faits connus sur les polynômes à une variable.\\
+Dans toute cette partie nous considérons un polynôme $f = a_0x^d + \dots + a_{d-1}x + a_d$ à coefficients dans $\C$. Notons $\langle f \rangle$ l'idéal engendré par $f$ dans l'anneau de polynômes $\C[x]$ et $A = \C[x]/\langle f \rangle$  son algèbre quotient. Dorénavant $x$ désignera indifféremment la variable $x$, sa projection sur le quotient $A$ ou l'endomorphisme de multiplication par $x$ dans $A$. Une base du $\C$-espace vectoriel $A$ est la {\bf base des monômes} $\bold{x} = (1, x,\cdots, x^{d-1})$.
 
 \subsection{Matrices des opérateurs de multiplication dans $A_x$}
 L'opérateur de multiplication
@@ -17,7 +17,7 @@ A \mapsto A \\
 h \mapsto xh
 \end{array}
 \right.$
-est un endomorphisme et se représente donc dans la base des monômes par une matrice $X$ de taille $d$, appelée {\bf matrice compagnon}
+est un endomorphisme et se représente donc dans la base des monômes par la matrice $X$ de taille $d$, appelée usuellement {\bf matrice compagnon}
 \begin{equation}
 \label{compan}
 X =
@@ -29,28 +29,30 @@ X =
 \end{bmatrix}
 \end{equation}
 
+Nous avons la proposition classique suivante:
 \begin{prop}
 \label{compan2roots}
-La matrice compagnon admet $f$ comme polynôme caractéristique et comme polynôme minimal, c'est-à-dire que $f(X) = 0$. De plus les racines du polynôme $f$ sont les valeurs propres de $X$, comptées avec les mêmes multiplicités.
+La matrice compagnon admet $f$ comme polynôme caractéristique et comme polynôme minimal, c'est-à-dire que l'on a $f(X) = 0$. De plus les racines du polynôme $f$ sont les valeurs propres de $X$, comptées avec les mêmes multiplicités.
 \end{prop}
 
 \begin{rem}
-La proposition précédente fournit une méthode effective de calcul numérique des racines de $f$. En effet, $X$ est une matrice de Hessenberg, à laquelle on peut appliquer des techniques performantes de calcul de valeurs propres, comme la méthode QR. Nous verrons à la section \ref{multivariable} que ces techniques peuvent aussi s'appliquer au cas d'un système multivariable en intersection complète.
+La proposition précédente fournit une méthode efficace de calcul numérique des racines de $f$. En effet, $X$ est une matrice de Hessenberg, à laquelle on peut appliquer de performantes techniques de calcul de valeurs propres, comme la méthode QR. Nous verrons à la section \ref{multivariable} que ces techniques peuvent aussi s'appliquer au cas d'un système multivariable en intersection complète.
 \end{rem}
-Plus généralement, pour tout élément $g\in A_x$, l'opérateur de multiplication
+
+Plus généralement, pour tout élément $g\in A$, l'opérateur de multiplication
 $g : \left\vert
 \begin{array}{c}
 A \mapsto A \\
 h \mapsto gh
 \end{array}
 \right.$
-est un endomorphisme, et se représente dans la base des monômes par une matrice que nous appelerons encore matrice compagnon de $g$ et qui se calcule à partir de $X$ très facilement. Considérons par exemple $g = x^2$. L'opérateur de multiplication par $x^2$ n'est autre que le carré de l'opérateur de multiplication par $x$; sa matrice est donc $X^2$. Donc d'une façon générale, nous avons
+est un endomorphisme, et se représente dans la base des monômes par une matrice appelée encore matrice compagnon de $g$ et qui se calcule facilement à partir de $X$. Considérons par exemple $g = x^2$. L'opérateur de multiplication par $x^2$ n'est autre que le carré de l'opérateur de multiplication par $x$; sa matrice est donc $X^2$. D'une façon générale, nous avons donc
 \begin{prop}
 la matrice compagnon de $g$ est $g(X)$.
 \end{prop}
 
 \begin{rem}
-Il faut noter que si $g_1, g_2$ sont deux représentants de $g$ on a $g_1(X) = g_2(X)$, ce qui définit $g(X)$ sans ambiguité, indépendamment du représentant de $g$ dans $A_x$.
+Il faut noter que si $g_1, g_2$ sont deux représentants de $g$ on a $g_1(X) = g_2(X)$, ce qui définit $g(X)$ sans ambiguité, indépendamment du représentant choisi.
 \end{rem}
 
 \subsection{Polynômes et matrices de Bezout}
