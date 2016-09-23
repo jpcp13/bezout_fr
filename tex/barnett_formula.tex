@@ -4,17 +4,16 @@
 
 
 \subsection{Formules de Barnett et structure de l'algèbre quotient.}
-Rappelons que dans notre hypothèse où l'idéal est zéro-dimensionel, la dimension de l'algèbre quotient $A = \C[\bold{x}]/\left<f\right>$ est finie, ce qui assure l'existence d'une base et de matrices compagnon $X_1,\cdots, X_n$ (matrices des opérateurs de multiplication par les variables dans la base considérée). Nous allons montrer que le même procédé mis en oeuvre dans la section \ref{Bar_gen}, consistant en manipulations sur les colonnes des matrices de Bezout $B(1), B(x_1), \cdots, B(x_n)$, permet ici aussi de construire une base de $A_x$ ainsi que les matrices compagnons associées.\\
-Rappelons tout d'abord un certain nombre de propriétés algébriques du polynôme $\delta(1)$ et des matrices de Bezout $B(x_k)$.
+Dans l'hypothèse où l'idéal est zéro-dimensionel, la dimension de l'algèbre quotient $A = \C[\bold{x}]/\langle f\rangle$ est finie, ce qui assure l'existence d'une base et de matrices compagnon $X_1,\cdots, X_n$ (matrices des opérateurs de multiplication par les variables dans la base considérée). Nous allons montrer que le même procédé mis en oeuvre dans la section \ref{Bar_gen}, consistant en manipulations sur les colonnes des matrices de Bezout $B(1), B(x_1), \cdots, B(x_n)$, permet ici aussi de construire une base de $A$ ainsi que les matrices compagnons associées. Rappelons tout d'abord un certain nombre de propriétés algébriques du polynôme $\delta(1)$ et des matrices de Bezout $B(x_k)$.
 
 \subsubsection{Propriétés algébriques du polynôme $\delta(1)$ et de la matrice $B(1)$}
-Les propriétés qui suivent sont de nature algébrique et seront données sans démonstration. Le lecteur intéressé pourra consulter les détails dans \cite{jpc, CM}. Comme dans la Proposition \ref{Barnett}, définissons de nouvelles familles d'éléments de $A_x$ par
+Les propriétés qui suivent sont de nature algébrique et sont données sans démonstration. Le lecteur intéressé pourra consulter les détails dans \cite{jpc, CM}. Comme dans la proposition \ref{Barnett}, définissons de nouvelles familles d'éléments de $A$ par
 \begin{equation}
 		\hat{\bold{x}}_k  =  \bold{x}B(x_k), \quad k=0\cdots n
 \end{equation}
-
+avec la convention de notation habituelle $\hat{\bold{x}} = \hat{\bold{x}}_0$.
 \begin{exmp}
-En reprenant l'exemple précédent nous avons
+En reprenant l'exemple \ref{bez_multi} nous avons
 \begin{equation}
 	\begin{array}{lll}
 		\hat{\bold{x}}_0 & = & (0, -x_2 - x_1x_2^2, -1 - x_1x_2, x_1, -x_2, 1) \\
@@ -31,18 +30,16 @@ Pour tout $k=1\cdots n$ on a
     \hat{\bold{x}}_0x_k = \hat{\bold{x}}_k
 \end{equation}
 \end{prop}
-
-Les relations ci-dessus sont faciles à vérifier sur l'exemple précédent. Jusqu'à maintenant les cas univariable et multivariable sont très similaires, sauf sur un point : dans le cas multivariable les familles $\bold{x}_0$ et $\hat{\bold{x}}_0$ ne sont plus nécessairement des bases de $A_x$. On a cependant la propriété suivante
+Les relations ci-dessus sont faciles à vérifier sur l'exemple \ref{bez_multi}. Jusqu'à maintenant les cas univariable et multivariable sont très similaires, sauf sur un point: dans le cas multivariable les familles $\bold{x}$ et $\hat{\bold{x}}$ ne sont plus nécessairement des bases de $A$. On a cependant la propriété suivante
 
 \begin{prop}
-Chacune des familles $\bold{x}$ et $\hat{\bold{x}}$ est génératrice dans $A_x$.
+Chacune des familles $\bold{x}$ et $\hat{\bold{x}}$ est génératrice dans $A$.
 \end{prop}
 
 \subsubsection{Processus de réduction}
 \label{sec:reduction_process}
-La proposition précédente fournit un début de structure de l'algèbre $A_x$. Nous avons pour l'instant une famille génératrice $\bold{x}$ de $A_x$ ainsi que des matrices de Bezout $B(x_k)$. Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B(x_k)$, on peut fabriquer une base de $A_x$ et des matrices compagnon $X_k$.\\
-Illustrons les calculs à partir de l'Exemple \ref{ex:bez_multi}. Le rang de $B(1)$ est $5$. La première colonne de $B(x_1)$ est nulle mais celle de $B(x_2)$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
-Multiplions $\bold{x}$ à droite par la matrice de Gauss $P$ dont la $5$ième colonne vaut $(1, 0, 0, 0, 1, 0)^{T}$, et multiplions les matrices de Bezout à gauche par $P^{-1}$, ce qui revient à soustraire la cinquième ligne à la première.
+La proposition précédente fournit un début de structure de l'algèbre $A$. Nous avons pour l'instant une famille génératrice $\bold{x}$ de $A$ ainsi que des matrices de Bezout $B(x_k)$. Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B(x_k)$, on peut fabriquer une base de $A$ et des matrices compagnon $X_k$. Illustrons les calculs à partir de l'exemple \ref{bez_multi}. Le rang de $B(1)$ est $5$. La première colonne de $B(x_1)$ est nulle mais celle de $B(x_2)$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
+Multiplions $\bold{x}$ à droite par la matrice de Gauss $P$ dont la cinquième colonne vaut $(1, 0, 0, 0, 1, 0)^{T}$, et multiplions les matrices de Bezout à gauche par $P^{-1}$, ce qui revient à soustraire la cinquième ligne à la première.
 Les matrices de Bezout $B(1), B(x_1), B(x_2)$ s'écrivent:
 $$
 \begin{array}{c|cccccc}
@@ -238,7 +235,7 @@ Lorsque le processus de réduction est terminé, c'est-à-dire lorsque la matric
 \end{prop}
 
 \begin{rem}
-Nous insistons sur le fait que la proposition précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il est possible d'obtenir en fin de processus des tailles de $\delta(1)$ différentes suivant que l'on considère les relations en $x$ ou en $y$ lors du processus de réduction. Le cas échéant, cette différence de taille finale est un phénomène qui reste à éclaircir.
+Nous insistons sur le fait que la proposition précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il est possible d'obtenir à la fin du processus de réduction des tailles de $\delta(1)$ différentes suivant que l'on utilise les relations en $x$ ou en $y$ lors du processus de réduction. Le cas échéant, cette différence de taille finale est un phénomène qui reste à éclaircir.
 \end{rem}
 
 \subsubsection{Formules de Barnett et matrices compagnon}
@@ -257,7 +254,7 @@ Reprenons l'exemple précédent et définissons les matrices $X_1, X_2$ par les 
 		0 & 1 & -1
 	\end{bmatrix}
 \end{equation}
-On vérifie que $X_1, X_2$ sont les matrices de multiplication par les variables $x_1, x_2$ dans la base $\bold{x}$. $X_1, X_2$ sont donc des matrices compagnon, pour la base $\bold{x}$ et nous retrouvons dans la situation décrite à la section \ref{Bar}. D'une façon générale nous avons:
+On vérifie que $X_1, X_2$ sont les matrices de multiplication par les variables $x_1, x_2$ dans la base $\bold{x}$. $X_1, X_2$ sont donc des matrices compagnon associées à la base $\bold{x}$ et nous retrouvons la situation décrite à la section \ref{Bar}. D'une façon générale nous avons:
 \begin{prop}
 \label{Barnett_multi}
 Lorsque le processus de réduction est terminé et que les matrices de Bezout sont écrites dans des bases $\bold{x, y}$, alors les matrices compagnon $X_j$, c'est à dire les matrices de multiplication par $x_j$ dans la base $\bold{x}$, peuvent se calculer grâce aux {\bf formules de Barnett}
@@ -267,15 +264,14 @@ Lorsque le processus de réduction est terminé et que les matrices de Bezout so
 \end{prop}
 
 \begin{rem}
-Comme dans le cas univariable nous avons pour tout $k=1,\cdots,n$,\\
-$B(x_k)^{T}B(1)^{-T}$ est la matrice de multiplication par $y_k$ dans la base $\bold{y}$ \\
-$B(1)^{-1}B(x_k)$ est la matrice de multiplication par $x_k$ dans la base $\hat{\bold{x}}$ \\
-$B(1)^{-T}B(x_k)^{T}$ est la matrice de multiplication par $y_k$ dans la base $\hat{\bold{y}}$
+Comme dans le cas univariable nous avons pour tout $j=1,\cdots,n$,\\
+$B(x_j)^{T}B(1)^{-T}$ est la matrice de multiplication par $y_j$ dans la base $\bold{y}$ \\
+$B(1)^{-1}B(x_j)$ est la matrice de multiplication par $x_j$ dans la base $\hat{\bold{x}}$ \\
+$B(1)^{-T}B(x_j)^{T}$ est la matrice de multiplication par $y_j$ dans la base $\hat{\bold{y}}$
 \end{rem}
 
 \subsubsection{Calcul numérique des racines}
-Comme dans le cas univariable (voir Proposition \ref{compan2roots}) les racines numériques du système polynomial $f_1, \cdots, f_n$ s'obtiennent en calculant les valeurs propres des matrices compagnons (voir \cite{AS}).\\
-Dans l'exemple précédent, les matrices $X_1, X_2$ fournissent les valeurs propres
+Comme dans le cas univariable (voir Proposition \ref{compan2roots}) les racines numériques du système polynomial $f_1, \cdots, f_n$ s'obtiennent en calculant les valeurs propres des matrices compagnons (\cite{AS}). Dans cet exemple les matrices $X_1, X_2$ fournissent les valeurs propres
 $$
 \begin{array}{c|c}
 	x_1 & x_2 \\
@@ -285,7 +281,7 @@ $$
 	0.66236 - 0.56228i & -0.87744 - 0.74486i
 \end{array}
 $$
-Puisque l'algèbre $A$ est commutative, les matrices $X_1, X_2$ commutent et ont donc les mêmes vecteurs propres. Lors du calcul il faut donc faire attention d'ordonner les valeurs propres pour qu'elles correspondent aux mêmes vecteurs propres. Dans l'exemple précédent on vérifie facilement que les couples $(x_1, x_2)$ ci-dessus sont bien racines du système $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
+Puisque l'algèbre $A$ est commutative, les matrices $X_1, X_2$ commutent et ont donc les mêmes vecteurs propres. Lors du calcul il faut donc faire attention d'ordonner les valeurs propres pour qu'elles correspondent aux mêmes vecteurs propres. Dans l'exemple précédent on vérifie facilement que les couples $(x_1, x_2)$ ci-dessus sont bien les racines du système $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
 
 
 \end{document}
