@@ -47,7 +47,7 @@ En développant $\delta(g) = \sum_{\alpha,\beta} b_{\alpha\beta} x^\alpha y^\bet
 	\delta(g) = \bold{x} B(g) \bold{y}^T
 \end{equation}
 \end{defn}
-
+Illustrons la définition précédente à l'aide d'un exemple, tiré de \cite{jpc}.
 \begin{exmp}
 \label{bez_multi}
 Fixons $n = 2$ et considérons $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
@@ -117,7 +117,7 @@ Ici, contrairement au cas univariable, les listes $\bold{x}$ et $\bold{y}$ ne so
 \end{rem}
 
 \subsubsection{Calcul effectif des matrices de Bezout}
-Dans l'exemple précédent, les polynômes de Bezout s'obtiennent en calculant le déterminant des matrices $\Delta(1), \Delta(x_1), \Delta(x_2)$, qui sont de taille $2$ et dont les coefficients sont des polynômes en $x_1, x_2$. Si le nombre de variables $n$ ou le degré des polynômes $f_i$ augmente alors ce calcul peut devenir difficile car les coefficients des matrices $\Delta(x_k)$ ne sont pas numériques et on ne peut donc pas appliquer la méthode du pivot de Gauss. Un moyen de contourner cette difficulté est de procéder par évaluation-interpolation :
+Dans l'exemple précédent, les polynômes de Bezout s'obtiennent en calculant le déterminant des matrices $\Delta(1), \Delta(x_1), \Delta(x_2)$, qui sont de taille $2$ et dont les coefficients sont des polynômes en $x_1, x_2$. Si le nombre de variables $n$ ou le degré des polynômes $f_i$ augmente alors ce calcul peut devenir difficile car les coefficients des matrices $\Delta(x_k)$ ne sont pas numériques et on ne peut donc pas appliquer la méthode du pivot de Gauss. Un moyen de résoudre cette difficulté est de procéder par évaluation-interpolation :
 \begin{enumerate}
 \item
 on estime à priori l'ensemble des monômes qui vont apparaitre dans le résultat $\delta(x^\gamma)$
@@ -129,9 +129,10 @@ pour chaque point $(u, v) \in U\times V$ on calcule le déterminant numérique d
 pour finir on interpole l'ensemble des valeurs obtenues par le polynôme cherché $\delta(x_k)$.
 \end{enumerate}
 Pour implémenter cet algorithme concrètement on doit préciser l'ensemble des monômes de $\delta(x_k)$ ainsi que les points de Fourier utilisés pour l'évaluation de $\delta(x_k)$. Prenons l'exemple d'un système polynomial $f$ de multidegré $(d_1, \cdots, d_n)$, c'est-à-dire que pour tous $i, j = 1..n$ le degré de $f_i$ en la variable $x_j$ est inférieur ou égal à $d_j$. Fixons un entier $k$ compris entre $0$ et $n$ et adoptons la convention que $x_0 = 1$. On voit facilement que $\delta(x_k)$, polynôme en $x, y$, est de multidegré $(d_1, 2d_2, \cdots, nd_n)$ en $x$ et de multidegré $(nd_1, (n-1)d_2, \cdots, d_n)$ en $y$.
- Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisirons donc $U = \prod_{j=1..n} U_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$. De même nous choisirons $V = \prod_{j=1..n} V_j$ de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}). Ceci est réalisé par exemple lorsque $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ avec $\theta_j = e^{i\pi/j}$. Les considérations précédentes nous permettent maintenant d'écrire l'algorithme \ref{fourierPoints}fournissant les ensembles $U$ et $V$.
+ Pour l'évaluation de $\delta(x_k)$ aux points de Fourier $(u, v) \in U\times V$ nous choisirons donc $U = \prod_{j=1..n} U_j$ o\`u $U_j$ est l'ensemble des racines complexes de $X^{jd_j} - 1$. De même nous choisirons $V = \prod_{j=1..n} V_j$ de façon que $U_j$ et $V_j$ soient disjoints, afin que le dénominateur ne s'annule jamais dans la formule (\ref{finite_diff}). Ceci est réalisé par exemple lorsque $V_j$ est l'ensemble des racines complexes de $X^{(n-j+1)d_j} - \theta_j$ avec $\theta_j = e^{i\pi/j}$. Les considérations précédentes nous permettent maintenant d'écrire l'algorithme~\ref{fourierPoints} présenté ci-dessous fournissant les ensembles $U$ et $V$.
 \begin{algorithm}
-\caption{Construction des ensembles de points de Fourier servant à l'évaluation du polynôme de Bezout $\delta(x_k)$}\label{fourierPoints}
+\caption{Construction des ensembles $U, V$ de points de Fourier servant à l'évaluation du polynôme de Bezout $\delta(x_k)$, $k = 0, \cdots, n$.}
+\label{fourierPoints}
 \begin{algorithmic}
 \Function{fourierPoints}{$d$} \Comment{multidegré $d = (d_1,\cdots,d_n)$}
 \For{$j=1..n$} \Comment{construction des facteurs $U_j, V_j$}
@@ -144,9 +145,9 @@ Pour implémenter cet algorithme concrètement on doit préciser l'ensemble des 
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
-Les ensembles de points de Fourier $U$ et $V$ peuvent alors être utilisés par l'algorithme \ref{evaluationMatrix} pour construire la matrice d'évaluation du polynôme de Bezout.
+Les ensembles de points de Fourier $U$ et $V$ peuvent alors être utilisés par l'algorithme \ref{evaluationMatrix} suivant pour construire la matrice d'évaluation du polynôme de Bezout.
 \begin{algorithm}[H]
-\caption{Construction de la matrice d'évaluation du polynôme de Bezout $\delta(x_k)$}
+\caption{Construction de la matrice $C^{(k)}$ d'évaluation du polynôme de Bezout $\delta(x_k)$}
 \label{evaluationMatrix}
 \begin{algorithmic}
 \Function{evaluation}{$f, k$} \Comment{$f = (f_1,\cdots,f_n)$ système polynomial}
@@ -164,7 +165,8 @@ Les ensembles de points de Fourier $U$ et $V$ peuvent alors être utilisés par 
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
-Rappelons que la matrice de Bezout $B^{(k)} = \left[b^{(k)}_{\alpha\beta}\right]_{\alpha\beta}$ est définie par $\delta^{(k)}(x, y) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} x^\alpha y^\beta$. On a donc $C^{(k)}_{u,v} = \delta^{(k)}(u, v) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} u^\alpha v^\beta$, ce qui s'écrit comme produit de matrices
+Ayant noté $C^{(k)}$ la matrice d'évaluation du polynôme de Bezout $\delta(x_k)$, notons $B^{(k)}$ la matrice de Bezout $B(x_k)$.
+La matrice $B^{(k)} = \left[b^{(k)}_{\alpha\beta}\right]_{\alpha\beta}$ est définie par $\delta^{(k)}(x, y) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} x^\alpha y^\beta$. On a donc $C^{(k)}_{u,v} = \delta^{(k)}(u, v) = \sum_{\alpha,\beta} b^{(k)}_{\alpha\beta} u^\alpha v^\beta$, ce qui s'écrit comme produit de matrices
 $\left[C^{(k)}_{u,v}\right]_{u,v} = \left[u^\alpha\right]_{u,\alpha} \left[b^{(k)}_{\alpha,\beta}\right]_{\alpha, \beta} \left[v^\beta\right]_{v, \beta}^T$. Définissons alors les matrices de Fourier $F_u = \left[ u^\alpha \right]_{u, \alpha}$
  et $F_v = \left[ v^\beta \right]_{v, \beta}$. On obtient la relation d'évaluation-interpolation entre les matrices $B^{(k)}$ et $C^{(k)}$
 $$C^{(k)} = F_uB^{(k)} F_v^T$$

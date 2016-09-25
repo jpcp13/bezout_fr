@@ -24,7 +24,7 @@ En reprenant l'exemple \ref{bez_multi} nous avons
 \end{exmp}
 
 \begin{prop}
-\label{xj}
+\label{xj} (admise, démonstration dans \cite{jpc}).
 Pour tout $k=1\cdots n$ on a
 \begin{equation}
     \hat{\bold{x}}_0x_k = \hat{\bold{x}}_k
@@ -32,13 +32,13 @@ Pour tout $k=1\cdots n$ on a
 \end{prop}
 Les relations ci-dessus sont faciles à vérifier sur l'exemple \ref{bez_multi}. Jusqu'à maintenant les cas univariable et multivariable sont très similaires, sauf sur un point: dans le cas multivariable les familles $\bold{x}$ et $\hat{\bold{x}}$ ne sont plus nécessairement des bases de $A$. On a cependant la propriété suivante
 
-\begin{prop}
+\begin{prop} (admise, démonstration dans \cite{jpc}).
 Chacune des familles $\bold{x}$ et $\hat{\bold{x}}$ est génératrice dans $A$.
 \end{prop}
 
 \subsubsection{Processus de réduction}
 \label{sec:reduction_process}
-La proposition précédente fournit un début de structure de l'algèbre $A$. Nous avons pour l'instant une famille génératrice $\bold{x}$ de $A$ ainsi que des matrices de Bezout $B(x_k)$. Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B(x_k)$, on peut fabriquer une base de $A$ et des matrices compagnon $X_k$. Illustrons les calculs à partir de l'exemple \ref{bez_multi}. Le rang de $B(1)$ est $5$. La première colonne de $B(x_1)$ est nulle mais celle de $B(x_2)$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
+La proposition précédente fournit un début de structure de l'algèbre $A$. Nous avons pour l'instant une famille génératrice $\bold{x}$ de $A$ ainsi que des matrices de Bezout $B(x_k), k = 0, \cdots, n$. Nous allons montrer comment, en appliquant le procédé matriciel décrit dans la section \ref{Bar_gen} à la famille génératrice $\bold{x}$ et aux matrices de Bezout $B(x_k)$, on peut fabriquer une base de $A$ et des matrices compagnon $X_k$. Illustrons les calculs à partir de l'exemple \ref{bez_multi}. Le rang de $B(1)$ est $5$. La première colonne de $B(x_1)$ est nulle mais celle de $B(x_2)$ ne l'est pas, ce qui fournit la relation dans le quotient $1 + x_1x_2 = 0$.
 Multiplions $\bold{x}$ à droite par la matrice de Gauss $P$ dont la cinquième colonne vaut $(1, 0, 0, 0, 1, 0)^{T}$, et multiplions les matrices de Bezout à gauche par $P^{-1}$, ce qui revient à soustraire la cinquième ligne à la première.
 Les matrices de Bezout $B(1), B(x_1), B(x_2)$ s'écrivent:
 $$
@@ -235,7 +235,7 @@ Lorsque le processus de réduction est terminé, c'est-à-dire lorsque la matric
 \end{prop}
 
 \begin{rem}
-Nous insistons sur le fait que la proposition précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il est possible d'obtenir à la fin du processus de réduction des tailles de $\delta(1)$ différentes suivant que l'on utilise les relations en $x$ ou en $y$ lors du processus de réduction. Le cas échéant, cette différence de taille finale est un phénomène qui reste à éclaircir.
+Nous insistons sur le fait que la proposition précédente est valable uniquement dans l'hypothèse où l'idéal est zéro-dimensionnel. Lors de nos expériences nous avons pu observer que dans le cas contraire, il est possible d'obtenir à la fin du processus de réduction des matrices $B(1)$ de tailles différentes suivant que l'on utilise les relations en $x$ ou en $y$ lors du processus de réduction. Le cas échéant, cette différence de taille finale est un phénomène qui reste à éclaircir.
 \end{rem}
 
 \subsubsection{Formules de Barnett et matrices compagnon}
@@ -254,7 +254,7 @@ Reprenons l'exemple précédent et définissons les matrices $X_1, X_2$ par les 
 		0 & 1 & -1
 	\end{bmatrix}
 \end{equation}
-On vérifie que $X_1, X_2$ sont les matrices de multiplication par les variables $x_1, x_2$ dans la base $\bold{x}$. $X_1, X_2$ sont donc des matrices compagnon associées à la base $\bold{x}$ et nous retrouvons la situation décrite à la section \ref{Bar}. D'une façon générale nous avons:
+On vérifie que $X_1, X_2$ sont les matrices de multiplication par les variables $x_1, x_2$ dans la base $\bold{x}$ et sont donc les matrices compagnon associées à la base $\bold{x}$. D'une façon générale nous avons:
 \begin{prop}
 \label{Barnett_multi}
 Lorsque le processus de réduction est terminé et que les matrices de Bezout sont écrites dans des bases $\bold{x, y}$, alors les matrices compagnon $X_j$, c'est à dire les matrices de multiplication par $x_j$ dans la base $\bold{x}$, peuvent se calculer grâce aux {\bf formules de Barnett}
@@ -271,7 +271,7 @@ $B(1)^{-T}B(x_j)^{T}$ est la matrice de multiplication par $y_j$ dans la base $\
 \end{rem}
 
 \subsubsection{Calcul numérique des racines}
-Comme dans le cas univariable (voir Proposition \ref{compan2roots}) les racines numériques du système polynomial $f_1, \cdots, f_n$ s'obtiennent en calculant les valeurs propres des matrices compagnons (\cite{AS}). Dans cet exemple les matrices $X_1, X_2$ fournissent les valeurs propres
+Comme dans le cas univariable (voir Proposition \ref{compan2roots}) les racines du système polynomial $f_1, \cdots, f_n$ s'obtiennent numériquement en calculant les valeurs propres des matrices compagnons (\cite{AS}). Dans cet exemple les matrices $X_1, X_2$ fournissent les valeurs propres
 $$
 \begin{array}{c|c}
 	x_1 & x_2 \\
@@ -281,7 +281,7 @@ $$
 	0.66236 - 0.56228i & -0.87744 - 0.74486i
 \end{array}
 $$
-Puisque l'algèbre $A$ est commutative, les matrices $X_1, X_2$ commutent et ont donc les mêmes vecteurs propres. Lors du calcul il faut donc faire attention d'ordonner les valeurs propres pour qu'elles correspondent aux mêmes vecteurs propres. Dans l'exemple précédent on vérifie facilement que les couples $(x_1, x_2)$ ci-dessus sont bien les racines du système $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
+Puisque l'algèbre $A$ est commutative, les matrices $X_1, X_2$ commutent et ont donc les mêmes vecteurs propres. Lors du calcul il faut donc faire attention d'ordonner les valeurs propres pour qu'elles correspondent aux mêmes vecteurs propres. Dans l'exemple précédent on vérifie facilement que les couples $(x_1, x_2)$ ci-dessus sont bien des approximations des racines du système $f_1 = x_1^2 + x_1x_2^2 - 1, f_2 = x_1^2x_2 + x_1$.
 
 
 \end{document}
